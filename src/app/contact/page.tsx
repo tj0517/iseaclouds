@@ -78,7 +78,7 @@ export default function Home() {
           >
             <div className="text-2xl font-bold">Send a message</div>
             <div className="flex flex-row justify-between mt-6">
-              <input
+              <input  
                 type="text"
                 id="name"
                 className="w-[45%] text-black font-normal border-b-2 py-1.5 border-b-black text-xl focus:outline-none placeholder:text-black placeholder:text-xl"

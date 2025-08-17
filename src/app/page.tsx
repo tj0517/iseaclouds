@@ -77,7 +77,7 @@ Our services are grounded in technical excellence, safety, and efficiency, ensur
 Partner with Sea Clouds for precise and dependable offshore engineering solutions—from concept design and planning to execution and support. Whether you require strategic offshore technical advisory or fully integrated engineering capabilities, we bring clarity and confidence to complex offshore challenges.
 Over...</div>
 </div>
-<div className="w-[35%] h-[75vh] relative max-h-[10%] ml-[2.5%]">
+<div className="w-[35%] h-[75vh] relative ml-[2.5%]">
   <Image
     src="/enginner1.jpg"
     alt="Logo"
@@ -123,52 +123,52 @@ Engineering hours
 <div className="w-full px-30 py-30 flex flex-row justify-between">
 <div className={`${poppins.className} flex-col w-[40%]`}>
 <div className="text-5xl text-blue-800 font-bold">Master Offshore Skills with SeaClouds Courses</div>
-<div className="text-xl text-black font-light mt-10 leading-10">
+<div className=" text-[16px]  2xl:text-xl text-black font-light mt-10 2xl:leading-10">
 Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
 </div>
 <div className="bg-blue-800 px-4 py-2 text-xl text-amber-50 w-[40%] mt-10">Check out</div>
 </div>
-<div className="w-[50%] flex flex-row justify-between flex-wrap">
-<div className="w-[47.5%] aspect-square relative mb-5">
+<div className="w-[40%] flex flex-row justify-between flex-wrap h-full">
+<div className="w-[47.5%] h-[15vw] relative mb-5">
   <Image
     src="/courses1.jpg"
     alt="Logo"
     fill
     className="object-cover object-center"  
   />
-  <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
+  <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
 surveyor
 course (remote)</div>
   </div>
-  <div className="w-[47.5%] aspect-square relative mb-5">
+  <div className="w-[47.5%] h-[15vw] relative mb-5">
   <Image
     src="/courses2.jpg"
     alt="Logo"
     fill
     className="object-cover object-right"  
   />
-    <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
+    <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
 surveyor
 course
 (stationary)</div>
   </div>
-  <div className="w-[47.5%] aspect-square relative">
+  <div className="w-[47.5%] h-[15vw] relative">
   <Image
   src="/courses3.jpg"
     alt="Logo"
     fill
     className="object-cover object-right"  
   />
-    <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey engineering (Company)</div>
+    <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey engineering (Company)</div>
   </div>
-  <div className="w-[47.5%] aspect-square relative">
+  <div className="w-[47.5%] h-[15vw] relative">
   <Image
   src="/courses4.jpg"
     alt="Logo"
     fill
     className="object-cover object-right"  
   />
-    <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey technician (stationary)</div>
+    <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey technician (stationary)</div>
 </div>
 </div>
 </div>

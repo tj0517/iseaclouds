@@ -53,7 +53,7 @@ export default function Home() {
               className="object-cover object-center"
             />
           </div>
-    <div className="absolute top-[10%] left-[15%] w-[35vw] h-[27vw] bg-gray-400 flex flex-col px-12 py-16">
+    <div className="absolute top-[10%] left-[15%] w-[35vw]  bg-gray-400 flex flex-col px-12 py-16">
     <div className="text-black font-black">{articles[0].date}</div>
     <div className={`${playfair.className} text-blue-800 text-3xl font-bold mt-3`}>{articles[0].title}</div>
     <div className="text-white italic mt-5 text-[18px] w-[70%]">{articles[0].description}</div>
