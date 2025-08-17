@@ -77,7 +77,7 @@ Our services are grounded in technical excellence, safety, and efficiency, ensur
 Partner with Sea Clouds for precise and dependable offshore engineering solutions—from concept design and planning to execution and support. Whether you require strategic offshore technical advisory or fully integrated engineering capabilities, we bring clarity and confidence to complex offshore challenges.
 Over...</div>
 </div>
-<div className="w-[35%] h-[75vh] relative ml-[2.5%]">
+<div className="w-[35%] h-[75vh] relative max-h-[10%] ml-[2.5%]">
   <Image
     src="/enginner1.jpg"
     alt="Logo"
@@ -122,14 +122,14 @@ Engineering hours
 
 <div className="w-full px-30 py-30 flex flex-row justify-between">
 <div className={`${poppins.className} flex-col w-[40%]`}>
-<div className="text-5xl text-blue-800 font-light">Master Offshore Skills with SeaClouds Courses</div>
-<div className="text-[14px] text-black font-normal mt-10">
+<div className="text-5xl text-blue-800 font-bold">Master Offshore Skills with SeaClouds Courses</div>
+<div className="text-xl text-black font-light mt-10 leading-10">
 Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
 </div>
 <div className="bg-blue-800 px-4 py-2 text-xl text-amber-50 w-[40%] mt-10">Check out</div>
 </div>
 <div className="w-[50%] flex flex-row justify-between flex-wrap">
-<div className="w-[47.5%] h-[18vw] relative mb-5">
+<div className="w-[47.5%] aspect-square relative mb-5">
   <Image
     src="/courses1.jpg"
     alt="Logo"
@@ -140,7 +140,7 @@ Advance your career in the maritime industry with SeaClouds courses! We offer pr
 surveyor
 course (remote)</div>
   </div>
-  <div className="w-[47.5%] h-[18vw] relative">
+  <div className="w-[47.5%] aspect-square relative mb-5">
   <Image
     src="/courses2.jpg"
     alt="Logo"
@@ -152,7 +152,7 @@ surveyor
 course
 (stationary)</div>
   </div>
-  <div className="w-[47.5%] h-[18vw] relative">
+  <div className="w-[47.5%] aspect-square relative">
   <Image
   src="/courses3.jpg"
     alt="Logo"
@@ -161,7 +161,7 @@ course
   />
     <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey engineering (Company)</div>
   </div>
-  <div className="w-[47.5%] h-[18vw] relative">
+  <div className="w-[47.5%] aspect-square relative">
   <Image
   src="/courses4.jpg"
     alt="Logo"
@@ -179,7 +179,7 @@ course
 <div className="text-blue-800 text-7xl font-bold text-center w-full">Why us?</div>
 <div className="w-[100%] px-[5%] flex flex-row pb-9 justify-between mt-30">
 <div className="w-[20%] flex flex-col text-center">
-<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Offshore Engineering</div>
+<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Offshore<br></br>Engineering</div>
 <div className="italic mt-[40px] text-slate-400">Sea Clouds brings together a team of seasoned professionals with deep offshore industry expertise, delivering efficient and effective offshore technical advisory and engineering solutions tailored to the needs of Oil & Gas and Wind Farm projects.</div>
 </div>
 <div className="w-[20%] flex flex-col text-center">
@@ -194,7 +194,7 @@ Safety</div>
 <div className="italic mt-[40px] text-slate-400">Sea Clouds prioritizes quality, safety, and sustainability in all operations, ensuring projects are executed with the highest standards of integrity and efficiency.</div>
 </div>
 <div className="w-[20%] flex flex-col text-center">
-<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Long-term Collaboration</div>
+<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Long-term<br></br> Collaboration</div>
 <div className="italic mt-[40px] text-slate-400">The company offers a combination of frame agreements for long-term collaboration and ad-hoc cooperation for specific projects, catering to diverse client requirements.</div>
 </div>
 
