@@ -79,7 +79,7 @@ Over...</div>
 </div>
 <div className="w-[35%] h-[75vh] relative ml-[2.5%]">
   <Image
-    src="/enginner1.jpg"
+    src="/engineer1.jpg"
     alt="Logo"
     fill
     className="object-cover object-bottom"  
@@ -93,7 +93,7 @@ Over...</div>
 </div>
 <div className=" text-white text-2xl mt-7" >
 Years of experience
-</div>
+</div>  
 </div>
 <div  className="w-25%  text-center">
 <div className={`${playfair.className} text-blue-800 text-8xl font-bold`}>
