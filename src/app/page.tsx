@@ -48,10 +48,10 @@ export default function Home() {
 <div><Link href="/contact">Contact us</Link></div>
 </div>
 <div className="ml-[20%]">
-<h1 className=" text-blue-800 w-full text-5xl font-bold mt-[100px]">
+<h1 className=" text-blue-800 w-full text-5xl font-bold mt-[100px] 2xl:w-[75%]">
   Navigating Offshore Excellence
 </h1>
-<div className=" w-[70%] mt-[60px] text-amber-50 font-normal text-lg">Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.</div>
+<div className=" w-[70%] mt-[60px] text-amber-50 font-light text-xl 2xl:w-[60%]">Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.</div>
 <div className="p-4 bg-blue-800 text-white w-[40%] mt-[40px] text-center rounded-full" >Explore</div>
 <div className="w-[20%] flex flex-row justify-between text-3xl text-white mt-[100px]">
 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
