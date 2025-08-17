@@ -1,103 +1,205 @@
 import Image from "next/image";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { Cormorant_Garamond } from 'next/font/google';
+import Footer from "./footer";
+import Link from 'next/link'
+import { Poppins } from 'next/font/google'
+
+const playfair = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: '700',
+});
+
+
+
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['200','400', '500', '700'], // wybierz wagi, które potrzebujesz
+    variable: '--font-poppins', // CSS variable do Tailwinda
+  })
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  <div className={`${poppins.className} bg-amber-50`}>
+<div className="w-full flex flex-row"> 
+<div className="w-[45%] h-[95vh] relative">
+  <Image
+    src="/main1_2.jpg"
+    alt="Logo"
+    fill
+    className="object-cover object-right"  
+  />
+<div className="absolute top-10 left-10">
+<Image
+    src="/logo.png"
+    alt="Logo"
+    width={150}
+    height={150}
+  />
+</div>
+</div>
+<div className="bg-gray-400 w-[55%]">
+<div className="w-[70%] ml-[20%] mt-[50px] flex flex-row justify-between text-amber-50 font-light text-xl">
+<div><Link href="/">Home</Link></div>
+<div><Link href="/courses">Courses</Link></div> 
+<div><Link href="/news">News</Link></div>
+<div><Link href="/offer">Offer</Link></div> 
+<div><Link href="/contact">Contact us</Link></div>
+</div>
+<div className="ml-[20%]">
+<h1 className=" text-blue-800 w-full text-5xl font-bold mt-[100px]">
+  Navigating Offshore Excellence
+</h1>
+<div className=" w-[70%] mt-[60px] text-amber-50 font-normal text-lg">Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.</div>
+<div className="p-4 bg-blue-800 text-white w-[40%] mt-[40px] text-center rounded-full" >Explore</div>
+<div className="w-[20%] flex flex-row justify-between text-3xl text-white mt-[100px]">
+<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <FaFacebookF />
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <FaInstagram />
+      </a>     
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <FaLinkedinIn />
+      </a>
+</div>
+</div>
+</div>
+</div>
+<div className="w-full flex flex-row pt-28">
+<div className="h-full w-[45%] ml-[10%]">
+<h2 className=" text-blue-800 w-full text-6xl font-bold ">
+About us
+</h2>
+<div className="text-slate-400 w-[80%] text-[18px] mt-[50px]">Sea Clouds was founded by a team of experts with over 25 years of professional experience and deep knowledge in the Offshore Oil & Gas and Wind Farm sectors.We specialize in delivering comprehensive offshore engineering solutions and technical advisory services across key disciplines including Marine, Offshore Construction, Survey and Seabed Intervention, as well as ROV (Remotely Operated Vehicle) operations.
+Our services are grounded in technical excellence, safety, and efficiency, ensuring that every involvement in our client’s project meets the highest industry standards.
+Partner with Sea Clouds for precise and dependable offshore engineering solutions—from concept design and planning to execution and support. Whether you require strategic offshore technical advisory or fully integrated engineering capabilities, we bring clarity and confidence to complex offshore challenges.
+Over...</div>
+</div>
+<div className="w-[35%] h-[75vh] relative ml-[2.5%]">
+  <Image
+    src="/enginner1.jpg"
+    alt="Logo"
+    fill
+    className="object-cover object-bottom"  
+  />
+</div>
+</div>
+<div className="w-[100%] px-[5%] flex flex-row bg-gray-400 pt-3 pb-9 justify-between">
+<div  className="w-25%  text-center">
+<div className={`${playfair.className} text-blue-800 text-8xl font-bold`}>
+25
+</div>
+<div className=" text-white text-2xl mt-7" >
+Years of experience
+</div>
+</div>
+<div  className="w-25%  text-center">
+<div className={`${playfair.className} text-blue-800 text-8xl font-bold`}>
+50
+</div>
+<div className=" text-white text-2xl mt-7" >
+Large-scale Projects
+</div>
+</div><div  className="w-25%  text-center">
+<div className={`${playfair.className} text-blue-800 text-8xl font-bold`}>
+550
+</div>
+<div className=" text-white text-2xl mt-7" >
+Offshore Days Annually
+</div>
+</div><div  className="w-25%  text-center">
+<div className={`${playfair.className} text-blue-800 text-8xl font-bold`}>
+1000
+</div>
+<div className=" text-white text-2xl mt-7" >
+Engineering hours
+</div>
+</div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+</div>
+
+<div className="w-full px-30 py-30 flex flex-row justify-between">
+<div className={`${poppins.className} flex-col w-[40%]`}>
+<div className="text-5xl text-blue-800 font-light">Master Offshore Skills with SeaClouds Courses</div>
+<div className="text-[14px] text-black font-normal mt-10">
+Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
+</div>
+<div className="bg-blue-800 px-4 py-2 text-xl text-amber-50 w-[40%] mt-10">Check out</div>
+</div>
+<div className="w-[50%] flex flex-row justify-between flex-wrap">
+<div className="w-[47.5%] h-[18vw] relative mb-5">
+  <Image
+    src="/courses1.jpg"
+    alt="Logo"
+    fill
+    className="object-cover object-center"  
+  />
+  <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
+surveyor
+course (remote)</div>
+  </div>
+  <div className="w-[47.5%] h-[18vw] relative">
+  <Image
+    src="/courses2.jpg"
+    alt="Logo"
+    fill
+    className="object-cover object-right"  
+  />
+    <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
+surveyor
+course
+(stationary)</div>
+  </div>
+  <div className="w-[47.5%] h-[18vw] relative">
+  <Image
+  src="/courses3.jpg"
+    alt="Logo"
+    fill
+    className="object-cover object-right"  
+  />
+    <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey engineering (Company)</div>
+  </div>
+  <div className="w-[47.5%] h-[18vw] relative">
+  <Image
+  src="/courses4.jpg"
+    alt="Logo"
+    fill
+    className="object-cover object-right"  
+  />
+    <div className=" flex text-white text-3xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey technician (stationary)</div>
+</div>
+</div>
+</div>
+
+
+
+<div className="w-full px-[2.5%] flex flex-col pt-10 pb-10 ">
+<div className="text-blue-800 text-7xl font-bold text-center w-full">Why us?</div>
+<div className="w-[100%] px-[5%] flex flex-row pb-9 justify-between mt-30">
+<div className="w-[20%] flex flex-col text-center">
+<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Offshore Engineering</div>
+<div className="italic mt-[40px] text-slate-400">Sea Clouds brings together a team of seasoned professionals with deep offshore industry expertise, delivering efficient and effective offshore technical advisory and engineering solutions tailored to the needs of Oil & Gas and Wind Farm projects.</div>
+</div>
+<div className="w-[20%] flex flex-col text-center">
+<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Flexible<br></br>
+
+Service</div>
+<div className="italic mt-[40px] text-slate-400">The company provides a range of services that include both remote and on-site assistance, allowing for immediate and adaptable responses to client needs.</div>
+</div>
+<div className="w-[20%] flex flex-col text-center">
+<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Quality <br></br>
+Safety</div>
+<div className="italic mt-[40px] text-slate-400">Sea Clouds prioritizes quality, safety, and sustainability in all operations, ensuring projects are executed with the highest standards of integrity and efficiency.</div>
+</div>
+<div className="w-[20%] flex flex-col text-center">
+<div className={`${playfair.className} text-black text-4xl font-bold pb-7 border-b-2`}>Long-term Collaboration</div>
+<div className="italic mt-[40px] text-slate-400">The company offers a combination of frame agreements for long-term collaboration and ad-hoc cooperation for specific projects, catering to diverse client requirements.</div>
+</div>
+
+</div>
+</div>
+<Footer></Footer>
+   </div>);
 }
