@@ -25,10 +25,10 @@ export default function Home() {
 <div className="w-full flex flex-row"> 
 <div className="w-[45%] h-[95vh] relative">
   <Image
-    src="/main1_2.jpg"
+    src="/m.webp"
     alt="Logo"
     fill
-    className="object-cover object-right"  
+    className="object-cover object-ce"  
   />
 <div className="absolute top-10 left-10">
 <Image
@@ -131,44 +131,38 @@ Advance your career in the maritime industry with SeaClouds courses! We offer pr
 <div className="w-[40%] flex flex-row justify-between flex-wrap h-full">
 <div className="w-[47.5%] h-[15vw] relative mb-5">
   <Image
-    src="/courses1.jpg"
+    src="/courses/ps_r.webp"
     alt="Logo"
     fill
-    className="object-cover object-center"  
+    className="object-cover object-center grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300"  
   />
-  <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
-surveyor
-course (remote)</div>
   </div>
   <div className="w-[47.5%] h-[15vw] relative mb-5">
   <Image
-    src="/courses2.jpg"
+    src="/courses/ps_o.webp"
     alt="Logo"
     fill
-    className="object-cover object-right"  
+    className="object-cover object-right grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300"  
   />
-    <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Project 
-surveyor
-course
-(stationary)</div>
+
   </div>
   <div className="w-[47.5%] h-[15vw] relative">
   <Image
-  src="/courses3.jpg"
+  src="/courses/se_c.webp"
     alt="Logo"
     fill
-    className="object-cover object-right"  
+    className="object-cover object-right grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300"  
   />
-    <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey engineering (Company)</div>
+
   </div>
   <div className="w-[47.5%] h-[15vw] relative">
   <Image
-  src="/courses4.jpg"
+  src="/courses/st_o.webp"
     alt="Logo"
     fill
-    className="object-cover object-right"  
+    className="object-cover object-right grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300"  
   />
-    <div className=" flex text-white text-2xl absolute font-bold h-full items-center w-[75%] left-[12.5%] text-center">Survey technician (stationary)</div>
+    
 </div>
 </div>
 </div>

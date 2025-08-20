@@ -1,11 +1,19 @@
 import Image from "next/image";
 import Link from 'next/link'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['200','400', '500', '700'], // wybierz wagi, które potrzebujesz
+    variable: '--font-poppins', // CSS variable do Tailwinda
+  })
+  
 
 
 
 export default function Menu() {
     return (
-<div className="w-full bg-gray-400 flex flex-row py-1.5">
+<div className={`w-full bg-gray-400 flex flex-row py-1.5 ${poppins.className} bg-amber-50`}>
     <div className="ml-[2.5%]">
 <Image
     src="/logo.png"
