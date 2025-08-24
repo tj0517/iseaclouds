@@ -2,6 +2,7 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { articles } from "@/data/aticles"
 import Menu from "@/app/menu"
+import Footer from "@/app/footer"
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
@@ -22,7 +23,8 @@ export default async function ArticlePage({
   if (!article) return notFound()
 
   return (
-    <div className={`${poppins.className}`} >
+    <div>
+    <div className={`${poppins.className} mb-30`} >
     <Menu/>
       <div className="flex flex-row justify-between w-full px-[7.5%] mt-20 h-[45vh]">
       <div className="h-full w-[50%] flex flex-col">
@@ -40,22 +42,21 @@ export default async function ArticlePage({
         />
       </div>
     </div>
-    <div className="flex flex-col w-full px-[7.5%] pt-20">
-      {article.content.map((block, i) => {
-    if (block.type === "paragraph") {
-      return <p key={i} className="mb-4">{block.text}</p>;
-    }
-    if (block.type === "list") {
-      return (
-        <div key={i} className="mb-4">
-          <div className="font-bold mb-2">{block.title}</div>
-          <ul className="list-disc ml-5">
-            {block.items.map((item, j) => <li key={j}>{item}</li>)}
-          </ul>
-        </div>
-      );
-    }
-  })}</div>
-    </div>
+    <div className="article-content flex flex-col w-full px-[7.5%] pt-20"
+     dangerouslySetInnerHTML={{ __html: article.content }}
+/>
+{article.photo2 && (
+  <div className="w-[80%] mx-auto aspect-[16/9] relative  mt-10">
+  <Image
+    src={`/news/${article.photo2}`}
+    alt={article.title}
+    fill
+    className="object-cover"
+  />
+</div>
+)}
+</div>
+<Footer/>
+</div>
   )
 }

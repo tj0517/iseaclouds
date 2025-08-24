@@ -111,10 +111,10 @@ export default function Home() {
         <div>
 <Menu></Menu>
 <div className="w-full flex flex-row bg-amber-50 pt-10 px-[10%] pb-10">
-<h2 className={`${playfair.className} text-blue-800 w-full text-6xl font-bold`}>
+<h2 className={`${playfair.className} text-blue-800 w-full xl:text-6xl text-5xl font-bold`}>
 Our Offer
 </h2>
-<div className="text-black mt-20">Sea Clouds provides comprehensive technical advisory services in the preparation, execution, and management of offshore projects — both from the Operator’s and the Contractor’s perspective.</div>
+<div className="text-black mt-20 xl:text-[18px] text-[13px]">Sea Clouds provides comprehensive technical advisory services in the preparation, execution, and management of offshore projects — both from the Operator’s and the Contractor’s perspective.</div>
 </div>
 {offers.map((offer, index) =>
   index % 2 === 0 ? (
@@ -130,8 +130,8 @@ Our Offer
           />
         </div>
         <div className="w-[40%] pl-16 pt-12">
-        <h2 className={`${playfair.className} text-blue-800 w-full text-4xl font-bold `}>{offer.title}</h2>
-    <ul className="list-disc pl-6 space-y-1 mt-10 italic">
+        <h2 className={`${playfair.className} text-blue-800 w-full xl:text-4xl text-3xl font-bold `}>{offer.title}</h2>
+    <ul className="list-disc pl-6 space-y-1 mt-10 italic xl:text-[16px] text-[13px]">
       {offer.description.map((item, i) => (
         <li key={i}>{item}</li>
       ))}
@@ -143,9 +143,9 @@ Our Offer
       {/* Drugi element z pary — tylko jeśli istnieje */}
       {offers[index + 1] && (
         <div className="w-full flex flex-row bg-amber-50">
-          <div className="w-[40%] pl-16 pt-12">
-        <h2 className={`${playfair.className} text-blue-800 w-full text-4xl font-bold `}>{offers[index+1].title}</h2>
-    <ul className="list-disc pl-6 space-y-1 italic mt-10">
+          <div className="w-[40%] xl:pl-16 pl-12 pt-12">
+        <h2 className={`${playfair.className} text-blue-800 w-full xl:text-4xl text-3xl font-bold `}>{offers[index+1].title}</h2>
+    <ul className="list-disc pl-6 space-y-1 italic mt-10 xl:text-[16px] text-[13px] w-[90%]">
       {offers[index + 1].description.map((item, i) => (
         <li key={i}>{item}</li>
       ))}

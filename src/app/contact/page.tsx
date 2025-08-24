@@ -50,7 +50,7 @@ export default function Home() {
       <Menu />
   
       {/* Background image */}
-      <div className="w-full h-[60vh] relative">
+      <div className="w-full xl:h-[60vh] h-[50vh] relative">
         <Image
           src="/contact/contact_bg.jpg"
           alt="contact background"
@@ -66,9 +66,9 @@ export default function Home() {
       </div>
   
       {/* Contact form */}
-      <div className="w-full px-10 bg-amber-50 py-16 flex flex-col">
+      <div className="w-full xl:px-10  bg-amber-50 py-16 flex flex-col">
         <div
-          className={`${playfair.className} text-blue-800 text-6xl font-bold ml-[11%]`}
+          className={`${playfair.className} text-blue-800 xl:text-6xl text-5xl font-bold ml-[11%]`}
         >
           Get in touch
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
           <form
             className={`${playfair.className} w-[45%] mx-auto p-6 space-y-4`}
           >
-            <div className="text-2xl font-bold">Send a message</div>
+            <div className="xl:text-2xl text-xl font-bold">Send a message</div>
             <div className="flex flex-row justify-between mt-6">
               <input  
                 type="text"
@@ -103,7 +103,7 @@ export default function Home() {
   
             <button
               type="submit"
-              className="w-[20%] bg-black hover:bg-blue-800 text-white py-2 px-4 ml-[80%] transition duration-200 text-xl font-bold"
+              className="xl:w-[20%] w-[25%] bg-black hover:bg-blue-800 text-white py-2 px-4 xl:ml-[80%] ml-[75%] transition duration-200 text-xl font-bold"
             >
               Send
             </button>
@@ -111,8 +111,14 @@ export default function Home() {
   
           {/* Map */}
           <div className="w-[45%] h-[400px]">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2324.3261147804737!2d18.607646377024473!3d54.36888827260357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd748fc55ad289%3A0x68285da2d45be550!2sDo%20Studzienki%2063%2C%2080-227%20Gda%C5%84sk!5e0!3m2!1spl!2spl!4v1755259178668!5m2!1spl!2spl" width="500" height="325" className="border:0 float-right mt-16" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+          <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2324.3261147804737!2d18.607646377024473!3d54.36888827260357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd748fc55ad289%3A0x68285da2d45be550!2sDo%20Studzienki%2063%2C%2080-227%20Gda%C5%84sk!5e0!3m2!1spl!2spl!4v1755259178668!5m2!1spl!2spl"
+    className="w-full h-full border-0"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+ </div>
         </div>
       </div>
   

@@ -22,7 +22,7 @@ export default function Menu() {
     height={80}
   />
   </div>
-<div className="w-[35%] ml-[54%] flex flex-row justify-between text-amber-50 font-light text-xl  items-center">
+<div className="xl:w-[35%] lg:w-[45%] w-[50%] lg:ml-[42.5%] ml-[36.5%] xl:ml-[54%] md:flex flex-row justify-between text-amber-50 font-light xl:text-xl items-center hidden">
 <div><Link href="/">Home</Link></div>
 <div><Link href="/courses">Courses</Link></div> 
 <div><Link href="/news">News</Link></div>

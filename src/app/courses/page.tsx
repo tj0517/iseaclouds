@@ -59,10 +59,10 @@ export default function Home() {
           <div className="font-normal text-xl mt-6">Grow in offshore wind — built on our oil & gas expertise</div> 
         </div>
       </div>
-      <div className="flex flex-row w-full pl-[5%] pr-[5%] flex-wrap py-20 bg-amber-50 justify-between">
+      <div className="flex flex-row w-full pl-[5%] pr-[5%] flex-wrap py-20 bg-amber-50 justify-between xl:pt-30 pb-20">
       {courses.map((course, index) =>
       (
-        <div key={index} className={`${playfair.className} w-[25%] mx-10 flex flex-col pb-16 text-2xl text-black`}>
+        <div key={index} className={`${playfair.className} xl:w-[25%] w-[22.5%] mx-10 lg:flex flex-col xl:pb-24 pb-16 text-2xl text-black hidden`}>
         <div className="relative w-full aspect-square">
           <Image
             src={`/courses/${course.image}`}
@@ -71,15 +71,15 @@ export default function Home() {
             className="object-cover object-right"
           />
         </div>
-        <div className="font-normal mt-5">
+        <div className="font-normal text-2xl xl:text-3xl mt-5">
         {course.title}
         </div>
-        <div className=" font-light mt-1">
+        <div className=" font-light text-2xl xl:text-3xl mt-1">
         {course.type}
         </div>
         <div className="w-full flex flex-row justify-between">
-        <div className=" text-3xl font-bold mt-3">{course.price}</div>
-        <div className="w-[40%] bg-blue-800 text-amber-50 text-center py-2">JOIN</div>
+        <div className=" xl:text-3xl text-2xl font-bold mt-3">{course.price}</div>
+        <div className="w-[35%] xl:w-[40%]  items-center bg-blue-800 text-amber-50 text-center py-2 xl:text-2xl text-lg">JOIN</div>
         </div>
       </div>
       
