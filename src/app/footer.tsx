@@ -19,13 +19,14 @@ export default function Footer() {
         <div className="w-[100%]  flex flex-col bg-gray-400 pt-6 pb-6 md:pb-16 justify-between">
 <div className="px-[5%]">
 <Image
-    src="/logo.png"
-    alt="Logo"
-    width={150}
-    height={150}
-  />
+  src="/logo.png"
+  alt="Logo"
+  width={150}
+  height={150}
+  className=" w-20 h-20 md:w-32 md:h-32"
+/>
 </div>
-<div className={`${poppins.className} text-amber-50 flex flex-row w-[80%] md:w-[70%] xl:w-[50%] justify-between  text-left ml-[10%] xl:ml-[7%] text-[16px] lg:text-lg`}>
+<div className={`${poppins.className} text-amber-50 flex flex-row w-[80%] md:w-[70%] xl:w-[50%] justify-between  text-left ml-[10%] xl:ml-[7%] text-xs md:text-[16px] lg:text-lg`}>
 <div className="flex flex-col w-[40%] lg:w-[28%] ">
 <div className="text-3xl font-light w-full mb-4 mt-10">Adress</div>
 Poland, Gdańsk

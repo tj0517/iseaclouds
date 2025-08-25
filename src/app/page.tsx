@@ -27,7 +27,7 @@ export default function Home() {
 <div className=" block md:hidden"><Menu/></div>
 <div className="w-full flex flex-row h-[90vh] sm:h-[95vh] lg:h-[90vh]"> 
 
-<div className="w-full lg:w-[45%] h-[80vh] md:h-full relative">
+<div className="w-full lg:w-[45%] h-[85vh] md:h-full relative">
   <Image
     src="/offer/offer3.jpg"
     alt="Logo"
@@ -45,6 +45,8 @@ export default function Home() {
 
 </div>
 </div>
+
+
 <div className="lg:bg-gray-400 lg:w-[55%] w-full absolute lg:relative h-full">
 <div className="xl:w-[70%] w-[80%] ml-[15%]  xl:ml-[20%] mt-10 hidden lg:flex flex-row justify-between text-amber-50 font-light text-lg md:text-[16px] xl:text-xl">
 <div><Link href="/">Home</Link></div>
@@ -181,7 +183,7 @@ Advance your career in the maritime industry with SeaClouds courses! We offer pr
 
 <div className="w-full px-[2.5%] flex flex-col pt-10 pb-10 ">
 <div className="text-blue-800 xl:text-7xl text-6xl font-bold text-center w-full">Why us?</div>
-<div className="w-[100%] px-[5%] flex flex-row flex-wrap pb-9 justify-between mt-30 text-[12px] md:text-[14px] xl:text-[16px] ">
+<div className="w-[100%] px-[5%] flex flex-row flex-wrap pb-9 justify-between mt-20 md:mt-30 text-[12px] md:text-[14px] xl:text-[16px] ">
 <div className=" w-[40%] lg:w-[20%] flex flex-col text-center mb-20 lg:mb-0">
 <div className={`${playfair.className} text-black text-2xl md:text-3xl xl:text-4xl font-bold pb-7 border-b-2`}>Offshore<br></br>Engineering</div>
 <div className="italic mt-6 xl:mt-10 text-slate-400">Sea Clouds brings together a team of seasoned professionals with deep offshore industry expertise, delivering efficient and effective offshore technical advisory and engineering solutions tailored to the needs of Oil & Gas and Wind Farm projects.</div>
