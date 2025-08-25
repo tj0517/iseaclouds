@@ -125,7 +125,7 @@ export default function Home() {
   </div>
 </div>
 
-      <div className="bg-amber-50 px-[7.55%] pb-30 flex flex-col">
+      <div className="bg-amber-50 px-[7.55%] pb-30 flex flex-col text-black">
        <div className="text-5xl font-bold text-center mb-20 mt-20">Frequently asked questions</div> 
   {faqs.map((faq, index) => {
     const isActive = activeIndex === index;
