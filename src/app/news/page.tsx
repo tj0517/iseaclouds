@@ -14,11 +14,11 @@ const playfair = Poppins({
 
 export default function Home() {
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden bg-amber-50">
 <Menu></Menu>
 <div className="w'-full flex flex-row relative">
 <div className="bg-cyan-900 w-[40%]"></div>
-<div className="w-[60%] h-[65vh] relative">
+<div className="w-[60%] h-[45vh] sm:h-[65vh] relative">
             <Image
               src={`/news/${articles[0].photo}`}
               alt={articles[0].title}
@@ -29,7 +29,7 @@ export default function Home() {
     <div className="absolute top-0 sm:top-[5%] lg:top-[10%] left-0 sm:left-[15%] lg:left-[20%] xl:left-[15%] w-[50%] sm:w-[60vw] lg:w-[45vw] xl:w-[35vw] sm:bg-gray-400 bg-cyan-900  flex flex-col px-12 h-full sm:h-auto py-10 sm:py-16">
     <div className=" text-white sm:text-black font-black">{articles[0].date}</div>
     <div className={`${playfair.className} sm:text-blue-800 text-black text-xl sm:text-2xl xl:text-3xl  font-bold mt-3`}>{articles[0].title}</div>
-    <div className="text-white italic mt-5 text-[16px] sm:text-[18px] w-[90%] sm:w-[70%]">{articles[0].description}</div>
+    <div className="text-white italic mt-5 text-[16px] sm:text-[18px] w-[90%] sm:w-[70% hidden sm:block">{articles[0].description}</div>
     <Link
               href={`/news/${articles[0].slug}`}
               className="bg-blue-800 text-white text-center p-1.5 mt-7 w-30 sm:w-50 text-xl sm:text-2xl"
