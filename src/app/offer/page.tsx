@@ -108,7 +108,7 @@ const playfair = Poppins({
 
 export default function Home() {
     return (
-        <div className="bg-amber-50">
+        <div className="bg-amber-50 text-black">
 <Menu></Menu>
 <div className="w-full flex flex-row bg-amber-50 pt-10 px-[10%] pb-10">
 <h2 className={`${playfair.className} text-blue-800 w-full text-3xl sm:text-5xl xl:text-6xl font-bold mr-10 sm:mr-0`}>
