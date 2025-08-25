@@ -79,7 +79,7 @@ export default function Home() {
     <form
       className={`${playfair.className} w-full md:w-[45%] mx-auto p-6 space-y-4`}
     >
-      <div className="xl:text-2xl text-xl font-bold">Send a message</div>
+      <div className="xl:text-2xl text-xl font-bold text-black">Send a message</div>
       <div className="flex flex-col md:flex-row md:justify-between mt-6 gap-4 md:gap-0">
         <input
           type="text"
