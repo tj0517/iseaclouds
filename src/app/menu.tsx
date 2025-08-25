@@ -1,36 +1,58 @@
+"use client";
+
 import Image from "next/image";
-import Link from 'next/link'
-import { Poppins } from 'next/font/google'
+import Link from "next/link";
+import { useState } from "react";
+import { Poppins } from "next/font/google";
+import { Menu as MenuIcon, X } from "lucide-react";
 
 const poppins = Poppins({
-    subsets: ['latin'],
-    weight: ['200','400', '500', '700'], // wybierz wagi, które potrzebujesz
-    variable: '--font-poppins', // CSS variable do Tailwinda
-  })
-  
-
-
+  subsets: ["latin"],
+  weight: ["200", "400", "500", "700"],
+  variable: "--font-poppins",
+});
 
 export default function Menu() {
-    return (
-<div className={`w-full bg-gray-400 flex flex-row py-1.5 ${poppins.className} bg-amber-50`}>
-    <div className="ml-[2.5%]">
-<Image
-    src="/logo.png"
-    alt="Logo"
-    width={80}
-    height={80}
-  />
-  </div>
-<div className="xl:w-[35%] lg:w-[45%] w-[50%] lg:ml-[42.5%] ml-[36.5%] xl:ml-[54%] md:flex flex-row justify-between text-amber-50 font-light xl:text-xl items-center hidden">
-<div><Link href="/">Home</Link></div>
-<div><Link href="/courses">Courses</Link></div> 
-<div><Link href="/news">News</Link></div>
-<div><Link href="/offer">Offer</Link></div> 
-<div><Link href="/contact">Contact us</Link></div>
-</div>
-</div>
+  const [isOpen, setIsOpen] = useState(false);
 
+  return (
+    <div
+      className={`w-full bg-gray-400 text-amber-50 flex flex-row items-center justify-between py-1.5 px-4 relative ${poppins.className}`}
+    >
+      {/* Logo */}
+      <div>
+        <Image src="/logo.png" alt="Logo" width={60} height={60} />
+      </div>
 
+      {/* Desktop menu */}
+      <div className="hidden md:flex flex-row gap-6 text-amber-900 font-light xl:text-xl items-center">
+        <Link href="/">Home</Link>
+        <Link href="/courses">Courses</Link>
+        <Link href="/news">News</Link>
+        <Link href="/offer">Offer</Link>
+        <Link href="/contact">Contact us</Link>
+      </div>
 
-    );}
+      {/* Mobile hamburger */}
+      <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={32} /> : <MenuIcon size={32} />}
+        </button>
+      </div>
+
+      {/* Dropdown menu with animation */}
+      <div
+        className={`absolute top-16 left-0 w-full bg-gray-400 flex flex-col items-center gap-4 py-6 shadow-md md:hidden z-50 
+          transition-all duration-300 origin-top
+          ${isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}
+        `}
+      >
+        <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
+        <Link href="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
+        <Link href="/news" onClick={() => setIsOpen(false)}>News</Link>
+        <Link href="/offer" onClick={() => setIsOpen(false)}>Offer</Link>
+        <Link href="/contact" onClick={() => setIsOpen(false)}>Contact us</Link>
+      </div>
+    </div>
+  );
+}

@@ -16,7 +16,7 @@ export default function Footer() {
 
 
 
-        <div className="w-[100%]  flex flex-col bg-gray-400 pt-6 pb-16 justify-between">
+        <div className="w-[100%]  flex flex-col bg-gray-400 pt-6 pb-6 md:pb-16 justify-between">
 <div className="px-[5%]">
 <Image
     src="/logo.png"
@@ -25,13 +25,13 @@ export default function Footer() {
     height={150}
   />
 </div>
-<div className={`${poppins.className} text-amber-50 flex flex-row w-[50%] justify-between text-[18px] text-left ml-[7%]`}>
-<div className="flex flex-col w-[28%]">
+<div className={`${poppins.className} text-amber-50 flex flex-row w-[80%] md:w-[70%] xl:w-[50%] justify-between  text-left ml-[10%] xl:ml-[7%] text-[16px] lg:text-lg`}>
+<div className="flex flex-col w-[40%] lg:w-[28%] ">
 <div className="text-3xl font-light w-full mb-4 mt-10">Adress</div>
 Poland, Gdańsk
 Do Studzienki 63
 </div>
-<div className="flex flex-col w-[28%]">
+<div className="flex flex-col w-[40%] lg:w-[28%]">
 <div className="text-3xl font-light w-full mb-4 mt-10">Contact</div>
 info@seaclouds.eu <br></br>
 +48 731-408-236
