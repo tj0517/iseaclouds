@@ -24,7 +24,7 @@ export default function Home() {
   return (
   <div className={`${poppins.className} bg-amber-50 overflow-x-hidden`}>
 
-<div className=" block md:hidden"><Menu/></div>
+<div className=" block lg:hidden"><Menu/></div>
 <div className="w-full flex flex-row h-[90vh] sm:h-[95vh] lg:h-[90vh]"> 
 
 <div className="w-full lg:w-[45%] h-[85vh] md:h-full relative">
@@ -40,7 +40,7 @@ export default function Home() {
   alt="Logo"
   width={150}
   height={150}
-  className="hidden md:block md:w-32 md:h-32  lg:w-32 lg:h-32"
+  className="hidden lg:block md:w-32 md:h-32  lg:w-32 lg:h-32"
 />
 
 </div>
@@ -77,7 +77,7 @@ export default function Home() {
 </div>
 
 
-<div className="w-full flex flex-col md:flex-row pt-12 md:pt-20 lg:pt-28">
+<div className="w-full flex flex-col md:flex-row  pt-0 md:pt-20 lg:pt-28">
 <div className="h-full w-full md:w-[45%] ml-[10%]">
 <h2 className=" text-blue-800 w-full text-5xl xl:text-6xl font-bold">
 About us
@@ -87,7 +87,7 @@ Our services are grounded in technical excellence, safety, and efficiency, ensur
 Partner with Sea Clouds for precise and dependable offshore engineering solutions—from concept design and planning to execution and support. Whether you require strategic offshore technical advisory or fully integrated engineering capabilities, we bring clarity and confidence to complex offshore challenges.
 Over...</div>
 </div>
-<div className="hidden md:block md:w-[50%] xl:w-[40%] h-[60vh] md:h-[75vh] relative xl:ml-[2.5%] mt-12 md:mt-0">
+<div className="hidden md:block md:w-[50%] xl:w-[40%] h-[60vh] md:h-[75vh] relative xl:ml-[2.5%] mt-12 lg:mt-0">
   <Image
     src="/engineer1.jpg"
     alt="Logo"

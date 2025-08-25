@@ -108,20 +108,20 @@ const playfair = Poppins({
 
 export default function Home() {
     return (
-        <div>
+        <div className="bg-amber-50">
 <Menu></Menu>
 <div className="w-full flex flex-row bg-amber-50 pt-10 px-[10%] pb-10">
-<h2 className={`${playfair.className} text-blue-800 w-full xl:text-6xl text-5xl font-bold`}>
+<h2 className={`${playfair.className} text-blue-800 w-full text-3xl sm:text-5xl xl:text-6xl font-bold mr-10 sm:mr-0`}>
 Our Offer
 </h2>
-<div className="text-black mt-20 xl:text-[18px] text-[13px]">Sea Clouds provides comprehensive technical advisory services in the preparation, execution, and management of offshore projects — both from the Operator’s and the Contractor’s perspective.</div>
+<div className="text-black mt-20 text-xs  xl:text-[18px]">Sea Clouds provides comprehensive technical advisory services in the preparation, execution, and management of offshore projects — both from the Operator’s and the Contractor’s perspective.</div>
 </div>
 {offers.map((offer, index) =>
   index % 2 === 0 ? (
     <div key={index}>
       {/* Pierwszy element z pary */}
-      <div className="w-full flex flex-row bg-gray-400">
-        <div className="w-[60%] h-[60vh] relative">
+      <div className="w-full flex flex-col md:flex-row md:bg-gray-400">
+        <div className="w-full md:w-[60%] h-[60vh] relative">
           <Image
             src={`/offer/${offer.image}`}
             alt={offer.title}
@@ -129,30 +129,25 @@ Our Offer
             className="object-cover object-right"
           />
         </div>
-        <div className="w-[40%] pl-16 pt-12">
-        <h2 className={`${playfair.className} text-blue-800 w-full xl:text-4xl text-3xl font-bold `}>{offer.title}</h2>
-    <ul className="list-disc pl-6 space-y-1 mt-10 italic xl:text-[16px] text-[13px]">
-      {offer.description.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-
+        <div className="w-full md:w-[45%] flex flex-col sm:flex-row md:flex-col lg:w-[40%] sm:pl-5 lg:pl-16 pt-5 lg:pt-12">
+          <h2
+            className={`${playfair.className} text-blue-800 w-full sm:w-[50%] md:w-full text-4xl sm:ext-2xl lg:text-3xl xl:text-4xl font-bold text-center sm:text-left mt-10 sm:mt-0`}
+          >
+            {offer.title}
+          </h2>
+          <ul className="list-none sm:list-disc pl-6 space-y-1 mt-10 sm:mt-20 md:mt-5 lg:mt-10 italic xl:text-[16px] text-[13px] mb-10 md:mb-0 text-center sm:text-left ">
+            {offer.description.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      {/* Drugi element z pary — tylko jeśli istnieje */}
+      {/* Drugi element z pary */}
       {offers[index + 1] && (
-        <div className="w-full flex flex-row bg-amber-50">
-          <div className="w-[40%] xl:pl-16 pl-12 pt-12">
-        <h2 className={`${playfair.className} text-blue-800 w-full xl:text-4xl text-3xl font-bold `}>{offers[index+1].title}</h2>
-    <ul className="list-disc pl-6 space-y-1 italic mt-10 xl:text-[16px] text-[13px] w-[90%]">
-      {offers[index + 1].description.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-
-        </div>
-          <div className="w-[60%] h-[60vh] relative">
+        <div className="w-full flex flex-col md:flex-row bg-amber-50">
+          {/* ⬅️ na mobile obrazek zawsze pierwszy */}
+          <div className="w-full md:w-[60%] h-[60vh] relative order-1 md:order-2">
             <Image
               src={`/offer/${offers[index + 1].image}`}
               alt={offers[index + 1].title}
@@ -160,11 +155,24 @@ Our Offer
               className="object-cover object-right"
             />
           </div>
+          <div className="w-full md:w-[45%] flex flex-col sm:flex-row md:flex-col lg:w-[40%] sm:pl-5 lg:pl-16 pt-5 lg:pt-12 order-2 md:order-1">
+            <h2
+              className={`${playfair.className} text-blue-800 w-full sm:w-[50%] md:w-full text-4xl sm:ext-2xl lg:text-3xl xl:text-4xl font-bold text-center sm:text-left mt-10 sm:mt-0`}
+            >
+              {offers[index + 1].title}
+            </h2>
+            <ul className="list-none sm:list-disc pl-6 space-y-1 mt-10 sm:mt-20 md:mt-5 lg:mt-10 italic xl:text-[16px] text-[13px] mb-10 md:mb-0 text-center sm:text-left ">
+              {offers[index + 1].description.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </div>
   ) : null
 )}
+
 <Footer></Footer>
         </div>
     );}

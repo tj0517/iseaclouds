@@ -25,7 +25,7 @@ export default function Menu() {
       </div>
 
       {/* Desktop menu */}
-      <div className="hidden md:flex flex-row gap-6 text-amber-900 font-light xl:text-xl items-center">
+      <div className="hidden md:flex flex-row gap-6 text-amber-50 font-light xl:text-xl items-center">
         <Link href="/">Home</Link>
         <Link href="/courses">Courses</Link>
         <Link href="/news">News</Link>
