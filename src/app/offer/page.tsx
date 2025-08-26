@@ -125,6 +125,7 @@ Our Offer
           <Image
             src={`/offer/${offer.image}`}
             alt={offer.title}
+            priority={true}
             fill
             className="object-cover object-right"
           />
@@ -151,6 +152,7 @@ Our Offer
             <Image
               src={`/offer/${offers[index + 1].image}`}
               alt={offers[index + 1].title}
+              priority={true}
               fill
               className="object-cover object-right"
             />
