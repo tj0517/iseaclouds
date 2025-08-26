@@ -54,6 +54,7 @@ export default function Home() {
         <Image
           src="/contact/contact_bg.jpg"
           alt="contact background"
+          priority={true}
           fill
           className="object-cover object-top"
         />
