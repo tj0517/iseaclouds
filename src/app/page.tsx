@@ -40,6 +40,7 @@ export default function Home() {
   alt="Logo"
   width={150}
   height={150}
+  priority={true}
   className="hidden lg:block md:w-32 md:h-32  lg:w-32 lg:h-32"
 />
 
