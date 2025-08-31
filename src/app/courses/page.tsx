@@ -100,13 +100,13 @@ export default function Home() {
             </div>
 
             <div className="w-full flex flex-row justify-between">
-              <div className="xl:text-3xl sm:text-2xl text-xl font-bold mt-3">
+              <div className="text-3xl md:text-2xl xl:text-3xl   font-bold mt-3 w-[40%] sm:w-[60%]">
                 {course.price}
               </div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-[35%] xl:w-[40%] h-[70%] sm:h-auto mt-[6%] sm:mt-0 items-center bg-blue-800 text-amber-50 text-center py-2 text-xs sm:text-lg xl:text-2xl cursor-pointer rounded-xl"
+                className="w-[35%] xl:w-[40%] h-[70%] sm:h-auto mt-[6%] sm:mt-0 items-center bg-blue-800 text-amber-50 text-center py-2 text-xs sm:text-lg xl:text-2xl cursor-pointer rounded-xl flex justify-center"
               >
                 JOIN
               </motion.div>

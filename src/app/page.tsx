@@ -219,7 +219,7 @@ Sea Clouds delivers integrated offshore engineering solutions and technical advi
     </div>
 
 
-    <div className="w-[100%] px-[5%] flex flex-row flex-wrap md:flex-nowrap bg-gray-400 pt-3 pb-9 justify-between text-6xl lg:text-7xl xl:text-8xl font-bold text-blue-800">
+    <div className="w-[100%] px-[5%] flex flex-row flex-wrap md:flex-nowrap bg-gray-400 pt-3 pb-9 justify-between text-7xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-blue-800">
       {stats.map((stat, index) => (
         <motion.div
         key={index}
@@ -228,11 +228,12 @@ Sea Clouds delivers integrated offshore engineering solutions and technical advi
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         custom={index + 1} // każdy kolejny element ma większy delay
+        className="w-[40%] sm:w-[20%]"
         >
           <div className={`${playfair.className} text-blue-800 font-bold text-center`}>
             {stat.number}
           </div>
-          <div className="text-white text-lg md:text-xl lg:text-2xl mt-7 font-light">
+          <div className="text-white text-xl sm:text-lg md:text-xl lg:text-2xl mt-7 font-light text-center">
             {stat.label}
           </div>
         </motion.div>
