@@ -23,7 +23,7 @@ export default async function ArticlePage({
   if (!article) return notFound()
 
   return (
-    <div>
+    <div className="bg-amber-50">
     <div className={`${poppins.className} mb-10 sm:mb-30`} >
     <Menu/>
       <div className="flex flex-col md:flex-row justify-between w-full md:px-[7.5%] mt-10 sm:mt-20 md:h-[45vh]">

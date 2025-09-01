@@ -5,7 +5,7 @@ export const articles = [
     date: "14 August 2025",
     description: "We're excited to share a key milestone in our contribution to the Baltica 2 Offshore Wind Farm...",
     photo: "baltica2.webp",
-    photo2:"baltica-2-Projekt.webp",
+    photo2:"Baltica-2-Projekt.webp",
     content: `
       <p>We're excited to share a key milestone in our contribution to the Baltica 2 Offshore Wind Farm — the successful preparation and submission of the full marine documentation package for the preparation of shore crossing on Baltica2 by means of Horizontal Directional Drilling (HDD).</p>
 
