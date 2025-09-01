@@ -24,16 +24,16 @@ export default async function ArticlePage({
 
   return (
     <div>
-    <div className={`${poppins.className} mb-30`} >
+    <div className={`${poppins.className} mb-10 sm:mb-30`} >
     <Menu/>
-      <div className="flex flex-row justify-between w-full px-[7.5%] mt-20 h-[45vh]">
-      <div className="h-full w-[50%] flex flex-col">
-      <h1 className= "text-blue-800  text-7xl font-bold leading-20 w-[75%]">
+      <div className="flex flex-col md:flex-row justify-between w-full md:px-[7.5%] mt-10 sm:mt-20 md:h-[45vh]">
+      <div className="h-full w-full md:w-[50%] flex flex-col">
+      <h1 className= "text-blue-800 text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-20 sm:ml-[15%] md:ml-0 w-full sm:w-[70%]  md:w-[85%] lg:w-[75%] text-center md:text-left mb-10 md:mb-0">
  {article.title}
 </h1>
-<div className="mr-auto mt-auto w-[90%] text-end font-bold text-xl">{article.date}</div>
+<div className="mr-auto mt-auto w-[95%] md:w-[90%]  text-end font-bold text-xl mb-2 sm:mb-5 md:mb-0">{article.date}</div>
 </div>
-      <div className="h-[45vh] w-[50%] relative">
+      <div className="md:h-[45vh] aspect-video w-full md:w-[50%] relative">
         <Image
           src={`/news/${article.photo}`}
           alt={article.title}
@@ -46,7 +46,7 @@ export default async function ArticlePage({
      dangerouslySetInnerHTML={{ __html: article.content }}
 />
 {article.photo2 && (
-  <div className="w-[80%] mx-auto aspect-[16/9] relative  mt-10">
+  <div className="w-full md:w-[80%] mx-auto aspect-[16/9] relative  mt-10">
   <Image
     src={`/news/${article.photo2}`}
     alt={article.title}
