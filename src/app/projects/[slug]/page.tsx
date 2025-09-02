@@ -54,10 +54,10 @@ export default async function ProjectsPage({
     </div>
     </div>
 
-    <div className="w-full flex flex-row justify-between mt-20 text-center">
-    <div className="w-[47.5%] py-10 border-2 border-black">
+    <div className="w-full flex flex-row justify-between mt-20 text-left">
+    <div className="w-[47.5%] pl-10 py-10 border-2 border-black">
     <div className="text-4xl font-bold">Scope of Work</div>
-    <div className="mt-10 text-md w-[80%] mx-auto">
+    <div className="mt-10 text-md w-[80%] ">
     <ul className="list-disc list-inside space-y-2 ">
     {project.scopeOfWork.map((item, i) => (
       <li key={i}>{item}</li>
@@ -65,9 +65,9 @@ export default async function ProjectsPage({
   </ul>
     </div>
     </div>
-    <div className="w-[47.5%] py-10 border-2 border-black">
+    <div className="w-[47.5%] pl-10 py-10 border-2 border-black">
     <div className="text-4xl font-bold">Deliverables</div>
-    <div className="mt-10 text-md w-[80%] mx-auto">
+    <div className="mt-10 text-md w-[80%]">
     <ul className="list-disc list-inside space-y-2 ">
     {project.deliverables.map((item, i) => (
       <li key={i}>{item}</li>
@@ -77,10 +77,10 @@ export default async function ProjectsPage({
     </div>
     </div>
 
-    <div className="w-full flex flex-row justify-between mt-20 text-center">
-    <div className="w-[47.5%] py-10 border-2 border-black">
+    <div className="w-full flex flex-row justify-between mt-20 text-left">
+    <div className="w-[47.5%] pl-10 py-10 border-2 border-black">
     <div className="text-4xl font-bold">Collaboration</div>
-    <div className="mt-10 text-md w-[80%] mx-auto">
+    <div className="mt-10 text-md w-[80%] ">
     <ul className="list-disc list-inside space-y-2 ">
     {project.collaboration.map((item, i) => (
       <li key={i}>{item}</li>
@@ -88,9 +88,9 @@ export default async function ProjectsPage({
   </ul>
     </div>
     </div>
-    <div className="w-[47.5%] py-10 border-2 border-black">
+    <div className="w-[47.5%] pl-10 py-10 border-2 border-black">
     <div className="text-4xl font-bold">Project scale</div>
-    <div className="mt-10 text-md w-[80%] mx-auto">
+    <div className="mt-10 text-md w-[80%]">
     <ul className="list-disc list-inside space-y-2 ">
     {project.projectScale.map((item, i) => (
       <li key={i}>{item}</li>
