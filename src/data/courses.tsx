@@ -65,10 +65,10 @@ export const courses = [
       decription: "A hands-on, technical course for engineers and technicians entering offshore survey operations. Learn communication protocols, data system integration, GNSS diagnostics and troubleshooting.",
       price: "2900 PLN",
       images: [
-        "ps_o_g/1.png",
-        "ps_o_g/2.png",
-        "ps_o_g/3.png",
-        "ps_o_g/4.png"
+        "/courses/ps_o_g/1.png",
+        "/courses/ps_o_g/2.png",
+        "/courses/ps_o_g/3.png",
+        "/courses/ps_o_g/4.png"
       ],
       big:false,
       info: {
