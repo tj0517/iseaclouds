@@ -35,7 +35,7 @@ export default async function ProjectsPage({
     </div>
     <div className="w-[47.5%] aspect-video relative">
     <Image
-          src={`/news/${project.photo}`}
+          src={`/projects/${project.photo}`}
           alt={project.projectName}
           fill
           className="object-cover"
