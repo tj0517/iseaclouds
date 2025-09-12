@@ -6,6 +6,7 @@ import Footer from "@/app/footer"
 import { Poppins } from 'next/font/google'
 import { Suspense } from "react"
 import dynamic from 'next/dynamic'
+import PurchaseFormModal from "../form"
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -36,15 +37,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="md:h-[45vh] aspect-video w-full md:w-[50%] relative">
             <Image src={`/courses/${course.image1}`} alt={course.title} fill className="object-cover" />
           </div>
-          <div className="h-full w-full md:w-[50%] flex flex-col ml-[7.5%]">
+          <div className="h-full w-full md:w-[50%] flex flex-col ml-[10%]">
             <h1 className="text-blue-800 text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-4xl font-bold leading-14 w-full sm:w-[70%] md:w-[85%] lg:w-[75%] text-center md:text-left mb-10 md:mb-0">
               {course.title} COURSE {course.type}
             </h1>
             <div className="text-xl mb-2 sm:mb-5 md:mb-0 mt-4">{course.date}</div>
-            <div className="text-lg mt-4">{course.decription}</div>
-            <div className="w-[32.5%] flex flex-row justify-between mt-10 text-2xl font-bold absolute bottom-4">
-              <div className="w-[40%] text-left pt-4 text-3xl">{course.price}</div>
-              <div className="w-[40%] bg-blue-800 text-amber-50 pb-2 pt-2.5 text-center">JOIN</div>
+            <div className="text-lg mt-4 w-[80%]">{course.decription}</div>
+            <div className="w-[27.5%] flex flex-row justify-between mt-10 text-2xl font-bold absolute bottom-4">
+              <div className="w-[60%] text-left pt-4 text-3xl">{course.price}</div>
+              <div className="w-[40%]">
+  <PurchaseFormModal course={course} />
+</div>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ export const courses = [
     {
       slug:"project-surveyor-onsite",
       image: 'ps_o.webp',
-      image1: 'ps_o.webp',
+      image1: 'ps_o_1.webp',
       title: 'PROJECT SURVEYOR',
       date: "8-9 November 2025",
       type: " (ON-SITE)",

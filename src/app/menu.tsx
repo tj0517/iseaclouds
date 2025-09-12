@@ -20,9 +20,9 @@ export default function Menu() {
       className={`w-full bg-gray-400 text-amber-50 flex flex-row items-center justify-between py-1.5 px-4 relative ${poppins.className}`}
     >
       {/* Logo */}
-      <div>
+      <Link href="/">
         <Image src="/logo.png" alt="Logo" width={60} height={60} />
-      </div>
+        </Link>
 
       {/* Desktop menu */}
       <div className="hidden md:flex flex-row gap-6 text-amber-50 font-light xl:text-xl items-center">

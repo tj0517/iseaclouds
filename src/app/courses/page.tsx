@@ -59,7 +59,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: index * 0.15 }}
             className={`${playfair.className} w-[40%] lg:w-[22.5%] xl:w-[25%] lg:mx-10 flex flex-col xl:pb-24 pb-16 text-2xl text-black`}
           >
-            <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md">
+            <div className="relative w-full aspect-square overflow-hidden shadow-md">
               <Image
                 src={`/courses/${course.image}`}
                 alt={course.title}
@@ -82,7 +82,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-[35%] xl:w-[40%] h-[70%] sm:h-auto mt-[6%] sm:mt-0 items-center bg-blue-800 text-amber-50 text-center py-2 text-xs sm:text-lg xl:text-2xl cursor-pointer rounded-xl flex justify-center"
+                className="w-[35%] xl:w-[40%] h-[70%] sm:h-auto mt-[6%] sm:mt-0 items-center bg-blue-800 text-amber-50 text-center py-2 text-xs sm:text-lg xl:text-2xl cursor-pointer flex justify-center"
               >
                 <Link
                     href={`/courses/${course.slug}`}
