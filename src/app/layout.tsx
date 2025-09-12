@@ -23,6 +23,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.png" />
         <link rel="preload" as="image" href="/offer/offer3.jpg" />
+        <link rel="preload" as="image" href="/offer/offer1.jpg" />
+        <link rel="preload" as="image" href="/offer/offer2.jpg" />
         <link rel="preload" as="image" href="/hero.webp" />
       </head>
       <body>{children}</body>
