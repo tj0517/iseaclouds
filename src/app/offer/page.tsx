@@ -14,7 +14,7 @@ const playfair = Poppins({
 
 const offers = [
   {
-    image: "offer1.jpg",
+    image: "offer1.webp",
     title: "Operations Support",
     description: [
       "Vessel DP Stability and Operational Manuals",
