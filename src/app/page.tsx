@@ -93,6 +93,7 @@ export default function Home() {
 
   return (
   <div className={`${poppins.className} bg-amber-50 overflow-x-hidden`}>
+    
 
 <div className=" block lg:hidden"><Menu/></div>
 <div className="w-full flex flex-row h-[90vh] sm:h-[95vh] lg:h-[90vh]"> 
