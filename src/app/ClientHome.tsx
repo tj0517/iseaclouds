@@ -76,7 +76,7 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
             <Link href="/offer">Explore</Link>
             </motion.div>
 
-            <motion.div className="w-[20%] lg:w-[10%] ml-[30%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]" variants={fadeUp} initial="hidden" animate="visible" custom={4}>
+            <motion.div className="w-[30%] lg:w-[10%] ml-[35%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]" variants={fadeUp} initial="hidden" animate="visible" custom={4}>
               <a href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               <a href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
             </motion.div>
