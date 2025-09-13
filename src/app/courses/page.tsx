@@ -13,10 +13,6 @@ export const metadata = {
   icons: {
     icon: "/logo.png",
   },
-  other: {
-    // dodatkowe tagi do <head>
-    preloadHero: `<link rel="preload" as="image" href="/courses/courses_bg1.jpg" />`,
-  },
 }
 
 
