@@ -7,6 +7,19 @@ const poppins = Poppins({
   variable: "--font-poppins"
 });
 
+export const metadata = {
+  title: "Sea Clouds - Courses",
+  description: "Grow in offshore wind with our Sea Clouds courses",
+  icons: {
+    icon: "/logo.png",
+  },
+  other: {
+    // dodatkowe tagi do <head>
+    preloadHero: `<link rel="preload" as="image" href="/courses/courses_bg1.jpg" />`,
+  },
+}
+
+
 export default function Home() {
   return (
     <div className={`${poppins.className}`}>

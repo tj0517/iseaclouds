@@ -47,7 +47,7 @@ export default function ClientContact() {
       <Menu />
 
       {/* Background image */}
-      <div className="w-full xl:h-[60vh] h-[50vh] relative">
+      <div className="w-full xl:h-[50vh] h-[50vh] relative">
         <Image
           src="/contact/contact_bg.jpg"
           alt="contact background"

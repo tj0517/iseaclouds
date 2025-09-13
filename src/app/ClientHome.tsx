@@ -41,6 +41,7 @@ export default function ClientHome({ stats, items, courses }: { stats: any[], it
         <div className="lg:bg-gray-400 lg:w-[55%] w-full absolute lg:relative h-full">
           <div className="xl:w-[70%] w-[80%] ml-[15%] xl:ml-[20%] mt-10 hidden lg:flex flex-row justify-between text-amber-50 font-light text-lg md:text-[16px] xl:text-xl">
             <div><Link href="/">Home</Link></div>
+            <div><Link href="/projects">Projects</Link></div>
             <div><Link href="/courses">Courses</Link></div>
             <div><Link href="/news">News</Link></div>
             <div><Link href="/offer">Offer</Link></div>
