@@ -143,7 +143,7 @@ export default function ClientOffer() {
           <div key={index}>
             {/* Pierwszy element z pary */}
             <div className="w-full flex flex-col md:flex-row md:bg-gray-400">
-              <div className="w-full md:w-[60%] h-[60vh] relative">
+              <div className="w-full md:w-[60%] aspect-square md:aspect-video relative">
                 <Image
                   src={`/offer/${offer.image}`}
                   alt={offer.title}
@@ -160,12 +160,12 @@ export default function ClientOffer() {
                 transition={{ duration: 0.8 }}
               >
                 <h2
-                  className={`${playfair.className} text-blue-800 w-full sm:w-[50%] md:w-full text-4xl lg:text-3xl xl:text-4xl font-bold text-center sm:text-left mt-10 sm:mt-0`}
+                  className={`${playfair.className} text-blue-800 w-full sm:w-[50%] md:w-full text-4xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center sm:text-left mt-10 sm:mt-0`}
                 >
                   {offer.title}
                 </h2>
                 <motion.ul
-                  className="list-none sm:list-disc pl-6 space-y-1 mt-10 sm:mt-20 md:mt-5 lg:mt-10 italic xl:text-[16px] text-[13px] mb-10 md:mb-0 text-center sm:text-left w-[95%]"
+                  className="list-none sm:list-disc pl-6 space-y-1 mt-10 sm:mt-20 md:mt-5 lg:mt-10 italic  text-[13px] md:text-[12px] lg:text-[13px] xl:text-[16px] mb-10 md:mb-0 text-center sm:text-left w-[95%] pb-4"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -187,13 +187,13 @@ export default function ClientOffer() {
             {/* Drugi element z pary */}
             {offers[index + 1] && (
               <div className="w-full flex flex-col md:flex-row bg-amber-50">
-                <div className="w-full md:w-[60%] h-[60vh] relative order-1 md:order-2">
+                <div className="w-full md:w-[60%] aspect-square md:aspect-video relative order-1 md:order-2">
                   <Image
                     src={`/offer/${offers[index + 1].image}`}
                     alt={offers[index + 1].title}
                     
                     fill
-                    className="object-cover object-right"
+                    className="object-cover object-center md:object-right"
                   />
                 </div>
 
@@ -205,12 +205,12 @@ export default function ClientOffer() {
                   transition={{ duration: 0.8 }}
                 >
                   <h2
-                    className={`${playfair.className} text-blue-800 w-full sm:w-[50%] md:w-full text-4xl lg:text-3xl xl:text-4xl font-bold text-center sm:text-left mt-10 sm:mt-0`}
+                    className={`${playfair.className} text-blue-800 w-full sm:w-[50%] md:w-full text-4xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center sm:text-left mt-10 sm:mt-0`}
                   >
                     {offers[index + 1].title}
                   </h2>
                   <motion.ul
-                    className="list-none sm:list-disc pl-6 space-y-1 mt-10 sm:mt-20 md:mt-5 lg:mt-10 italic xl:text-[16px] text-[13px] mb-10 md:mb-0 text-center sm:text-left w-[95%]"
+                    className="list-none sm:list-disc pl-6 space-y-1 mt-10 sm:mt-20 md:mt-5 lg:mt-10 italic text-[13px] md:text-[12px] lg:text-[13px] xl:text-[16px]  mb-10 md:mb-0 text-center sm:text-left w-[95%] pb-4"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
