@@ -7,6 +7,7 @@ import Footer from "./components/footer"
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Cormorant_Garamond } from "next/font/google";
+import { courses } from "@/data/courses";
 
 const playfair = Cormorant_Garamond({ subsets: ["latin"], weight: "700" });
 
@@ -37,10 +38,9 @@ interface Item {
 interface ClientHomeProps {
   stats: Stat[];
   items: Item[];
-  courses: string[];
 }
 
-export default function ClientHome({ stats, items, courses }: ClientHomeProps) {
+export default function ClientHome({ stats, items}: ClientHomeProps) {
   return (
     <div className="overflow-x-hidden">
       <div className="block lg:hidden"><Menu /></div>
@@ -72,14 +72,13 @@ export default function ClientHome({ stats, items, courses }: ClientHomeProps) {
               Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.
             </motion.div>
 
-            <motion.div className="p-4 bg-blue-800 text-white w-[40%] ml-[30%] lg:ml-0 mt-12 lg:mt-16 text-center rounded-full" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
-              Explore
+            <motion.div className="p-4 bg-blue-800 text-white w-[40%] ml-[30%] lg:ml-0 mt-12 lg:mt-16 text-center rounded-full hover:cursor-pointer" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
+            <Link href="/offer">Explore</Link>
             </motion.div>
 
-            <motion.div className="w-[40%] lg:w-[20%] ml-[30%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]" variants={fadeUp} initial="hidden" animate="visible" custom={4}>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+            <motion.div className="w-[20%] lg:w-[10%] ml-[30%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]" variants={fadeUp} initial="hidden" animate="visible" custom={4}>
+              <a href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              <a href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
             </motion.div>
           </div>
         </div>
@@ -113,13 +112,15 @@ export default function ClientHome({ stats, items, courses }: ClientHomeProps) {
           <div className="text-[16px] 2xl:text-xl text-black font-light mt-10 md:mt-6 xl:mt-10 2xl:leading-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
           Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
           </div>
-          <div className="bg-blue-800 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10">Check out</div>
+          <div className="bg-blue-800 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer">
+          <Link href="/courses">Check out</Link>
+          </div>
         </motion.div>
 
         <div className="w-[90%] md:w-[80%] lg:w-[50%] ml-auto mr-auto md:mr-0 md:ml-[10%] lg:ml-0 xl:w-[42.5%] flex flex-row justify-between flex-wrap h-full mt-20 lg:mt-0">
           {courses.map((src, index) => (
             <motion.div key={index} className="w-[47.5%] aspect-square relative mb-5" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} custom={index + 1} variants={fadeUp}>
-              <Image src={src} alt={`Course ${index + 1}`} fill className="object-cover object-center grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300" />
+              <Link href={`/courses/${src.slug}`}><Image src={`/courses/${src.image}`} alt={`Course ${index + 1}`} fill className="object-cover object-center grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300" /></Link>
             </motion.div>
           ))}
         </div>

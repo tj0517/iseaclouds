@@ -93,7 +93,7 @@ export default function ClientContact() {
 
             <button
               type="submit"
-              className="xl:w-[20%] w-[40%] bg-black hover:bg-blue-800 text-white py-2 px-4 md:ml-[60%] transition duration-200 text-xl font-bold"
+              className="xl:w-[20%] xl:ml-[80%] w-[40%] bg-black hover:bg-blue-800 text-white py-2 px-4 md:ml-[60%]  transition duration-200 text-xl font-bold"
             >
               Send
             </button>
@@ -127,7 +127,7 @@ export default function ClientContact() {
                 <span className="text-[20px] font-light">{faq.question}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`w-6 h-6 transition-transform duration-300 ${isActive ? "rotate-180" : ""}`}
+                  className={`hover:cursor-pointer w-6 h-6 transition-transform duration-300 ${isActive ? "rotate-180" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

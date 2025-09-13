@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import ClientHome, { fadeUp, fadeLeft, scaleUpDelay } from "./ClientHome";
 import type { Metadata } from "next";
 
+
 const poppins = Poppins({ subsets: ["latin"], weight: ["200", "400", "500", "700"], variable: "--font-poppins" });
 
 export const metadata: Metadata = {
@@ -38,11 +39,11 @@ export default function Home() {
         text: "The company offers a combination of frame agreements for long-term collaboration and ad-hoc cooperation for specific projects, catering to diverse client requirements.",
     },
 ];
-  const courses = ["/courses/ps_r.webp", "/courses/ps_o.webp", "/courses/se_c.webp", "/courses/st_o.webp"];
+
 
   return (
     <div className={`${poppins.className} bg-amber-50`}>
-      <ClientHome stats={stats} items={items} courses={courses} />
+      <ClientHome stats={stats} items={items}  />
     </div>
   );
 }

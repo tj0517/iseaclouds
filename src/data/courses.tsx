@@ -6,7 +6,7 @@ export const courses = [
       title: 'PROJECT SURVEYOR',
       date: "8-9 November 2025",
       type: " (ON-SITE)",
-      decription: "Project Surveyor Course with Skill-Based Training for Offshore Wind Farms and Oil & Gas Projects",
+      description: `Project Surveyor Course with Skill-Based Training for Offshore Wind Farms and Oil & Gas Projects`,
       price: "2088 PLN",
       images: [
         "ps_o_g/1.png",
@@ -34,13 +34,13 @@ export const courses = [
       title: 'PROJECT SURVEYOR',
       date: "8-9 November 2025",
       type: "(REMOTE)",
-      decription: "Project Surveyor Course with Skill-Based Training for Offshore Wind Farms and Oil & Gas Projects",
+      description: `Project Surveyor Course with Skill-Based Training for Offshore Wind Farms and Oil & Gas Projects`,
       price: "1984 PLN",
       images: [
-        "ps_o_g/1.png",
-        "ps_o_g/2.png",
-        "ps_o_g/3.png",
-        "ps_o_g/4.png"
+        "ps_r_g/1.png",
+        "ps_r_g/2.png",
+        "ps_r_g/3.png",
+        "ps_r_g/4.png"
       ],
       big:true,
       info: {
@@ -59,16 +59,16 @@ export const courses = [
       slug:"survey-technician",
       image: 'st_o.webp',
       image1: 'st_o_1.jpg',
-      title: 'PROJECT SURVEYOR',
-      date: "September / October 2025",
+      title: 'SURVEY TECHNICIAN',
+      date: "15-16 November 2025",
       type: " (ON-SITE)",
-      decription: "A hands-on, technical course for engineers and technicians entering offshore survey operations. Learn communication protocols, data system integration, GNSS diagnostics and troubleshooting.",
+      description: `A hands-on, technical course for engineers and technicians entering offshore survey operations. Learn communication protocols, data system integration, GNSS diagnostics and troubleshooting.`,
       price: "2900 PLN",
       images: [
-        "/courses/ps_o_g/1.png",
-        "/courses/ps_o_g/2.png",
-        "/courses/ps_o_g/3.png",
-        "/courses/ps_o_g/4.png"
+        "st_o_g/1.png",
+        "st_o_g/2.png",
+        "st_o_g/3.png",
+        "st_o_g/4.png"
       ],
       big:false,
       info: {
@@ -84,31 +84,34 @@ export const courses = [
       place:"Batorego 28-32 Gdynia, Poland",
     },
     {
-      slug:"project-surveyor-online",
-      image: 'ps_o_1.webp',
+      slug:"survey_engineering-course",
+      image: 'se_c.webp',
       image1: 'ps_o_1.webp',
-      title: 'PROJECT SURVEYOR',
-      date: "8-9 November 2025",
-      type: " (ON-SITE)",
-      decription: "Project Surveyor Course with Skill-Based Training for Offshore Wind Farms and Oil & Gas Projects",
-      price: "2088 PLN",
+      title: 'SURVEY ENGINEERING',
+      date: "To be agreed",
+      type: "(COMPANY)",
+      description: `
+      The survey engineering course provides practical knowledge and covers international standards for offshore wind and Oil & Gas projects — from concept to operation.<br /><br />
+      <strong>Pricing upon request based on location and number of participants.</strong>
+      If you are interested in organizing an on-demand course at your company’s premises, please contact us using the details provided: <a href="mailto:courses@seaclouds.eu">courses@seaclouds.eu</a>
+    `,  price: "POA PLN",
       images: [
-        "ps_o_g/1.png",
-        "ps_o_g/2.png",
-        "ps_o_g/3.png",
-        "ps_o_g/4.png"
+        "se_c_g/1.png",
+        "se_c_g/2.png",
+        "se_c_g/3.png",
+        "se_c_g/4.png"
       ],
-      big:true,
+      big:false,
       info: {
-        "Target Group": "candidates with extensive survey experience or relevant offshore expertise who aspire to advance their careers by transition into Project Surveyor roles.",
-        "Course Objectives": "The project surveyor course provides practical knowledge and proven best practices required to perform the tasks and responsibilities of a Project Surveyor.",
-        "Course Opportunities": "enhance new career prospects, opening up new job opportunities in the Oil & Gas and Renewables sectors.",
+        "Target Group": "engineers, project managers and specialists involved in offshore wind farm and Oil & Gas projects, including those starting in marine survey, geotechnical and geodetic operations.",
+        "Course Objectives": "The survey engineering course delivers practical knowledge and best practices for planning, managing, and executing survey operations throughout the full lifecycle of subsea infrastructure projects.",
+        "Course Opportunities": "expanding competencies critical for offshore wind and Oil & Gas sectors, increasing readiness for senior survey project roles and improving project delivery quality.",
         "Course Language": "English and Polish. Course materials provided in English.",
-        "Course Contents": "Roles & Responsibilities, Survey Project Management, HSEQ Engagement, Offshore Installations Support, Spool & Metrologies, Seabed Intervention",
+        "Course Contents": "Survey Management (roles, documentation, HSEQ), Survey Planning (equipment, calibration, mobilization, system accuracies), Survey Operations (geophysical, geotechnical, UXO, pre-lay, as-built, Seabed Intervention)",
         "Course Instructor": "Ernest Jezionek - Experienced Senior Project Surveyor, advisor in the GEDS Mentoring program at Subsea 7, and lecturer in the Postgraduate Offshore Wind Energy program.",
-        "Course Completion": "Certificate including a detailed course description, confirming that the participant meets the knowledge and skill requirements to be considered a potential candidate for a Project Surveyor position."
+        "Course Completion": "each participant receives a named certificate co-issued with Döhle Marine Services Europe Ltd., an accredited training center, confirming the participant’s competencies in accordance with IMCA frameworks (IMCA C 004, IMCA S 015, IMCA S 020)."
       },
-      duration:"16H",
-      place:"Do Studzienki 63 Gdańsk, Poland",
+      duration:"18H",
+      place:"Client's Location",
     }
   ]
