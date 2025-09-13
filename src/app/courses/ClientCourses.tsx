@@ -71,7 +71,7 @@ export default function ClientCourses() {
             </div>
 
             <div className="w-full flex flex-row justify-between">
-              <div className="text-3xl md:text-2xl xl:text-3xl font-bold mt-3 w-[40%] sm:w-[60%]">
+              <div className="text-2xl md:text-2xl xl:text-3xl font-bold mt-3 w-[40%] sm:w-[60%]">
                 {course.price}
               </div>
               <motion.div

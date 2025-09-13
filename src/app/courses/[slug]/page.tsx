@@ -30,12 +30,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!course) return notFound()
 
   return (
-    <div className="bg-amber-50 text-bl overflow-x-hidden">
+    <div className="bg-amber-50 text-bl overflow-x-hidden text-black">
       <div className={`${poppins.className} mb-10 sm:mb-30`}>
         <Menu />
         <div className="flex flex-col md:flex-row justify-between w-full md:px-[7.5%] mt-10 sm:mt-20  relative text-lg md:text-[13px] lg:text-[15px] xl:text-xl text-center md:text-left">
           <div className="md:aspect-square aspect-video w-full md:w-[50%] relative">
-            <Image src={`/courses/${course.image1}`} alt={course.title} fill className="object-cover" />
+            <Image src={`/courses/${course.image1}`} alt={course.title} priority={true} fill className="object-cover" />
           </div>
           <div className="h-full w-[80%] md:w-[55%] flex flex-col ml-[10%]">
             <h1 className="text-blue-800 text-4xl md:text-2xl xl:text-4xl font-bold leading-14 w-full  text-center md:text-left mb-10 md:mb-0 mt-10 md:mt-0">
@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
         <div className="w-[70%] lg:w-[55%] mx-auto py-10 md:py-20 xl:py-30 text-4xl md:text-5xl lg:text-6xl font-bold text-center text-blue-800">Discover more about the course</div>
         <div className="w-full px-10 flex flex-col lg:flex-row justify-between pb-15 md:pb-30">
-          <div className="w-[90%] md:w-[70%] lg:w-[45%] mx-auto mt-10">
+          <div className="w-[95%] md:w-[70%] lg:w-[45%] mx-auto mt-10">
             <Suspense fallback={
               <div className="w-full aspect-video bg-gray-200 rounded-xl flex items-center justify-center">
                 <p className="text-gray-500">Ładowanie galerii...</p>
