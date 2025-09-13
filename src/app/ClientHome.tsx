@@ -24,8 +24,23 @@ export const scaleUpDelay = {
   hidden: { scale: 0, opacity: 0 },
   visible: (i = 1) => ({ scale: 1, opacity: 1, transition: { delay: i * 0.2, duration: 0.6 } }),
 };
+interface Stat {
+  number: number;
+  label: string;
+}
 
-export default function ClientHome({ stats, items, courses }: { stats: any[], items: any[], courses: string[] }) {
+interface Item {
+  title: string;
+  text: string;
+}
+
+interface ClientHomeProps {
+  stats: Stat[];
+  items: Item[];
+  courses: string[];
+}
+
+export default function ClientHome({ stats, items, courses }: ClientHomeProps) {
   return (
     <div className="overflow-x-hidden">
       <div className="block lg:hidden"><Menu /></div>
