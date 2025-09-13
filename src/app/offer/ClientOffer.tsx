@@ -147,7 +147,6 @@ export default function ClientOffer() {
                 <Image
                   src={`/offer/${offer.image}`}
                   alt={offer.title}
-                  priority={index===0}
                   fill
                   className="object-cover object-right"
                 />
@@ -192,7 +191,7 @@ export default function ClientOffer() {
                   <Image
                     src={`/offer/${offers[index + 1].image}`}
                     alt={offers[index + 1].title}
-                    priority={index===1}
+                    
                     fill
                     className="object-cover object-right"
                   />
