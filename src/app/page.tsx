@@ -10,10 +10,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo.png",
   },
-  other: {
-    // dodatkowe tagi do <head>
-    preloadHero: `<link rel="preload" as="image" href="/offer/offer3.jpg" />`,
-  },
 };
 
 export default function Home() {
