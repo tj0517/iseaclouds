@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { courses } from "@/data/courses"
-import Menu from "@/app/menu"
-import Footer from "@/app/footer"
+import Menu from "@/app/components/menu"
+import Footer from "@/app/components/footer"
 import { Poppins } from 'next/font/google'
 import { Suspense } from "react"
 import dynamic from 'next/dynamic'

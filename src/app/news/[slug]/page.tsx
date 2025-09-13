@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { articles } from "@/data/aticles"
-import Menu from "@/app/menu"
-import Footer from "@/app/footer"
+import Menu from "@/app/components/menu"
+import Footer from "@/app/components/footer"
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
