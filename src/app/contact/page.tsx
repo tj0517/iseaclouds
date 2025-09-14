@@ -10,13 +10,6 @@ const poppins = Poppins({
 export const metadata = {
   title: "Sea Clouds - Contact",
   description: "Grow in offshore wind with our Sea Clouds courses",
-  icons: {
-    icon: "/logo.png",
-  },
-  other: {
-    // dodatkowe tagi do <head>
-    preloadHero: `<link rel="preload" as="image" href="/contact/contact_bg.jpg" />`,
-  },
 }
 
 export default function Home() {

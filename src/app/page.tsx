@@ -5,13 +5,10 @@ import type { Metadata } from "next";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["200", "400", "500", "700"], variable: "--font-poppins" });
 
-export const metadata: Metadata = {
-  title: "Seaclouds",
-  description: "Opis podstrony oferta dla SEO",
-  icons: {
-    icon: "/logo.png",
-  },
-};
+export const metadata = {
+  title: "Sea Clouds",
+  description: "Grow in offshore wind with our Sea Clouds courses",
+}
 
 export default function Home() {
   const stats = [

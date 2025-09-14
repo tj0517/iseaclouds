@@ -4,12 +4,28 @@ import { projects } from "@/data/projects"
 import Menu from "@/app/components/menu"
 import Footer from "@/app/components/footer"
 import { Poppins } from 'next/font/google'
+import type { Metadata } from "next";
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['200','400', '500', '700'], // wybierz wagi, które potrzebujesz
   variable: '--font-poppins', // CSS variable do Tailwinda
 })
+
+type Props = {
+  params: { slug: string }
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const project = projects.find((c) => c.slug === params.slug);
+
+  return {
+    title: project ? `Seaclouds - ${project.projectName}` : "Seaclouds | Course not found",
+    description: project?.overview || "Opis kursu",
+  };
+}
+
+
 
 export default async function ProjectsPage({
   params,

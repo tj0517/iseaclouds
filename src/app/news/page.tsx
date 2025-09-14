@@ -7,6 +7,11 @@ const poppins = Poppins({
   variable: "--font-poppins"
 });
 
+export const metadata = {
+  title: "Sea Clouds - News",
+  description: "Grow in offshore wind with our Sea Clouds courses",
+}
+
 export default function Home() {
   return (
     <div className={`${poppins.className} bg-amber-50`}>

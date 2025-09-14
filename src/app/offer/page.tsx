@@ -8,13 +8,10 @@ const poppins = Poppins({
   variable: "--font-poppins"
 });
 
-export const metadata: Metadata = {
-  title: "Seaclouds - Offer",
-  description: "Opis podstrony oferta dla SEO",
-  icons: {
-    icon: "/logo.png",
-  },
-};
+export const metadata = {
+  title: "Sea Clouds - Offer",
+  description: "Grow in offshore wind with our Sea Clouds courses",
+}
 
 export default function Home() {
   return (

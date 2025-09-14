@@ -4,6 +4,8 @@ import { articles } from "@/data/aticles"
 import Menu from "@/app/components/menu"
 import Footer from "@/app/components/footer"
 import { Poppins } from 'next/font/google'
+import type { Metadata } from "next";
+import { article } from "framer-motion/client"
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -11,6 +13,20 @@ const poppins = Poppins({
   variable: '--font-poppins', // CSS variable do Tailwinda
 })
 
+
+
+type Props = {
+  params: { slug: string }
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = articles.find((c) => c.slug === params.slug);
+
+  return {
+    title: article ? `Seaclouds - ${article.title}` : "Seaclouds | Course not found",
+    description: article?.description || "Opis kursu",
+  };
+}
 export default async function ArticlePage({
   params,
 }: {

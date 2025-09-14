@@ -13,6 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 
+
+export const metadata: Metadata = {
+  title: "Seaclouds",
+  description: "Opis strony",
+  icons: {
+    icon: "/logo.png", // lub .png/.svg w public/
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{

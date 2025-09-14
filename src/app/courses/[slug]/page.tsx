@@ -7,12 +7,26 @@ import { Poppins } from 'next/font/google'
 import { Suspense } from "react"
 import dynamic from 'next/dynamic'
 import PurchaseFormModal from "../form"
+import type { Metadata } from "next";
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['200','400', '500', '700'],
   variable: '--font-poppins',
 })
+
+type Props = {
+  params: { slug: string }
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const course = courses.find((c) => c.slug === params.slug);
+
+  return {
+    title: course ? `Seaclouds - ${course.title}` : "Seaclouds | Course not found",
+    description: course?.description || "Opis kursu",
+  };
+}
 
 // Dynamic import dla CourseSlider z wyłączonym SSR
 const CourseSlider = dynamic(() => import("../courseslider"), {
