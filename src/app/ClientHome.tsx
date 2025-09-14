@@ -50,16 +50,16 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
     <div className="overflow-x-hidden">
       <div className="block lg:hidden"><Menu /></div>
       
-      <div className="w-full flex flex-row h-[90vh] sm:h-[95vh] lg:h-[90vh]">
-        <div className="w-full lg:w-[45%] h-[85vh] md:h-full relative">
+      <div className="w-full flex flex-row h-[90vh] sm:h-[95vh] lg:h-[90vh] 2xl:h-[80vh]" >
+        <div className="w-full lg:w-[45%] 2xl:w-[55%] h-[85vh] md:h-full relative">
           <Image src="/offer/offer3.jpg" alt="Logo" fill className="object-cover object-center lg:brightness-100 brightness-30" />
           <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">
             <Image src="/logo.png" alt="Logo" width={150} height={150} priority className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" />
           </div>
         </div>
 
-        <div className="lg:bg-gray-400 lg:w-[55%] w-full absolute lg:relative h-full">
-          <div className="xl:w-[70%] w-[80%] ml-[15%] xl:ml-[20%] mt-10 hidden lg:flex flex-row justify-between text-amber-50 font-light text-lg md:text-[16px] xl:text-xl">
+        <div className="lg:bg-gray-400 lg:w-[55%]  w-full absolute lg:relative h-full">
+          <div className="w-[80%] xl:w-[70%] 2xl:w-[60%] ml-[15%] xl:ml-[20%]  mt-10 hidden lg:flex flex-row justify-between text-amber-50 font-light text-lg md:text-[16px] xl:text-xl">
             <div><Link href="/">Home</Link></div>
             <div><Link href="/projects/baltica2-wind">Projects</Link></div>
             <div><Link href="/courses">Courses</Link></div>
@@ -68,12 +68,12 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
             <div><Link href="/contact">Contact us</Link></div>
           </div>
 
-          <div className="ml-auto mr-auto lg:ml-[15%] xl:ml-[20%] w-[75%] sm:w-[50%] lg:w-full">
-            <motion.h1 className="text-blue-500 lg:text-blue-800 w-full lg:w-[70%] text-center lg:text-left text-4xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:w-[75%] font-bold mt-16 md:mt-24 lg:mt-16" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
+          <div className="ml-auto mr-auto lg:ml-[15%] xl:ml-[20%]  w-[75%] sm:w-[50%] lg:w-full">
+            <motion.h1 className="text-blue-500 lg:text-blue-800 w-full lg:w-[70%] text-center lg:text-left text-4xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:w-[50%] font-bold mt-16 md:mt-24 lg:mt-16" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
               Navigating Offshore Excellence
             </motion.h1>
 
-            <motion.div className="lg:w-[70%] text-center lg:text-left mt-12 lg:mt-8 xl:mt-15 text-amber-50 font-light text-lg xl:text-xl 2xl:w-[60%]" variants={fadeUp} initial="hidden" animate="visible" custom={2}>
+            <motion.div className="lg:w-[70%] text-center lg:text-left mt-12 lg:mt-8 xl:mt-15 text-amber-50 font-light text-lg xl:text-xl 2xl:w-[50%]" variants={fadeUp} initial="hidden" animate="visible" custom={2}>
               Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.
             </motion.div>
 
@@ -93,11 +93,11 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
       <div className="w-full flex flex-col md:flex-row pt-0 md:pt-20 lg:pt-28">
         <motion.div className="h-full w-full md:w-[45%] ml-[10%]" variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <h2 className="text-blue-800 w-full text-5xl xl:text-6xl font-bold">About us</h2>
-          <div className="text-slate-400 w-[80%] text-[14px] md:text-[13.5px] lg:text-[15px] xl:text-[18px] mt-10 lg:mt-[50px] mb-16 md:mb-0">
+          <div className="text-slate-400 w-[80%] 2xl:w-[60%] text-[14px] md:text-[13.5px] lg:text-[15px] xl:text-[18px] mt-10 lg:mt-[50px] mb-16 md:mb-0">
           Sea Clouds was founded by a team of experts with over 25 years of professional experience and deep knowledge in the Offshore Oil & Gas and Wind Farm sectors. We specialize in delivering comprehensive offshore engineering solutions and technical advisory services across key disciplines including Marine, Offshore Construction, Survey and Seabed Intervention, as well as ROV (Remotely Operated Vehicle) operations. Our services are grounded in technical excellence, safety, and efficiency, ensuring that every involvement in our client’s project meets the highest industry standards. Partner with Sea Clouds for precise and dependable offshore engineering solutions—from concept design and planning to execution and support. Whether you require strategic offshore technical advisory or fully integrated engineering capabilities, we bring clarity and confidence to complex offshore challenges. Over...  </div>
         </motion.div>
 
-        <div className="hidden md:block md:w-[50%] xl:w-[40%] h-[60vh] md:h-[75vh] relative xl:ml-[2.5%] mt-12 lg:mt-0">
+        <div className="hidden md:block md:w-[50%] xl:w-[40%] 2xl:w-[35%] h-[60vh] md:h-[75vh] relative xl:ml-[2.5%] mt-12 lg:mt-0">
           <Image src="/engineer1.jpg" alt="Logo" fill className="object-cover object-bottom" />
         </div>
       </div>

@@ -20,11 +20,13 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = articles.find((c) => c.slug === params.slug);
+  // Await the params first
+  const { slug } = await params;
+  const article = articles.find((c) => c.slug === slug);
 
   return {
-    title: article ? `Seaclouds - ${article.title}` : "Seaclouds | Course not found",
-    description: article?.description || "Opis kursu",
+    title: article ? `Seaclouds - ${article.title}` : "Seaclouds | Article not found",
+    description: article?.description || "Article not found",
   };
 }
 export default async function ArticlePage({
@@ -39,10 +41,10 @@ export default async function ArticlePage({
   if (!article) return notFound()
 
   return (
-    <div className="bg-amber-50 text-bl">
+    <div className="bg-amber-50 text-bl text-black">
     <div className={`${poppins.className} mb-10 sm:mb-30`} >
     <Menu/>
-      <div className="flex flex-col md:flex-row justify-between w-full md:px-[7.5%] mt-10 sm:mt-20 md:h-[45vh]">
+      <div className="flex flex-col md:flex-row justify-between w-full md:px-[7.5%] 2xl:px-[15%] mt-10 sm:mt-20 md:h-[45vh]">
       <div className="h-full w-full md:w-[50%] flex flex-col">
       <h1 className= "text-blue-800 text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-20 sm:ml-[15%] md:ml-0 w-full sm:w-[70%]  md:w-[85%] lg:w-[75%] text-center md:text-left mb-10 md:mb-0">
  {article.title}
@@ -58,11 +60,11 @@ export default async function ArticlePage({
         />
       </div>
     </div>
-    <div className="article-content flex flex-col w-full px-[7.5%] pt-20"
+    <div className="article-content flex flex-col w-full md:px-[7.5%] 2xl:px-[15%] pt-20"
      dangerouslySetInnerHTML={{ __html: article.content }}
 />
 {article.photo2 && (
-  <div className="w-full md:w-[80%] mx-auto aspect-[16/9] relative  mt-10">
+  <div className="w-full md:w-[80%] 2xl:w-[65%] mx-auto aspect-[16/9] relative  mt-10">
   <Image
     src={`/news/${article.photo2}`}
     alt={article.title}
