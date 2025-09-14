@@ -15,9 +15,11 @@ const poppins = Poppins({
 
 
 
-type Props = {
-  params: { slug: string }
-};
+interface Props {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Await the params first

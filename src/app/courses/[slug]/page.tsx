@@ -15,9 +15,13 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
-type Props = {
-  params: { slug: string }
-};
+
+// Poprawna definicja Props dla App Router
+interface Props {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Dodaj await przed params
