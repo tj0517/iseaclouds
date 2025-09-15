@@ -57,6 +57,7 @@ export default async function ArticlePage({
         <Image
           src={`/news/${article.photo}`}
           alt={article.title}
+          priority={true}
           fill
           className="object-cover"
         />
