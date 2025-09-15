@@ -51,7 +51,7 @@ export default function ClientContact() {
         <Image
           src="/contact/contact_bg.jpg"
           alt="contact background"
-          priority
+          priority={true}
           fill
           className="object-cover object-top"
         />

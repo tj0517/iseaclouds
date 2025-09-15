@@ -52,7 +52,7 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
       
       <div className="w-full flex flex-row h-[90vh] sm:h-[95vh] lg:h-[90vh] 2xl:h-[80vh]" >
         <div className="w-full lg:w-[45%] 2xl:w-[55%] h-[85vh] md:h-full relative">
-          <Image src="/offer/offer3.jpg" alt="Logo" fill className="object-cover object-center lg:brightness-100 brightness-30" />
+          <Image src="/offer/offer3.jpg" alt="Oil&gas" priority={true} fill className="object-cover object-center lg:brightness-100 brightness-30" />
           <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">
             <Image src="/logo.png" alt="Logo" width={150} height={150} priority className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" />
           </div>

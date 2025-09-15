@@ -24,7 +24,7 @@ export default function ClientCourses() {
         <Image
           src="/courses/courses_bg1.jpg"
           alt="contact background"
-          priority
+          priority={true}
           fill
           className="object-cover brightness-70"
         />

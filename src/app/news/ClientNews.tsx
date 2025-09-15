@@ -25,6 +25,7 @@ export default function ClientNews() {
           <Image
             src={`/news/${articles[0].photo}`}
             alt={articles[0].title}
+            priority={true}
             fill
             className="object-cover object-center"
           />
