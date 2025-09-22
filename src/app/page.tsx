@@ -7,7 +7,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["200", "400", "500", "700
 
 export const metadata = {
   title: "Sea Clouds",
-  description: "Grow in offshore wind with our Sea Clouds courses",
+  description: "Sea Clouds delivers expert offshore engineering solutions and technical advisory for Oil & Gas and Wind Farm projects, emphasizing safety and innovation.",
 }
 
 export default function Home() {

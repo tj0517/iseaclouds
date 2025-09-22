@@ -9,7 +9,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Sea Clouds - Courses",
-  description: "Grow in offshore wind with our Sea Clouds courses",
+  description: "SeaClouds Offshore Courses: Project Surveyor & Survey Technician Training Advance your career with specialized offshore certification courses for Project Surveyors and Survey Technicians. Gain the skills required for oil & gas and wind farm projects.",
 }
 
 

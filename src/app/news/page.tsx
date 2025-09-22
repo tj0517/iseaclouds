@@ -9,7 +9,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Sea Clouds - News",
-  description: "Grow in offshore wind with our Sea Clouds courses",
+  description: "Discover articles on offshore engineering services, including offshore wind farm engineering, marine construction, ROV operations, seabed interventions, and offshore project management. Stay informed about the latest trends and innovations in the offshore industry.",
 }
 
 export default function Home() {

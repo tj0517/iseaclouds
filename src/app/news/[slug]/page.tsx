@@ -23,7 +23,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Await the params first
-  const { slug } = await params;
+  const { slug } = await params; 
   const article = articles.find((c) => c.slug === slug);
 
   return {
