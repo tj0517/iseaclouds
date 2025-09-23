@@ -21,6 +21,8 @@ export default function PurchaseFormModal({
     email: "",
     phone: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [cooldown, setCooldown] = useState(0)
 
   // 🔒 blokowanie scrolla
   useEffect(() => {
@@ -34,6 +36,16 @@ export default function PurchaseFormModal({
     }
   }, [open])
 
+  // ⏰ Zarządzanie cooldownem
+  useEffect(() => {
+    if (cooldown > 0) {
+      const timer = setTimeout(() => {
+        setCooldown(cooldown - 1)
+      }, 1000)
+      return () => clearTimeout(timer)
+    }
+  }, [cooldown])
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -44,14 +56,37 @@ export default function PurchaseFormModal({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    // 🔒 Sprawdź czy już trwa wysyłanie lub cooldown
+    if (isSubmitting || cooldown > 0) {
+      return
+    }
+
+    setIsSubmitting(true)
+
     try {
-      const res = await fetch("/api/courses", {
+      // Wysyłanie emaila do klienta
+      const customerRes = await fetch("/api/courses", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, course }),
+        body: JSON.stringify({ 
+          ...formData, 
+          course,
+          emailType: "customer" 
+        }),
       })
 
-      if (res.ok) {
+      // Wysyłanie emaila do admina
+      const adminRes = await fetch("/api/courses", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          ...formData, 
+          course,
+          emailType: "admin" 
+        }),
+      })
+
+      if (customerRes.ok && adminRes.ok) {
         alert("✅ Order sent successfully!")
         setOpen(false)
         setFormData({
@@ -65,12 +100,16 @@ export default function PurchaseFormModal({
           email: "",
           phone: "",
         })
+        // 🔒 Ustaw cooldown na 10 sekund
+        setCooldown(10)
       } else {
         alert("❌ Error sending order")
       }
     } catch (error) {
       console.error(error)
       alert("❌ Something went wrong")
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -224,13 +263,12 @@ export default function PurchaseFormModal({
                     required
                   />
                   <input
-                    type="text"
+                    type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Phone"
+                    placeholder="Phone (optional)"
                     className="border p-1 mt-3"
-                    required
                   />
                 </div>
 
@@ -254,7 +292,7 @@ export default function PurchaseFormModal({
 
                 <button
                   type="submit"
-                  className="w-[50%] ml-[47.5%] mt-[20%] bg-blue-800 text-white px-4 py-2 hover:bg-blue-700"
+                  className="w-[50%] ml-[47.5%] mt-[20%] bg-blue-800 text-white px-4 py-2 hover:bg-blue-700 hover:cursor-pointer"
                 >
                   Buy
                 </button>
