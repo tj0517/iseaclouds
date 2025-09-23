@@ -280,7 +280,7 @@ export default function PurchaseFormModal({
                     onChange={handleChange}
                     placeholder="Phone"
                     className="border p-1 mt-3 disabled:opacity-50"
-                    required
+
                     disabled={isSubmitting}
                   />
                 </div>

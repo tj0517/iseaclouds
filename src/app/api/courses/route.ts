@@ -3,13 +3,27 @@ import nodemailer from 'nodemailer'
 
 export async function POST(request: NextRequest) {
   try {
+    // Sprawdź czy zmienne środowiskowe są ustawione
+    const requiredEnvVars = ['EMAIL_HOST', 'EMAIL_USER', 'EMAIL_PASS', 'EMAIL_PORT']
+    const missingVars = requiredEnvVars.filter(varName => !process.env[varName])
+    
+    if (missingVars.length > 0) {
+      console.error('Missing environment variables:', missingVars)
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      )
+    }
+
     const body = await request.json()
+    console.log('Received order data:', JSON.stringify(body, null, 2))
+
     const { 
       name, 
       email, 
       course, 
       emailType,
-      type,
+      type = 'individual',
       companyName,
       country,
       city,
@@ -18,6 +32,14 @@ export async function POST(request: NextRequest) {
       taxId,
       phone
     } = body
+
+    // Walidacja wymaganych pól
+    if (!name || !email || !course || !emailType) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      )
+    }
 
     // Konfiguracja transporter email
     const transporter = nodemailer.createTransport({
@@ -29,6 +51,18 @@ export async function POST(request: NextRequest) {
         pass: process.env.EMAIL_PASS,
       },
     })
+
+    // Test połączenia SMTP
+    try {
+      await transporter.verify()
+      console.log('SMTP connection verified')
+    } catch (smtpError) {
+      console.error('SMTP connection failed:', smtpError)
+      return NextResponse.json(
+        { error: 'Email service unavailable' },
+        { status: 503 }
+      )
+    }
 
     // Email dla klienta
     if (emailType === 'customer') {
@@ -65,59 +99,92 @@ export async function POST(request: NextRequest) {
       `
 
       const mailOptions = {
-        from: process.env.EMAIL_FROM,
+        from: process.env.EMAIL_USER,
         to: email,
         subject: emailSubject,
         html: emailHtml,
       }
 
-      await transporter.sendMail(mailOptions)
+      const result = await transporter.sendMail(mailOptions)
+      console.log('Customer email sent:', result.messageId)
       
       return NextResponse.json(
-        { message: 'Customer email sent successfully' },
+        { 
+          message: 'Customer email sent successfully',
+          messageId: result.messageId 
+        },
         { status: 200 }
       )
     }
 
-    // Email dla admina (domyślnie)
-    const emailSubject = `New course order: ${course.title}`
+    // Email dla admina
+    const emailSubject = `📚 Nowe zamówienie kursu: ${course.title}`
     
-    const emailText = `
-New order for ${course.title} (${course.type}) - ${course.price}
+    const emailHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <meta charset="utf-8">
+          <title>Nowe zamówienie</title>
+      </head>
+      <body>
+          <h2>📚 Nowe zamówienie kursu</h2>
+          
+          <h3>Szczegóły kursu:</h3>
+          <ul>
+              <li><strong>Kurs:</strong> ${course.title}</li>
+              <li><strong>Typ:</strong> ${course.type}</li>
+              <li><strong>Cena:</strong> ${course.price} PLN</li>
+          </ul>
 
-Name: ${name}
-Company: ${companyName || "-"}
-Country: ${country}
-City: ${city}
-ZIP: ${zip}
-Address: ${address}
-Tax ID: ${taxId || "-"}
+          <h3>Dane klienta:</h3>
+          <ul>
+              <li><strong>Imię i nazwisko:</strong> ${name}</li>
+              <li><strong>Email:</strong> ${email}</li>
+              <li><strong>Telefon:</strong> ${phone || 'Nie podano'}</li>
+              <li><strong>Typ zamówienia:</strong> ${type}</li>
+              ${companyName ? `<li><strong>Firma:</strong> ${companyName}</li>` : ''}
+              ${taxId ? `<li><strong>NIP:</strong> ${taxId}</li>` : ''}
+          </ul>
 
-E-mail: ${email}
-Phone: ${phone}
+          <h3>Adres:</h3>
+          <ul>
+              <li><strong>Kraj:</strong> ${country}</li>
+              <li><strong>Miasto:</strong> ${city}</li>
+              <li><strong>Kod pocztowy:</strong> ${zip}</li>
+              <li><strong>Adres:</strong> ${address}</li>
+          </ul>
 
-Order type: ${type}
-Order date: ${new Date().toLocaleString('pl-PL')}
+          <p><strong>Data zamówienia:</strong> ${new Date().toLocaleString('pl-PL')}</p>
+      </body>
+      </html>
     `
 
     const mailOptions = {
-      from: process.env.EMAIL_FROM,
+      from: process.env.EMAIL_USER,
       to: process.env.ADMIN_EMAIL || "tjezionek2000@gmail.com",
       subject: emailSubject,
-      text: emailText,
+      html: emailHtml,
     }
 
-    await transporter.sendMail(mailOptions)
+    const result = await transporter.sendMail(mailOptions)
+    console.log('Admin email sent:', result.messageId)
 
     return NextResponse.json(
-      { message: 'Admin email sent successfully' },
+      { 
+        message: 'Admin email sent successfully',
+        messageId: result.messageId 
+      },
       { status: 200 }
     )
 
   } catch (error) {
-    console.error('Error sending email:', error)
+    console.error('Error in API route:', error)
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { 
+        error: 'Failed to process order',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     )
   }
