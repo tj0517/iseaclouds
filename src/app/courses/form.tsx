@@ -129,6 +129,7 @@ export default function PurchaseFormModal({
             <button
               onClick={() => setOpen(false)}
               className="absolute top-7 right-7 text-gray-600 hover:text-black hover:cursor-pointer"
+              disabled={isSubmitting} // 🔒 Blokuj podczas wysyłania
             >
               ✕
             </button>
@@ -149,6 +150,7 @@ export default function PurchaseFormModal({
                   value="individual"
                   checked={type === "individual"}
                   onChange={() => setType("individual")}
+                  disabled={isSubmitting} // 🔒 Blokuj podczas wysyłania
                 />
                 Individual
               </label>
@@ -158,6 +160,7 @@ export default function PurchaseFormModal({
                   value="company"
                   checked={type === "company"}
                   onChange={() => setType("company")}
+                  disabled={isSubmitting} // 🔒 Blokuj podczas wysyłania
                 />
                 Company
               </label>
@@ -175,8 +178,9 @@ export default function PurchaseFormModal({
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Full Name"
-                  className="border p-1"
+                  className="border p-1 disabled:opacity-50"
                   required
+                  disabled={isSubmitting} // 🔒 Blokuj podczas wysyłania
                 />
 
                 {type === "company" && (
@@ -186,7 +190,8 @@ export default function PurchaseFormModal({
                     value={formData.companyName}
                     onChange={handleChange}
                     placeholder="Company Name (optional)"
-                    className="border p-1 mt-2"
+                    className="border p-1 mt-2 disabled:opacity-50"
+                    disabled={isSubmitting} // 🔒 Blokuj podczas wysyłania
                   />
                 )}
 
@@ -196,8 +201,9 @@ export default function PurchaseFormModal({
                   value={formData.country}
                   onChange={handleChange}
                   placeholder="Country"
-                  className="border p-1 mt-2"
+                  className="border p-1 mt-2 disabled:opacity-50"
                   required
+                  disabled={isSubmitting}
                 />
                 <input
                   type="text"
@@ -205,8 +211,9 @@ export default function PurchaseFormModal({
                   value={formData.city}
                   onChange={handleChange}
                   placeholder="City"
-                  className="border p-1 mt-2"
+                  className="border p-1 mt-2 disabled:opacity-50"
                   required
+                  disabled={isSubmitting}
                 />
                 <input
                   type="text"
@@ -214,8 +221,9 @@ export default function PurchaseFormModal({
                   value={formData.zip}
                   onChange={handleChange}
                   placeholder="ZIP Code"
-                  className="border p-1 mt-2"
+                  className="border p-1 mt-2 disabled:opacity-50"
                   required
+                  disabled={isSubmitting}
                 />
                 <input
                   type="text"
@@ -223,8 +231,9 @@ export default function PurchaseFormModal({
                   value={formData.address}
                   onChange={handleChange}
                   placeholder="Address"
-                  className="border p-1 mt-2"
+                  className="border p-1 mt-2 disabled:opacity-50"
                   required
+                  disabled={isSubmitting}
                 />
 
                 {type === "company" && (
@@ -234,8 +243,9 @@ export default function PurchaseFormModal({
                     value={formData.taxId}
                     onChange={handleChange}
                     placeholder="Tax ID"
-                    className="border p-1 mt-2"
+                    className="border p-1 mt-2 disabled:opacity-50"
                     required
+                    disabled={isSubmitting}
                   />
                 )}
               </div>
@@ -259,16 +269,19 @@ export default function PurchaseFormModal({
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="E-mail"
-                    className="border p-1"
+                    className="border p-1 disabled:opacity-50"
                     required
+                    disabled={isSubmitting}
                   />
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Phone (optional)"
-                    className="border p-1 mt-3"
+                    placeholder="Phone"
+                    className="border p-1 mt-3 disabled:opacity-50"
+                    required
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -276,8 +289,9 @@ export default function PurchaseFormModal({
                   <input
                     id="accept"
                     type="checkbox"
-                    className="w-6 h-6 border-gray-300 mt-1"
+                    className="w-6 h-6 border-gray-300 mt-1 disabled:opacity-50"
                     required
+                    disabled={isSubmitting}
                   />
                   <label htmlFor="accept" className="text-sm text-gray-700">
                     <Link
@@ -292,9 +306,20 @@ export default function PurchaseFormModal({
 
                 <button
                   type="submit"
-                  className="w-[50%] ml-[47.5%] mt-[20%] bg-blue-800 text-white px-4 py-2 hover:bg-blue-700 hover:cursor-pointer"
+                  disabled={isSubmitting || cooldown > 0} // 🔒 Blokuj podczas wysyłania i cooldownu
+                  className={`w-[50%] ml-[47.5%] mt-[20%] px-4 py-2 ${
+                    isSubmitting || cooldown > 0
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-blue-800 hover:bg-blue-700 cursor-pointer"
+                  } text-white`}
                 >
-                  Buy
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : cooldown > 0 ? (
+                    `Wait ${cooldown}s`
+                  ) : (
+                    "Buy"
+                  )}
                 </button>
               </div>
             </form>
