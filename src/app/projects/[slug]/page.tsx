@@ -20,23 +20,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((c) => c.slug === params.slug);
 
   return {
-    title: project ? `Seaclouds - ${project.projectName}` : "Seaclouds | Course not found",
-    description: project?.overview || "Opis kursu",
+    title: project ? `Seaclouds - ${project.projectName}` : "Seaclouds | Project not found",
+    description: project?.overview || "Project not found",
   };
 }
 
+export default async function ProjectsPage({ params }: Props) {
+  const { slug } = params;
+  const project = projects.find((a) => a.slug === slug);
 
-
-export default async function ProjectsPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const { slug } = await params
-
-  const project = projects.find((a) => a.slug === slug)
-
-  if (!project) return notFound()
+  if (!project) {
+    return <div>Project not found</div>;
+  }
 
   return (
     <div className={`${poppins.className} bg-amber-50 text-black`}>
