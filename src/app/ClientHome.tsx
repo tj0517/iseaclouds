@@ -59,12 +59,13 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
         </div>
 
         <div className="lg:bg-gray-400 lg:w-[55%]  w-full absolute lg:relative h-full">
-          <div className="w-[80%] xl:w-[70%] 2xl:w-[60%] ml-[15%] xl:ml-[20%]  mt-10 hidden lg:flex flex-row justify-between text-amber-50 font-light text-lg md:text-[16px] xl:text-xl">
+          <div className="w-[80%] xl:w-[75%] 2xl:w-[60%] ml-[15%] xl:ml-[20%]  mt-10 hidden lg:flex flex-row justify-between text-amber-50 font-light text-lg md:text-[16px] xl:text-[17px]">
             <div><Link href="/">Home</Link></div>
             <div><Link href="/projects/baltica2-wind">Projects</Link></div>
             <div><Link href="/courses">Courses</Link></div>
             <div><Link href="/news">News</Link></div>
             <div><Link href="/offer">Offer</Link></div>
+            <Link href="/about_us">About us</Link>
             <div><Link href="/contact">Contact us</Link></div>
           </div>
 

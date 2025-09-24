@@ -27,10 +27,11 @@ export default function Menu() {
       {/* Desktop menu */}
       <div className="hidden md:flex flex-row gap-6 text-amber-50 font-light xl:text-xl items-center">
         <Link href="/">Home</Link>
-        <div><Link href="/projects/baltica2-wind">Projects</Link></div>
+        <Link href="/projects/baltica2-wind">Projects</Link>
         <Link href="/courses">Courses</Link>
         <Link href="/news">News</Link>
         <Link href="/offer">Offer</Link>
+        <Link href="/about_us">About us</Link>
         <Link href="/contact">Contact us</Link>
       </div>
 
@@ -53,6 +54,7 @@ export default function Menu() {
         <Link href="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
         <Link href="/news" onClick={() => setIsOpen(false)}>News</Link>
         <Link href="/offer" onClick={() => setIsOpen(false)}>Offer</Link>
+        <Link href="/about_us" onClick={() => setIsOpen(false)}>About us</Link>
         <Link href="/contact" onClick={() => setIsOpen(false)}>Contact us</Link>
       </div>
     </div>
