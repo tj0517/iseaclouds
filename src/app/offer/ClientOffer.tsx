@@ -143,7 +143,7 @@ export default function ClientOffer() {
           <div key={index}>
             {/* Pierwszy element z pary */}
             <div className="w-full flex flex-col md:flex-row md:bg-gray-400">
-              <div className="w-full md:w-[60%] aspect-square md:aspect-video relative">
+              <div className="w-full md:w-[60%] aspect-square sm:h-[55vh] md:aspect-video relative">
                 <Image
                   src={`/offer/${offer.image}`}
                   alt={offer.title}
@@ -188,7 +188,7 @@ export default function ClientOffer() {
             {/* Drugi element z pary */}
             {offers[index + 1] && (
               <div className="w-full flex flex-col md:flex-row bg-amber-50">
-                <div className="w-full md:w-[60%] aspect-square md:aspect-video relative order-1 md:order-2">
+                <div className="w-full md:w-[60%] aspect-square sm:h-[55vh]  md:aspect-video relative order-1 md:order-2">
                   <Image
                     src={`/offer/${offers[index + 1].image}`}
                     alt={offers[index + 1].title}
