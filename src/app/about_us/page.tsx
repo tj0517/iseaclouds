@@ -21,7 +21,7 @@ const offers = [
   },
   {
     image: "offer4.jpg",
-    title: "Tenders Support",
+    title: "Our vision",
     description: [
       "To empower young talent by equipping them with the skills and knowledge. Providing structured courses and a comprehensive mentoring system",
       "Sharing actively experience and knowledge with young employers by fully involvement in projects as well by continuous oversight and supervision of their work.",
