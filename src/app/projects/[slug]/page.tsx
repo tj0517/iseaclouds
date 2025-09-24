@@ -6,32 +6,40 @@ import Footer from "@/app/components/footer"
 import { Poppins } from 'next/font/google'
 import type { Metadata } from "next";
 
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['200','400', '500', '700'], // wybierz wagi, które potrzebujesz
   variable: '--font-poppins', // CSS variable do Tailwinda
 })
 
-type Props = {
-  params: { slug: string }
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projects.find((c) => c.slug === params.slug);
-
-  return {
-    title: project ? `Seaclouds - ${project.projectName}` : "Seaclouds | Project not found",
-    description: project?.overview || "Project not found",
-  };
+interface Props {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default async function ProjectsPage({ params }: Props) {
-  const { slug } = params;
-  const project = projects.find((a) => a.slug === slug);
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // Await the params first
+  const { slug } = await params; 
+  const project = projects.find((c) => c.slug === slug);
+
+  return {
+    title: project ? `Seaclouds - ${project.projectName}` : "Seaclouds | Course not found",
+    description: project?.overview || "Opis kursu",
+  };
+}
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+
+  const project = projects.find((a) => a.slug === slug)
+
+  if (!project) return notFound()
+
 
   return (
     <div className={`${poppins.className} bg-amber-50 text-black`}>
