@@ -295,7 +295,7 @@ export default function PurchaseFormModal({
                   />
                   <label htmlFor="accept" className="text-sm text-gray-700">
                     <Link
-                      href="/gdrp"
+                      href="/gdpr"
                       className="text-blue-700 underline hover:text-blue-900"
                     >
                       * I accept the terms of personal data processing for the
