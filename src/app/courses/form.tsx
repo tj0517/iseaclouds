@@ -251,9 +251,9 @@ export default function PurchaseFormModal({
               </div>
 
               <div className="w-[30%] flex flex-col h-[80%] ">
-                <div className="font-bold">Shipping method</div>
+                <div className="font-bold">Course Access</div>
                 <div className="mt-4 text-[14px]">
-                  After you&apos;ve placed your order, we will contact you.
+                  After placing your order, we will contact you within 24 hours to arrange payment and course access.
                 </div>
                 <div className="font-bold mt-8">Payment method</div>
                 <div className="mt-4 text-[14px]">
