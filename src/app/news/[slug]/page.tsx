@@ -44,26 +44,27 @@ export default async function ArticlePage(
 
 
   return (
-    <div className="bg-amber-50 text-black">
+    <div className="bg-amber-50 text-black text-xl">
       <Menu />
 
       {/* HERO */}
       <div className="w-[75%] mx-auto max-w-[1300px]">
       <div className="flex flex-row w-full mt-20">
     <div className="h-full w-full md:w-[50%] flex flex-col">
-      <h1 className="text-stone-800 text-7xl font-extralight">
+      <h1 className="text-stone-800 text-5xl lg:text-7xl font-extralight">
         {article.title}
       </h1>
       <div className="text-start font-bold text-2xl mt-14 text-amber-50 bg-cyan-900 px-6 py-2 rounded-lg w-fit">
         {article.date}
       </div>
     </div>
-    <div className="h-[175px] mt-auto rounded-4xl  w-3 bg-cyan-900 ml-10 border-4 border-cyan-900"></div>
+    <div className="h-[75px] lg:h-[125px] mt-auto rounded-4xl  w-3 bg-cyan-900  border-4 border-cyan-900"></div>
   </div>
 
 
       {/* CONTENT */}
-      <div className="w-full  pt-30">
+      <div className="w-full  pt-30 flex flex-col mb-20 gap-y-10">
+        <div>{article.description}</div>
               <div className="md:h-[450px] aspect-video w-full relative">
           {article.photo && (
             <Image
@@ -75,16 +76,18 @@ export default async function ArticlePage(
             />
           )}
         </div>
+
+        <div>
         <PortableText
   value={article.content}
   components={{
     block: {
       h1: ({children}) => <h1 className="text-3xl font-bold">{children}</h1>,
-      h2: ({children}) => <h2 className="text-4xl font-black">{children}</h2>,
+      h2: ({children}) => <h2 className="text-4xl font-black pb-6">{children}</h2>,
       normal: ({children}) => <p className="my-2">{children}</p>,
     },
     list: {
-      bullet: ({children}) => <ul className="list-disc ml-6">{children}</ul>,
+      bullet: ({children}) => <ul className="list-disc ml-6 mb-10">{children}</ul>,
       number: ({children}) => <ol className="list-decimal ml-6">{children}</ol>,
     },
     listItem: {
@@ -93,12 +96,9 @@ export default async function ArticlePage(
     },
   }}
 />
-
-      </div>
-
-      {/* OPTIONAL PHOTO */}
-      {article.photo2 && (
-        <div className="w-full md:w-[80%] 2xl:w-[65%] mx-auto aspect-[16/9] relative mt-10">
+</div>
+{article.photo2 && (
+        <div className=" aspect-video w-full relative">
           <Image
             src={urlFor(article.photo2).url()}
             alt={article.title}
@@ -107,6 +107,10 @@ export default async function ArticlePage(
           />
         </div>
       )}
+      </div>
+
+      {/* OPTIONAL PHOTO */}
+      
 </div>
       <Footer />
     </div>
