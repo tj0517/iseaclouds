@@ -90,7 +90,7 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
     <div className="overflow-x-hidden sm:text-lg md:text-[13.5px] lg:text-[15px]  xl:text-[18px] text-stone-600">
       <div className="block lg:hidden"><Menu /></div>
       
-      <div className="w-full flex flex-row h-[600px] sm:h-[650px] md:h-[650px] xl:h-[750px]">
+      <div className="w-full flex flex-row h-[650px] md:h-[650px] xl:h-[750px]">
         <div className="w-full lg:w-[45%] 2xl:w-[55%] h-full relative">
           <Image src="/offer/offer3.jpg" alt="Oil&gas" priority={true} fill className="object-cover object-center lg:brightness-100 brightness-30" />
           <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">

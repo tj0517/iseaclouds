@@ -56,7 +56,7 @@ export default function ClientNews({ articles, i }: Props) {
 
           <div className="text-black">{articles[0].date}</div>
 
-          <div className="mt-8 w-[80%] lg:w-2/3 text-black">
+          <div className="mt-8 w-[80%] h-[25%] overflow-clip lg:w-2/3 text-black">
             {articles[0].description}
           </div>
           <Link
