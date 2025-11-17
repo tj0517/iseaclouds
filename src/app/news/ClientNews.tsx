@@ -32,7 +32,7 @@ export default function ClientNews({ articles, i }: Props) {
 
       {/* HERO */}
       <div className="w-full hidden md:flex flex-row relative md:h-[500px] lg:h-[600px] xl:h-[700px] rounded-4xl ">
-        <div className="bg-cyan-900 w-[40%] h-full relative" />
+        <div className="bg-gray-400 w-[40%] h-full relative" />
         <div className="w-[60%] h-full relative overflow-hidden">
           {articles[0].photo && (
             <Image
@@ -46,7 +46,7 @@ export default function ClientNews({ articles, i }: Props) {
 
         <div
           className=" absolute  top-10 left-[20%] lg:top-16 xl:top-24 lg:left-1/6 xl:left-1/5 rounded-2xl
-          w-1/2 lg:w-[45%] max-w-[600px] sm:bg-gray-400 bg-cyan-900  
+          w-1/2 lg:w-[45%] max-w-[600px] sm:bg-amber-50
           flex flex-col px-12  py-12 lg:h-3/4 xl:h-2/3 "
         >
           <div className={`${playfair.className} text-3xl font-bold text-black `}>
