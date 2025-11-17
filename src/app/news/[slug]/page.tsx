@@ -12,7 +12,7 @@ import { client } from "@/sanity/lib/client";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["200", "400", "500", "700"],
+  weight: ["100","200", "400", "500", "700"],
   variable: "--font-poppins",
 })
 
@@ -48,17 +48,23 @@ export default async function ArticlePage(
       <Menu />
 
       {/* HERO */}
-      <div className="flex flex-col md:flex-row justify-between w-full md:px-[7.5%] 2xl:px-[15%] mt-10 sm:mt-20 md:h-[45vh]">
-        <div className="h-full w-full md:w-[50%] flex flex-col">
-          <h1 className="text-blue-800 text-5xl font-bold">
-            {article.title}
-          </h1>
-          <div className="text-right font-bold text-xl mt-auto">
-            {article.date}
-          </div>
-        </div>
+      <div className="w-[75%] mx-auto max-w-[1300px]">
+      <div className="flex flex-row w-full mt-20">
+    <div className="h-full w-full md:w-[50%] flex flex-col">
+      <h1 className="text-stone-800 text-7xl font-extralight">
+        {article.title}
+      </h1>
+      <div className="text-start font-bold text-2xl mt-14 text-amber-50 bg-cyan-900 px-6 py-2 rounded-lg w-fit">
+        {article.date}
+      </div>
+    </div>
+    <div className="h-[175px] mt-auto rounded-4xl  w-3 bg-cyan-900 ml-10 border-4 border-cyan-900"></div>
+  </div>
 
-        <div className="md:h-[45vh] aspect-video w-full md:w-[50%] relative">
+
+      {/* CONTENT */}
+      <div className="w-full  pt-30">
+              <div className="md:h-[450px] aspect-video w-full relative">
           {article.photo && (
             <Image
                src={urlFor(article.photo).url()}
@@ -69,10 +75,6 @@ export default async function ArticlePage(
             />
           )}
         </div>
-      </div>
-
-      {/* CONTENT */}
-      <div className="w-full md:px-[7.5%] 2xl:px-[15%] pt-20">
         <PortableText
   value={article.content}
   components={{
@@ -105,7 +107,7 @@ export default async function ArticlePage(
           />
         </div>
       )}
-
+</div>
       <Footer />
     </div>
   );
