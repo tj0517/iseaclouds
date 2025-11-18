@@ -21,14 +21,9 @@ body {
   margin-bottom: 0.5rem;
 }
 
-p
-{
-margin-bottom: 30px;
-}
 
 h1
-{
-  font-size: 5rem; /* base na mobile */
+{/* base na mobile */
   font-weight: 200;
   color:black;
 }
@@ -40,30 +35,4 @@ h2 {
   color: oklch(39.8% 0.07 227.392); /* text-cyan-900 */
 }
 
-/* Small screens */
-@media (min-width: 640px) { /* sm */
-  h2 {
-    font-size: 3rem; /* sm:text-5xl */
-  }
-}
-
 /* Medium screens */
-@media (min-width: 768px) { /* md */
-  h2 {
-    font-size: 3.5rem; /* md:text-6xl */
-  }
-}
-
-/* Large screens */
-@media (min-width: 1024px) { /* lg */
-  h2 {
-    font-size: 3rem; /* lg:text-7xl */
-  }
-}
-
-/* Extra large screens */
-@media (min-width: 1280px) { /* xl */
-  h2 {
-    font-size: 3rem; /* xl:text-7xl lub większe */
-  }
-}

@@ -6,6 +6,7 @@ export async function getArticle(slug: string): Promise<Article | null> {
     `
       *[_type == "article" && slug.current == $slug][0]{
         title,
+        overview,
         slug,
         date,
         description,
@@ -22,6 +23,7 @@ export async function getArticles(): Promise<Article[]> {
   return await client.fetch(`
     *[_type=='article'] | order(date desc){
       title,
+      overview,
       slug,
       date,
       description,

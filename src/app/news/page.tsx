@@ -10,6 +10,7 @@ export default async function Page() {
   const articles = await client.fetch(`
     *[_type=='article'] | order(date desc){
       title,
+      overview,
       slug,
       date,
       description,

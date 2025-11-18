@@ -2,6 +2,7 @@ import type { PortableTextBlock } from "@portabletext/types";
 
 export interface Article {
   title: string;
+  overview: string;
   slug: { 
     current: string; 
     _type?: "slug";

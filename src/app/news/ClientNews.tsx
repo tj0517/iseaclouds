@@ -7,6 +7,7 @@ import { Article } from "../types/article";
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from "@/sanity/lib/client";
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { ArrowRight } from "lucide-react";
 
 const playfair = Poppins({
   subsets: ["latin"],
@@ -30,8 +31,8 @@ export default function ClientNews({ articles, i }: Props) {
     <div className="overflow-x-hidden bg-amber-50 text-2xl lg:text-xl">
       <Menu />
       <div className="w-[80%] mx-auto max-w-[1400px] flex flex-col pt-20 text-left">
-      <h1 className="mb-20">Latest<br/> Articles</h1>
-      <div className="w-full flex flex-col gap-y-20 mb-">
+      <h1 className="mb-20 text-7xl">Latest<br/> Articles</h1>
+      <div className="w-full flex flex-col gap-y-14  mb-20">
         {articles.map((article, index) => (
           <div key={index} className="w-full">
           <div className="w-full h-0.5 bg-black mb-6"></div>
@@ -44,16 +45,20 @@ export default function ClientNews({ articles, i }: Props) {
                   alt={article.title}
                   width={600}
                   height={400}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover rounded-xl"
                 />
             </Link>
 }
             </div>
-            <div className="w-2/3 flex flex-col">
-              <Link href={`/news/${article.slug.current}`} className="hover:underline w-1/2">
-                <h3 className={`text-4xl mb-4 font-thin ${playfair.className} `}>{article.title}</h3>
+            <div className="w-1/3 flex flex-col pl-4">
+                <h3 className={`text-4xl mb-4 font-thin underline `}>{article.title}</h3>
+              <p className="text-[16px]">{article.overview}</p>
+              <div className="mt-auto text-[14px] font-bold">{article.date}</div>
+            </div>
+            <div className="w-1/3 pl-6 flex justify-end ">
+              <Link href={`/news/${article.slug.current}`} className="text-lg underline">
+                <ArrowRight className="w-10 h-10 text-cyan-900"/>
               </Link>
-              <p className="text-[16px] w-1/2">{article.description}</p>
             </div>
           </div>  
 

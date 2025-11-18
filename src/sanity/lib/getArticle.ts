@@ -13,6 +13,7 @@ export async function getArticle(slug: string) {
   return await client.fetch(
     `*[_type == "article" && slug.current == $slug][0]{
       title,
+      overview,
       date,
       description,
       content,

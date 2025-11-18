@@ -1,4 +1,5 @@
 import { getArticle } from "./query";
+import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Menu from "@/app/components/menu";
 import Footer from "@/app/components/footer";
@@ -8,6 +9,7 @@ import { Poppins } from "next/font/google";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/lib/client";
+import { ArrowLeft } from "lucide-react";
 
 
 const poppins = Poppins({
@@ -59,12 +61,17 @@ export default async function ArticlePage(
       </div>
     </div>
     <div className="h-[75px] lg:h-[125px] mt-auto rounded-4xl  w-3 bg-cyan-900  border-4 border-cyan-900"></div>
+    <div className="w-1/2 flex flex-row justify-end">
+    <Link href="/news" className="flex flex-row gap-x-2 text-cyan-900 hover:underline mt-4">
+      <ArrowLeft size={60} />
+    </Link>   
+    </div>
   </div>
 
 
       {/* CONTENT */}
       <div className="w-full  pt-30 flex flex-col mb-20 gap-y-10">
-        <div>{article.description}</div>
+        <div> {article.description}</div>
               <div className="md:h-[450px] aspect-video w-full relative">
           {article.photo && (
             <Image
@@ -82,8 +89,8 @@ export default async function ArticlePage(
   value={article.content}
   components={{
     block: {
-      h1: ({children}) => <h1 className="text-3xl font-bold">{children}</h1>,
-      h2: ({children}) => <h2 className="text-4xl font-black pb-6">{children}</h2>,
+      h1: ({children}) => <h1 className=" font-bold">{children}</h1>,
+      h2: ({children}) => <h2 className="font-black pb-6">{children}</h2>,
       normal: ({children}) => <p className="my-2">{children}</p>,
     },
     list: {
