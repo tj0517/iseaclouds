@@ -156,6 +156,16 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
           className="object-cover"
         />
       </div>
+
+   <div className="hidden md:block absolute top-0 left-0 -translate-x-2/3 -translate-y-1/3 opacity-70 z-0 rotate-90">
+        <Image 
+          src="/bg-2.svg"
+          alt="Bg donut"
+          width={800}
+          height={800}
+          className="object-cover"
+        />
+      </div>
   <div className="w-full flex flex-row justify-between border-b-2 border-black pb-4 mb-10 md:mb-20 z-10">
     <h2 className="text-cyan-900 text-2xl md:text-3xl lg:text-4xl">Last<br/> Projects</h2>
   </div>
@@ -236,6 +246,15 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
           className="object-cover"
         />
       </div>
+         <div className="hidden md:block absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 opacity-70 z-0 rotate-180">
+        <Image 
+          src="/bg-2.svg"
+          alt="Bg donut"
+          width={800}
+          height={800}
+          className="object-cover"
+        />
+      </div>
         <h2 className="text-center text-cyan-900 z-10">Why us?</h2>
         <div className="w-full flex flex-row flex-wrap pb-9 justify-between mt-10 md:mt-20 text-[12px] md:text-[14px] xl:text-[16px] gap-y-10 z-10">
           {items.map((item, index) => (
@@ -264,6 +283,15 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 
      <div className="w-full max-w-[1500px] mx-auto px-[7.5%] py-16 pb-24 flex lg:flex-row flex-col justify-between overflow-clip  relative">
       <div className=" absolute top-0 left-0 -translate-x-1/3 -translate-y-1/2 opacity-70 z-0 rotate-90">
+        <Image 
+          src="/bg-2.svg"
+          alt="Bg donut"
+          width={800}
+          height={800}
+          className="object-cover"
+        />
+      </div>
+        <div className="hidden md:block absolute bottom-0 right-0 translate-y-1/3 opacity-70 z-0 rotate-180">
         <Image 
           src="/bg-2.svg"
           alt="Bg donut"
