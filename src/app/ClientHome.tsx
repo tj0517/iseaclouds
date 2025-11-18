@@ -117,10 +117,11 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
             <div className="lg:w-[70%] text-center lg:text-left mt-12 lg:mt-8 xl:mt-15 text-amber-50 font-light text-lg xl:text-xl 2xl:w-[50%]">
               Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.
             </div>
-
+            <Link  href="/offer">
             <div className="p-4 bg-cyan-900 text-white w-[40%] ml-[30%] lg:ml-0 mt-12 lg:mt-16 text-center hover:cursor-pointer hover:text-cyan-900 hover:bg-amber-50">
-              <Link href="/offer">Explore</Link>
+              Explore
             </div>
+            </Link>
 
             <div className="w-[30%] lg:w-[10%] ml-[35%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]">
               <a href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
