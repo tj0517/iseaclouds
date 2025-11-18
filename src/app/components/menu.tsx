@@ -28,7 +28,6 @@ export default function Menu() {
       <div className="hidden md:flex flex-row gap-6 text-amber-50 font-light xl:text-xl items-center">
   <div><Link className="hover:text-cyan-900" href="/">Home</Link></div>
             <div><Link className="hover:text-cyan-900" href="/projects/baltica2-wind">Projects</Link></div>
-            <div><Link className="hover:text-cyan-900" href="/courses">Courses</Link></div>
             <div><Link className="hover:text-cyan-900" href="/news">News</Link></div>
             <div><Link className="hover:text-cyan-900" href="/offer">Offer</Link></div>
             <div><Link className="hover:text-cyan-900" href="/about_us">About us</Link></div>

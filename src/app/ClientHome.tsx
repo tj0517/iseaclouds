@@ -111,7 +111,6 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
           <div className="w-[80%] xl:w-[75%] 2xl:w-[60%] ml-[15%] xl:ml-[20%] mt-10 hidden lg:flex flex-row justify-between font-light text-lg md:text-[16px] xl:text-[17px] text-amber-50">
             <div><Link className="hover:text-cyan-900" href="/">Home</Link></div>
             <div><Link className="hover:text-cyan-900" href="/projects/baltica2-wind">Projects</Link></div>
-            <div><Link className="hover:text-cyan-900" href="/courses">Courses</Link></div>
             <div><Link className="hover:text-cyan-900" href="/news">News</Link></div>
             <div><Link className="hover:text-cyan-900" href="/offer">Offer</Link></div>
             <div><Link className="hover:text-cyan-900" href="/about_us">About us</Link></div>
