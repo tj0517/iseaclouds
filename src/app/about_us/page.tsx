@@ -54,9 +54,9 @@ export default function Home() {
       
       {/* Hero */}
       <div className="w-full flex flex-col sm:flex-row bg-amber-50 pt-10 px-[10%] pb-10">
-        <h2 className="text-cyan-900 w-full sm:w-[40%] text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-4 sm:mb-0 sm:mr-10">
+        <h1 className="text-cyan-900 w-full sm:w-[40%] text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-thin mb-4 sm:mb-0 sm:mr-10 underline">
           About us
-        </h2>
+        </h1>
         <div className="text-black w-full sm:w-1/2 text-xs sm:text-base xl:text-[18px] mt-4 sm:mt-20">
           At Sea Clouds Engineering Solutions, we specialize in Integrated Engineering Services for the Offshore Oil & Gas and Wind Farm sectors, delivering innovative solutions with a commitment to quality, safety, and sustainability.
         </div>
@@ -78,9 +78,9 @@ export default function Home() {
               </div>
 
               <div className="w-full md:w-[45%] flex flex-col sm:flex-row md:flex-col lg:w-[40%] sm:pl-5 md:pl-0 lg:pl-12 xl:pl-16 pt-5 lg:pt-12 order-1 md:order-2">
-                  <h2 className="text-cyan-900 w-full sm:w-[45%] md:w-full text-3xl xl:text-4xl font-bold text-center sm:text-left md:text-center lg:text-left mt-4 sm:mt-4">
+                  <h3 className="text-cyan-900 w-full sm:w-[45%] md:w-full text-3xl xl:text-4xl font-thin underline text-center sm:text-left md:text-center lg:text-left mt-4 sm:mt-4">
                   {offer.title}
-                </h2>
+                </h3>
                 <ul className="list-none w-[80%] sm:w-[45%] md:w-[70%] lg:w-[80%] mx-auto sm:mx-0 md:mx-auto lg:pl-4 space-y-1 mt-6 sm:mt-20 md:mt-12 lg:mt-8 italic text-sm md:text-[13px] lg:text-[15px] xl:text-[17px] mb-6 md:mb-0 text-center sm:text-left md:text-center lg:text-left pb-4">
                   {offer.description.map((item, i) => (
                     <li key={i} className="mb-4 md:mb-3 lg:mb-4">
@@ -105,9 +105,9 @@ export default function Home() {
                 </div>
 
                 <div className="w-full md:w-[45%] flex flex-col sm:flex-row md:flex-col lg:w-[40%] sm:pl-5 md:pl-0 lg:pl-12 xl:pl-16 pt-5 lg:pt-12 order-1 md:order-1">
-                  <h2 className="text-cyan-900 w-full sm:w-[45%] md:w-full text-3xl xl:text-4xl font-bold text-center sm:text-left md:text-center lg:text-left mt-4 sm:mt-4">
+                  <h3 className="text-cyan-900 w-full sm:w-[45%] md:w-full text-3xl xl:text-4xl font-thin underline text-center sm:text-left md:text-center lg:text-left mt-4 sm:mt-4">
                     {offers[index + 1].title}
-                  </h2>
+                  </h3>
                   <ul className="list-none w-[80%] sm:w-[45%] md:w-[70%] lg:w-[80%] mx-auto sm:mx-0 md:mx-auto lg:pl-4 space-y-1 mt-6 sm:mt-20 md:mt-12 lg:mt-8 italic text-sm md:text-[13px] lg:text-[15px] xl:text-[17px] mb-6 md:mb-0 text-center sm:text-left md:text-center lg:text-left pb-4">
                     {offers[index + 1].description.map((item, i) => (
                       <li key={i} className="mb-4 md:mb-3 lg:mb-4">

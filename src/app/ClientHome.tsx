@@ -145,15 +145,24 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 
       {/* Sekcje About, Stats, Courses, Why Us */}
      <StatsSection stats={stats} />
-    <div className="w-full bg-sky-50">
+    <div className="w-full -50">
 <div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto flex flex-col py-8 md:py-10 relative  pb-20 md:pb-30">
   {/* Nagłówek sekcji */}
-  <div className="w-full flex flex-row justify-between border-b-2 border-black pb-4 mb-10 md:mb-20">
+   <div className=" absolute top-0 right-0 translate-x-1/3 -translate-y-1/2 opacity-70 z-0 rotate-90">
+        <Image 
+          src="/bg-2.svg"
+          alt="Bg donut"
+          width={800}
+          height={800}
+          className="object-cover"
+        />
+      </div>
+  <div className="w-full flex flex-row justify-between border-b-2 border-black pb-4 mb-10 md:mb-20 z-10">
     <h2 className="text-cyan-900 text-2xl md:text-3xl lg:text-4xl">Last<br/> Projects</h2>
   </div>
 
   {/* Główna zawartość */}
-  <div className="w-full flex flex-col pt-8 md:pt-10 relative">
+  <div className="w-full flex flex-col pt-8 md:pt-10 relative z-10">
     {/* Linia pionowa - ukryj na mobile */}
     <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-2 h-full bg-cyan-900 rounded-t-2xl z-10"></div>
     
@@ -203,6 +212,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 
     {/* Dolny wiersz - "Wait for more" */}
     <div className="w-full h-auto md:h-56 hidden lg:flex flex-col lg:flex-row z-20 mt-8 md:mt-0">
+      
       <div className="w-full lg:w-[40%] order-2 lg:order-1"></div>
       
       <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-center h-auto lg:h-full items-center lg:items-end order-1 lg:order-2 mb-4 lg:mb-0">
@@ -218,6 +228,15 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 </div>
 
         <div className="w-full px-[7.5%] max-w-[1500px] mx-auto  flex flex-col py-10 relative">
+           <div className=" absolute top-0 left-0 -translate-x-2/3 -translate-y-1/3 opacity-70 z-0 rotate-90">
+        <Image 
+          src="/bg-2.svg"
+          alt="Bg donut"
+          width={800}
+          height={800}
+          className="object-cover"
+        />
+      </div>
         <h2 className="text-center text-cyan-900 z-10">Why us?</h2>
         <div className="w-full flex flex-row flex-wrap pb-9 justify-between mt-10 md:mt-20 text-[12px] md:text-[14px] xl:text-[16px] gap-y-10 z-10">
           {items.map((item, index) => (

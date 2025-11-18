@@ -123,10 +123,10 @@ export default function ClientOffer() {
         <h2
           className={`${playfair.className} text-cyan-900 w-full text-3xl sm:text-5xl xl:text-6xl font-bold mr-10 sm:mr-0`}
         >
-          Our Offer
+          Our<br/> Offer
         </h2>
         <motion.div
-          className="text-black mt-20 text-[14px] sm:text-[16px]   lg:text-[18px]"
+          className="text-black mt-32  sm:mt-36 lg:mt-48 text-[14px] sm:text-[16px]   lg:text-[18px]"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
