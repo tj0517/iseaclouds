@@ -109,13 +109,13 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 
         <div className="lg:bg-gray-400 lg:w-[55%] w-full absolute lg:relative h-full">
           <div className="w-[80%] xl:w-[75%] 2xl:w-[60%] ml-[15%] xl:ml-[20%] mt-10 hidden lg:flex flex-row justify-between font-light text-lg md:text-[16px] xl:text-[17px] text-amber-50">
-            <div><Link className="hover:text-black" href="/">Home</Link></div>
-            <div><Link className="hover:text-black" href="/projects/baltica2-wind">Projects</Link></div>
-            <div><Link className="hover:text-black" href="/courses">Courses</Link></div>
-            <div><Link className="hover:text-black" href="/news">News</Link></div>
-            <div><Link className="hover:text-black" href="/offer">Offer</Link></div>
-            <div><Link className="hover:text-black" href="/about_us">About us</Link></div>
-            <div><Link className="hover:text-black" href="/contact">Contact us</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/">Home</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/projects/baltica2-wind">Projects</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/courses">Courses</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/news">News</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/offer">Offer</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/about_us">About us</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/contact">Contact us</Link></div>
           </div>
 
           <div className="ml-auto mr-auto lg:ml-[15%] xl:ml-[20%] w-[75%] sm:w-[60%] lg:w-full">
@@ -222,7 +222,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
         <div className="w-full flex flex-row flex-wrap pb-9 justify-between mt-10 md:mt-20 text-[12px] md:text-[14px] xl:text-[16px] gap-y-10 z-10">
           {items.map((item, index) => (
             <div key={index} className="w-[47.5%] lg:w-[20%] flex flex-col text-center  lg:mb-0">
-              <div className="text-black text-2xl md:text-3xl xl:text-3xl font-light pb-7 border-b-2 border-b-cyan-900 whitespace-pre-line">{item.title}</div>
+              <div className="text-cyan-900 text-2xl md:text-3xl xl:text-3xl font-light pb-7 border-b-2 border-b-cyan-900 whitespace-pre-line">{item.title}</div>
               <div className="italic mt-6 xl:mt-10 text-stone-600">{item.text}</div>
             </div>
           ))}
@@ -256,7 +256,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
       </div>
         <div className="flex-col w-[90%] ml-auto mr-auto xl:mr-0 xl:ml-0 lg:w-[45%] text-center lg:text-left z-10" >
           <h4 className="text-4xl md:text-5xl text-cyan-900 font-thin underline">Master Offshore Skills with SeaClouds Courses</h4>
-          <div className="text-base sm:text-lg text-black font-light mt-10 md:mt-6 xl:mt-10 2xl:leading-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
+          <div className="text-base sm:text-lg text-cyan-900 font-light mt-10 md:mt-6 xl:mt-10 2xl:leading-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
           Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
           </div>
           <div className="bg-cyan-900 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer hover:bg-gray-400">

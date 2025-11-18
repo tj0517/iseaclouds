@@ -176,13 +176,13 @@ export default function ClientOffer() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2
+        <h3
           className={`${playfair.className} text-cyan-900  
           md:w-1/3 lg:w-full text-4xl lg:text-3xl xl:text-4xl 
-          font-bold text-center md:text-left mt-10 md:mt-0`}
+          font-thin text-center md:text-left mt-10 md:mt-0 underline`}
         >
           {offer.title}
-        </h2>
+        </h3>
 
         <motion.ul
           className="list-none md:list-disc md:pl-6 space-y-1 mt-10 md:mt-20 lg:mt-10 italic 

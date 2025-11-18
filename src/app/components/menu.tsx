@@ -26,13 +26,13 @@ export default function Menu() {
 
       {/* Desktop menu */}
       <div className="hidden md:flex flex-row gap-6 text-amber-50 font-light xl:text-xl items-center">
-        <Link href="/">Home</Link>
-        <Link href="/projects/baltica2-wind">Projects</Link>
-        <Link href="/courses">Courses</Link>
-        <Link href="/news">News</Link>
-        <Link href="/offer">Offer</Link>
-        <Link href="/about_us">About us</Link>
-        <Link href="/contact">Contact us</Link>
+  <div><Link className="hover:text-cyan-900" href="/">Home</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/projects/baltica2-wind">Projects</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/courses">Courses</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/news">News</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/offer">Offer</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/about_us">About us</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/contact">Contact us</Link></div>
       </div>
 
       {/* Mobile hamburger */}
