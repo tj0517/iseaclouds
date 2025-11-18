@@ -25,4 +25,9 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
+   api: {
+    projectId: 'ximk90it', // twój projectId
+    dataset: 'production',
+    token: process.env.SANITY_API_TOKEN, // dodaj tę linię
+  }
 })
