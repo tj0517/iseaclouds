@@ -31,7 +31,7 @@ export default function ClientNews({ articles, i }: Props) {
     <div className="overflow-x-hidden bg-amber-50 text-2xl lg:text-xl">
       <Menu />
       <div className="w-[80%] mx-auto max-w-[1400px] flex flex-col pt-20 text-left">
-      <h1 className="mb-20 text-7xl">Latest<br/> Articles</h1>
+      <h1 className="mb-10 md:mb-20 text-5xl md:text-7xl">Latest<br/> Articles</h1>
       <div className="w-full flex flex-col gap-y-6 md:gap-y-14  mb-20">
         {articles.map((article, index) => (
           <div key={index} className="w-full">
