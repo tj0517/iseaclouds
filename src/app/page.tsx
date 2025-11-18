@@ -4,8 +4,6 @@ import { FaCalendarAlt, FaBuilding, FaShip, FaClock } from "react-icons/fa";
 import type { Metadata } from "next";
 
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["200", "400", "500", "700"], variable: "--font-poppins" });
-
 export const metadata = {
   title: "Sea Clouds",
   description: "Sea Clouds delivers expert offshore engineering solutions and technical advisory for Oil & Gas and Wind Farm projects, emphasizing safety and innovation.",
@@ -39,7 +37,7 @@ export default function Home() {
 
 
   return (
-    <div className={`${poppins.className} bg-amber-50`}>
+    <div>
       <ClientHome stats={stats} items={items}  />
     </div>
   );
