@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProject} from "./query";
+import { getProject} from "@/sanity/lib/getProject";
 import Menu from "@/app/components/menu";
 import Footer from "@/app/components/footer";
 import { Poppins } from 'next/font/google';

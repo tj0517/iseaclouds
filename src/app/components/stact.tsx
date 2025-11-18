@@ -1,7 +1,6 @@
 "use client";
 import {JSX} from "react";
-import { useEffect, useRef } from 'react';
-import { useGSAP } from '@gsap/react';
+import Image from "next/image";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
   
@@ -24,9 +23,21 @@ export default function StatsSection({ stats }: StatsSectionProps) {
 
 
  return (
-  <div className="main h-auto max-w-[1500px] mx-auto overflow-clip w-full py-10 px-[5%] sm:px-[7.5%] flex flex-col lg:flex-row justify-between flex-wrap">
+  <div className="main h-auto max-w-[1500px] mx-auto overflow-clip w-full py-10 px-[5%] sm:px-[7.5%] flex flex-col lg:flex-row justify-between flex-wrap pb-10 md:pb-20 lg:pb-30 relative">
+
+<div className=" absolute top-0 left-0 -translate-x-1/4 -translate-y-1/3 opacity-70 z-0">
+  <Image 
+    src="/bg-2.svg"
+    alt="Bg donut"
+    width={800}
+    height={800}
+    className="object-cover"
+  />
+</div>
+
+
     {/* Left content */}
-    <div className="content_box w-full lg:w-[55%] flex flex-col mb-10 lg:mb-0">
+    <div className="content_box w-full lg:w-[55%] flex flex-col z-10">
       <h2 className="w-full text-4xl sm:text-5xl xl:text-7xl font-light text-cyan-900">
         About us
       </h2>
@@ -40,7 +51,7 @@ export default function StatsSection({ stats }: StatsSectionProps) {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="stat-item w-full flex flex-col py-4 sm:py-6 px-6 sm:px-10 border border-stone-600 rounded-2xl text-[14px] sm:text-[16px] bg-amber-50"
+          className="stat-item w-full flex flex-col py-4 sm:py-6 px-6 sm:px-10 rounded-2xl text-[14px] sm:text-[16px] bg-amber-50 border-1"
           style={{ zIndex: 10 + index * 10 }}
         >
           <div className="w-full flex flex-row items-center gap-4 sm:gap-8 h-16">

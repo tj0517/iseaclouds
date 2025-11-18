@@ -1,17 +1,18 @@
 "use client";
 
-import { JSX, use } from "react";
-import { useEffect, useRef,useLayoutEffect } from 'react';
-import { useGSAP } from '@gsap/react';
+import { JSX } from "react";
+import {  useRef,useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaCalendarAlt, FaBuilding, FaShip, FaClock } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn} from "react-icons/fa";
+import { GoArrowUpRight } from "react-icons/go";
 import Menu from "./components/menu";
 import Footer from "./components/footer";
 import { courses } from "@/data/courses";
 import StatsSection from "./components/stact";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -45,13 +46,21 @@ interface Item {
 interface ClientHomeProps {
   stats: Stat[];
   items: Item[];
+   project?: {  // Dodaj ? aby było optional
+    title: string;
+    industry: string;
+    slug: string;
+    location: string;
+    date: string;
+    photo: string;
+  };
 }
 
 
 
-export default function ClientHome({ stats, items}: ClientHomeProps) {
+export default function ClientHome({ stats, items,project}: ClientHomeProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
-
+  
   // pomocnicza funkcja — określa, ile części sekcji jest widoczne w oknie
   const getRatio = (el: HTMLElement) => {
     return window.innerHeight / (window.innerHeight + el.offsetHeight);
@@ -99,18 +108,18 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
         </div>
 
         <div className="lg:bg-gray-400 lg:w-[55%] w-full absolute lg:relative h-full">
-          <div className="w-[80%] xl:w-[75%] 2xl:w-[60%] ml-[15%] xl:ml-[20%] mt-10 hidden lg:flex flex-row justify-between text-amber-50 font-light text-lg md:text-[16px] xl:text-[17px]">
-            <div><Link href="/">Home</Link></div>
-            <div><Link href="/projects/baltica2-wind">Projects</Link></div>
-            <div><Link href="/courses">Courses</Link></div>
-            <div><Link href="/news">News</Link></div>
-            <div><Link href="/offer">Offer</Link></div>
-            <Link href="/about_us">About us</Link>
-            <div><Link href="/contact">Contact us</Link></div>
+          <div className="w-[80%] xl:w-[75%] 2xl:w-[60%] ml-[15%] xl:ml-[20%] mt-10 hidden lg:flex flex-row justify-between font-light text-lg md:text-[16px] xl:text-[17px] text-amber-50">
+            <div><Link className="hover:text-black" href="/">Home</Link></div>
+            <div><Link className="hover:text-black" href="/projects/baltica2-wind">Projects</Link></div>
+            <div><Link className="hover:text-black" href="/courses">Courses</Link></div>
+            <div><Link className="hover:text-black" href="/news">News</Link></div>
+            <div><Link className="hover:text-black" href="/offer">Offer</Link></div>
+            <div><Link className="hover:text-black" href="/about_us">About us</Link></div>
+            <div><Link className="hover:text-black" href="/contact">Contact us</Link></div>
           </div>
 
           <div className="ml-auto mr-auto lg:ml-[15%] xl:ml-[20%] w-[75%] sm:w-[60%] lg:w-full">
-            <h1 className="text-cyan-600 lg:text-cyan-900 w-full lg:w-[70%] text-center lg:text-left text-4xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:w-[50%] font-light mt-16 md:mt-24 lg:mt-16">
+            <h1 className="text-cyan-700 lg:text-cyan-900 w-full lg:w-[70%] text-center lg:text-left text-4xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-6xl 2xl:w-[50%] font-light mt-16 md:mt-24 lg:mt-16 underline">
               Navigating Offshore Excellence
             </h1>
 
@@ -136,13 +145,83 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
 
       {/* Sekcje About, Stats, Courses, Why Us */}
      <StatsSection stats={stats} />
+    <div className="w-full bg-sky-50">
+<div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto flex flex-col py-8 md:py-10 relative  pb-20 md:pb-30">
+  {/* Nagłówek sekcji */}
+  <div className="w-full flex flex-row justify-between border-b-2 border-black pb-4 mb-10 md:mb-20">
+    <h2 className="text-cyan-900 text-2xl md:text-3xl lg:text-4xl">Last<br/> Projects</h2>
+  </div>
 
+  {/* Główna zawartość */}
+  <div className="w-full flex flex-col pt-8 md:pt-10 relative">
+    {/* Linia pionowa - ukryj na mobile */}
+    <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-2 h-full bg-cyan-900 rounded-t-2xl z-10"></div>
+    
+    {/* Górny wiersz z projektem */}
+    <div className="w-full h-auto md:h-72 flex flex-col lg:flex-row z-20 gap-8 md:gap-0">
+      {/* Lewa karta - tekst */}
+      <div className="w-full lg:w-[40%] text-stone-800 rounded-xl lg:rounded-tr-[100px] px-6 py-6 md:px-10 md:py-10 flex flex-col gap-2 shadow-[-8px_8px_8px_-6px_rgba(0,_0,_0,_0.1)] md:shadow-[-14px_13px_8px_-6px_rgba(0,_0,_0,_0.1)] border-2 border-black bg-white order-1">
+        {project ? (
+          <>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-thin pr-4 md:pr-10 pb-4 xl:pb-8">{project.title}</h3>
+            <p className="font-bold text-sm md:text-base">{project.industry}</p>
+            <p className="font-bold text-sm md:text-base">{project.location}</p>
+            <p className="font-bold text-sm md:text-base">{project.date}</p>
+          </>
+        ) : (
+          <p>No project data available</p>
+        )}
+      </div>
 
-        <div className="w-full px-[7.5%] max-w-[1500px] mx-auto  flex flex-col pt-10 pb-10 ">
-        <h2 className="text-center">Why us?</h2>
-        <div className="w-full flex flex-row flex-wrap pb-9 justify-between mt-10 md:mt-20 text-[12px] md:text-[14px] xl:text-[16px] gap-y-10">
+      {/* Środkowa strzałka - zmiana pozycji na mobile */}
+      <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-center h-auto lg:h-full items-center order-3 lg:order-2 my-4 lg:my-0">
+        <div className="w-12 h-12 md:w-14 md:h-14 bg-cyan-900 rounded-full flex flex-row justify-center items-center text-amber-50 text-2xl md:text-3xl"> 
+          <Link href={`/projects/${project?.slug}`}>
+            <GoArrowUpRight strokeWidth={1.5} />
+          </Link>
+        </div>
+      </div>
+
+      {/* Prawa karta - zdjęcie */}
+      <div className="w-full lg:w-[40%] order-2 lg:order-3">
+        {project && project.photo ? (
+          <div className="w-full h-64 md:h-full relative rounded-xl lg:rounded-tr-[100px] overflow-clip shadow-[-8px_8px_8px_-6px_rgba(0,_0,_0,_0.1)] md:shadow-[-14px_13px_8px_-6px_rgba(0,_0,_0,_0.1)]">
+            <Image 
+              src={project.photo} 
+              alt={project.title} 
+              fill 
+              className="object-cover object-center hover:scale-105 transition-transform duration-300" 
+            />
+          </div>
+        ) : (
+          <div className="w-full h-64 bg-gray-200 rounded-xl flex items-center justify-center">
+            <p className="text-gray-500">No project image available</p>
+          </div>
+        )}
+      </div>
+    </div>
+
+    {/* Dolny wiersz - "Wait for more" */}
+    <div className="w-full h-auto md:h-56 hidden lg:flex flex-col lg:flex-row z-20 mt-8 md:mt-0">
+      <div className="w-full lg:w-[40%] order-2 lg:order-1"></div>
+      
+      <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-center h-auto lg:h-full items-center lg:items-end order-1 lg:order-2 mb-4 lg:mb-0">
+        <div className="hidden lg:flex  md:w-10 md:h-10 bg-cyan-900 rounded-full flex-row justify-center items-center text-white text-xl md:text-3xl"></div>
+      </div>
+      
+      <div className="w-full lg:w-[40%] flex flex-row justify-center lg:justify-start items-center lg:items-end text-xl md:text-3xl lg:text-5xl font-thin text-stone-900 underline order-3 text-center lg:text-left">
+        Wait for more
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+        <div className="w-full px-[7.5%] max-w-[1500px] mx-auto  flex flex-col py-10 relative">
+        <h2 className="text-center text-cyan-900 z-10">Why us?</h2>
+        <div className="w-full flex flex-row flex-wrap pb-9 justify-between mt-10 md:mt-20 text-[12px] md:text-[14px] xl:text-[16px] gap-y-10 z-10">
           {items.map((item, index) => (
-            <div key={index} className="w-[40%] lg:w-[20%] flex flex-col text-center  lg:mb-0">
+            <div key={index} className="w-[47.5%] lg:w-[20%] flex flex-col text-center  lg:mb-0">
               <div className="text-black text-2xl md:text-3xl xl:text-3xl font-light pb-7 border-b-2 border-b-cyan-900 whitespace-pre-line">{item.title}</div>
               <div className="italic mt-6 xl:mt-10 text-stone-600">{item.text}</div>
             </div>
@@ -165,38 +244,35 @@ export default function ClientHome({ stats, items}: ClientHomeProps) {
 </div>
 
 
-     <div className="w-full max-w-[1500px] mx-auto px-10 md:px-20 xl:px-30 py-16 flex lg:flex-row flex-col justify-between">
-        <div className="flex-col w-[80%] ml-auto mr-auto xl:mr-0 xl:ml-0 lg:w-[40%] text-center lg:text-left" >
-          <div className="text-4xl xl:text-5xl text-cyan-900 font-light">Master Offshore Skills with SeaClouds Courses</div>
-          <div className="text-[16px] 2xl:text-xl text-black font-light mt-10 md:mt-6 xl:mt-10 2xl:leading-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
+     <div className="w-full max-w-[1500px] mx-auto px-[7.5%] py-16 pb-24 flex lg:flex-row flex-col justify-between overflow-clip  relative">
+      <div className=" absolute top-0 left-0 -translate-x-1/3 -translate-y-1/2 opacity-70 z-0 rotate-90">
+        <Image 
+          src="/bg-2.svg"
+          alt="Bg donut"
+          width={800}
+          height={800}
+          className="object-cover"
+        />
+      </div>
+        <div className="flex-col w-[90%] ml-auto mr-auto xl:mr-0 xl:ml-0 lg:w-[45%] text-center lg:text-left z-10" >
+          <h4 className="text-4xl md:text-5xl text-cyan-900 font-thin underline">Master Offshore Skills with SeaClouds Courses</h4>
+          <div className="text-base sm:text-lg text-black font-light mt-10 md:mt-6 xl:mt-10 2xl:leading-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
           Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
           </div>
-          <div className="bg-cyan-900 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer">
+          <div className="bg-cyan-900 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer hover:bg-gray-400">
           <Link href="/courses">Check out</Link>
           </div>
         </div>
 
-        <div className="w-[90%] md:w-[80%] lg:w-[50%] ml-auto mr-auto md:mr-0 md:ml-[10%] lg:ml-0 xl:w-[42.5%] flex flex-row justify-between flex-wrap h-full mt-20 lg:mt-0">
+        <div className="w-[90%] md:w-[80%] lg:w-[40%] ml-auto mr-auto md:mr-0 md:ml-[10%] lg:ml-0 xl:w-[42.5%] flex flex-row justify-between flex-wrap h-full mt-10 lg:mt-auto gap-y-5">
           {courses.map((src, index) => (
-            <div key={index} className="w-[47.5%] aspect-square relative mb-5 rounded-3xl overflow-clip" >
+            <div key={index} className="w-[47.5%] aspect-square relative rounded-3xl overflow-clip shadow-2xl" >
               <Link href={`/courses/${src.slug}`}><Image src={`/courses/${src.image}`} alt={`Course ${index + 1}`} fill className="object-cover object-center grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300" /></Link>
             </div>
           ))}
         </div>
       </div>
 
-
-  
-
-
-
-
-   
-
-
-     
-
-   
 </div>
       <Footer />
     </div>
