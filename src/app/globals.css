@@ -21,13 +21,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-
-h1
-{/* base na mobile */
-  font-weight: 200;
-  color:black;
-}
-
 h2 {
   width: 100%; /* w-full */
   font-size: 2.5rem; /* base na mobile */
