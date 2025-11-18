@@ -55,22 +55,22 @@ export default function ClientContact() {
           fill
           className="object-cover object-top"
         />
-        <div className="top-[30%] text-center w-full absolute text-white text-7xl font-bold">
+        <div className="top-[30%] text-center w-full absolute text-white text-7xl font-thin">
           Contact us
-          <div className="w-[15%] ml-auto mr-auto h-[15px] bg-cyan-900 rounded-full mt-7"></div>
+          <div className="w-[10%] ml-auto mr-auto h-[10px] bg-cyan-900 rounded-full mt-7"></div>
         </div>
       </div>
 
-      <div className="w-full xl:px-10 bg-amber-50 py-16 flex flex-col">
-        <div className="text-cyan-900 xl:text-6xl text-5xl font-bold md:ml-[11%] ml-[8%]">
+      <div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto bg-amber-50 py-16 flex flex-col">
+        <div className="text-cyan-900 xl:text-6xl text-5xl font-thin underline">
           Get in touch
         </div>
 
-        <div className="w-[90%] ml-auto mr-auto flex flex-col md:flex-row justify-between gap-10 md:gap-0">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-10 md:gap-0 mt-8">
           {/* Formularz */}
-          <form className="w-full md:w-[45%] mx-auto p-6 space-y-4">
+          <form className="w-full md:w-[45%] space-y-4">
             <div className="xl:text-2xl text-xl font-bold text-black">Send a message</div>
-            <div className="flex flex-col md:flex-row md:justify-between mt-6 gap-4 md:gap-0">
+            <div className="flex flex-col md:flex-row md:justify-between mt-3 gap-4 md:gap-0">
               <input
                 type="text"
                 placeholder="name"
@@ -100,7 +100,7 @@ export default function ClientContact() {
           </form>
 
           {/* Mapka */}
-          <div className="w-full md:w-[45%] h-[300px] md:h-[400px]">
+          <div className="w-full md:w-[45%] h-[300px] md:h-[350px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2324.3261147804737!2d18.607646377024473!3d54.36888827260357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd748fc55ad289%3A0x68285da2d45be550!2sDo%20Studzienki%2063%2C%2080-227%20Gda%C5%84sk!5e0!3m2!1spl!2spl!4v1755259178668!5m2!1spl!2spl"
               className="w-full h-full border-0"
@@ -112,7 +112,7 @@ export default function ClientContact() {
         </div>
       </div>
 
-      <div className="bg-amber-50 px-[7.55%] pb-30 flex flex-col text-black">
+      <div className="bg-amber-50 w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto pb-30 flex flex-col text-black">
         <div className="text-5xl font-bold text-center mb-20 mt-20">
           Frequently asked questions
         </div>
