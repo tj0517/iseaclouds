@@ -32,12 +32,12 @@ export default function ClientNews({ articles, i }: Props) {
       <Menu />
       <div className="w-[80%] mx-auto max-w-[1400px] flex flex-col pt-20 text-left">
       <h1 className="mb-20 text-7xl">Latest<br/> Articles</h1>
-      <div className="w-full flex flex-col gap-y-14  mb-20">
+      <div className="w-full flex flex-col gap-y-6 md:gap-y-14  mb-20">
         {articles.map((article, index) => (
           <div key={index} className="w-full">
           <div className="w-full h-0.5 bg-black mb-6"></div>
-          <div className="w-full flex flex-row">
-            <div className="w-1/3 pr-6">
+          <div className="w-full flex flex-col md:flex-row">
+            <div className="w-full md:w-[45%] lg:w-1/3 md:pr-6">
             {article.photo&&
               <Link href={`/news/${article.slug.current}`}>
                 <Image
@@ -50,12 +50,12 @@ export default function ClientNews({ articles, i }: Props) {
             </Link>
 }
             </div>
-            <div className="w-1/3 flex flex-col pl-4">
-                <h3 className={`text-4xl mb-4 font-thin underline `}>{article.title}</h3>
-              <p className="text-[16px]">{article.overview}</p>
-              <div className="mt-auto text-[14px] font-bold">{article.date}</div>
+            <div className="w-3/4 md:w-[45%] lg:w-1/2 xl:w-1/3 flex flex-col lg:pl-4 mt-4 lg:mt-0 ">
+                <h3 className={`text-3xl lg:text-4xl mb-4 font-thin underline `}>{article.title}</h3>
+              <p className="text-[14px] md:hidden lg:block lg:text-[16px]">{article.overview}</p>
+              <div className="mt-4 text-[14px] font-bold md:mt-auto">{article.date}</div>
             </div>
-            <div className="w-1/3 pl-6 flex justify-end ">
+            <div className="w-fit ml-auto pl-6 flex justify-end ">
               <Link href={`/news/${article.slug.current}`} className="text-lg underline">
                 <ArrowRight className="w-10 h-10 text-cyan-900"/>
               </Link>

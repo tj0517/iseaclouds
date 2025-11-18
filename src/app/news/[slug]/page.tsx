@@ -50,7 +50,7 @@ export default async function ArticlePage(
       <Menu />
 
       {/* HERO */}
-      <div className="w-[75%] mx-auto max-w-[1300px]">
+      <div className="w-[75%] mx-auto max-w-[1200px]">
       <div className="flex flex-row w-full mt-20">
     <div className="h-full w-full md:w-[50%] flex flex-col">
       <h1 className="text-stone-800 text-5xl lg:text-7xl font-extralight">
