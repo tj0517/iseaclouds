@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {/* Hero Section */}
       <div className="w-[85%] mx-auto max-w-[1400px]">
       <div className="w-full  flex flex-col lg:flex-row justify-between my-10 lg:my-20 gap-8 lg:gap-0">
-        <div className="w-full lg:w-[45%] text-left flex flex-col text-lg sm:text-[20px] xl:text-2xl">
+        <div className="w-full lg:w-[42.5%] text-left flex flex-col text-[14px] sm:text-base xl:text-[18px]">
           <h1 className="text-2xl sm:text-5xl xl:text-6xl font-thin pt-2 text-cyan-900 w-full lg:w-[70%] underline">
             {project.title}
           </h1>
@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             Year: <span className="font-black">{project.year}</span>
           </div>
         </div>
-        <div className="w-full lg:w-[47.5%] aspect-video relative mt-6 lg:mt-0 shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
+        <div className="w-full lg:w-[55%] aspect-video relative mt-6 lg:mt-0 shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
           <Image
             src={project.photo}
             alt={project.title}
