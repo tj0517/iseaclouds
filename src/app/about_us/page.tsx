@@ -75,8 +75,8 @@ export default function Home() {
             key={index} 
             className={`w-full sm:w-[90%] lg:w-[47%] mx-auto lg:mx-0 flex flex-col gap-y-6 px-6 sm:px-8 py-8 border-2 border-cyan-900 rounded-4xl ${
               index % 2
-                ? "shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(5,51,69)]"
-                : "shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[12px_12px_0px_0px_rgba(5,51,69)]"
+                ? "shadow-[-12px_12px_0px_0px_rgba(5,51,69)]"
+                : "shadow-[-12px_12px_0px_0px_rgba(5,51,69)] md:shadow-[12px_12px_0px_0px_rgba(5,51,69)]"
             }`}
           >
             <h3 className="text-cyan-900 text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-thin text-center md:text-left mt-6 md:mt-0 underline">
