@@ -86,7 +86,7 @@ export default function Home() {
             </h3>
             <div className="w-full flex flex-col gap-y-4 items-center md:items-end">
               {offer.description.map((parent, id) => (
-                <p className="text-[14px] sm:text-base xl:text-[18px] w-full sm:w-2/3" key={id}>
+                <p className="text-[14px] sm:text-base xl:text-[18px] w-3/4 sm:w-2/3 text-center md:text-left" key={id}>
                   {parent}
                 </p>
               ))}
