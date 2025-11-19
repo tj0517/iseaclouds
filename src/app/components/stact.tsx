@@ -25,16 +25,6 @@ export default function StatsSection({ stats }: StatsSectionProps) {
  return (
   <div className="main h-auto max-w-[1500px] mx-auto overflow-clip w-full py-10 px-[5%] sm:px-[7.5%] flex flex-col lg:flex-row justify-between flex-wrap pb-10 md:pb-20 lg:pb-30 relative">
 
-<div className=" absolute top-0 left-0 -translate-x-1/4 -translate-y-1/3 opacity-70 z-0">
-  <Image 
-    src="/bg-2.svg"
-    alt="Bg donut"
-    width={800}
-    height={800}
-    className="object-cover"
-  />
-</div>
-
 
     {/* Left content */}
     <div className="content_box w-full lg:w-[55%] flex flex-col z-10">
