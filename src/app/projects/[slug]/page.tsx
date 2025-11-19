@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             Year: <span className="font-black">{project.year}</span>
           </div>
         </div>
-        <div className="w-full lg:w-[55%] aspect-video relative mt-6 lg:mt-0 shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
+        <div className="w-full lg:w-[55%] aspect-video relative mt-6 lg:mt-0 shadow-[-8px_8px_0px_0px_rgba(5,51,69)] md:shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
           <Image
             src={project.photo}
             alt={project.title}
@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <div className="w-full flex-col pb-10 lg:pb-20">
 
   {/* Project Overview */}
-  <div className="w-full px-5 sm:px-10 py-8 sm:py-10 flex flex-col lg:flex-row border-2 border-black gap-6 lg:gap-0 shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
+  <div className="w-full px-5 sm:px-10 py-8 sm:py-10 flex flex-col lg:flex-row border-2 border-black gap-6 lg:gap-0 shadow-[-8px_8px_0px_0px_rgba(5,51,69)] md:shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
     <div className="w-full lg:w-[40%]">
       <div className="text-2xl sm:text-3xl lg:text-4xl font-bold">Project Overview</div>
     </div>
@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   {/* Scope & Deliverables */}
   <div className="w-full flex flex-col lg:flex-row justify-between mt-10 lg:mt-20 text-left gap-6 lg:gap-0">
-    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
+    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(5,51,69)] md:shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
       <div className="text-2xl sm:text-3xl lg:text-4xl font-bold">Scope of Work</div>
       <div className="mt-6 lg:mt-10 text-sm sm:text-base w-full lg:w-[80%]">
         <ul className="list-disc list-inside space-y-2">
@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </ul>
       </div>
     </div>
-    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
+    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(5,51,69)] md:shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
       <div className="text-2xl sm:text-3xl lg:text-4xl font-bold">Deliverables</div>
       <div className="mt-6 lg:mt-10 text-sm sm:text-base w-full lg:w-[80%]">
         <ul className="list-disc list-inside space-y-2">
@@ -103,7 +103,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   {/* Collaboration & Project Scale */}
   <div className="w-full flex flex-col lg:flex-row justify-between mt-10 lg:mt-20 text-left gap-6 lg:gap-0">
-    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
+    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(5,51,69)] md:shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
       <div className="text-2xl sm:text-3xl lg:text-4xl font-bold">Collaboration</div>
       <div className="mt-6 lg:mt-10 text-sm sm:text-base w-full lg:w-[80%]">
         <ul className="list-disc list-inside space-y-2">
@@ -113,7 +113,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </ul>
       </div>
     </div>
-    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.1)] md:shadow-[-12px_12px_0px_0px_rgba(0,0,0,0.1)]">
+    <div className="w-full lg:w-[47.5%] px-5 sm:px-10 py-8 sm:py-10 border-2 border-black shadow-[-8px_8px_0px_0px_rgba(5,51,69)] md:shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
       <div className="text-2xl sm:text-3xl lg:text-4xl font-bold">Project Scale</div>
       <div className="mt-6 lg:mt-10 text-sm sm:text-base w-full lg:w-[80%]">
         <ul className="list-disc list-inside space-y-2">

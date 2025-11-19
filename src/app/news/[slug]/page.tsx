@@ -90,7 +90,7 @@ export default async function ArticlePage(
   components={{
     block: {
       h1: ({children}) => <h1 className=" font-bold">{children}</h1>,
-      h2: ({children}) => <h2 className="font-black pb-6">{children}</h2>,
+      h2: ({children}) => <h3 className="font-black pb-6">{children}</h3>,
       normal: ({children}) => <p className="my-2">{children}</p>,
     },
     list: {

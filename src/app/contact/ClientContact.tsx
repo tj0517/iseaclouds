@@ -49,22 +49,22 @@ export default function ClientContact() {
       {/* Background image */}
       <div className="w-full xl:h-[50vh] h-[50vh] relative">
         <Image
-          src="/contact/contact_bg.jpg"
+          src="/offer/offer5.jpg"
           alt="contact background"
           priority={true}
           fill
-          className="object-cover object-top"
+          className="object-cover object-centre opacity-100 brightness-40"
         />
-        <div className="top-[30%] text-center w-full absolute text-white text-7xl font-thin">
+        <div className="top-[20%] text-center w-full absolute text-white text-7xl font-thin">
           Contact us
           <div className="w-[10%] ml-auto mr-auto h-[10px] bg-cyan-900 rounded-full mt-7"></div>
         </div>
       </div>
 
       <div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto bg-amber-50 py-16 flex flex-col">
-        <div className="text-cyan-900 xl:text-6xl text-5xl font-thin underline">
+        <h2 className="text-cyan-900 xl:text-6xl text-5xl font-thin underline">
           Get in touch
-        </div>
+        </h2>
 
         <div className="w-full flex flex-col md:flex-row justify-between gap-10 md:gap-0 mt-8">
           {/* Formularz */}
@@ -113,9 +113,9 @@ export default function ClientContact() {
       </div>
 
       <div className="bg-amber-50 w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto pb-30 flex flex-col text-black">
-        <div className="text-5xl font-bold text-center mb-20 mt-20">
+        <h2 className="text-cyan-900 text-center mb-10">
           Frequently asked questions
-        </div>
+        </h2>
         {faqs.map((faq, index) => {
           const isActive = activeIndex === index;
           return (

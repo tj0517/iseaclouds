@@ -63,7 +63,7 @@ export default function Home() {
         <h2 className="text-cyan-900 w-full lg:w-1/3 underline text-2xl lg:text-4xl">
           About us
         </h2>
-        <div className="text-black w-full lg:w-2/3 text-[14px] sm:text-base xl:text-[18px] mt-4 lg:mt-0">
+        <div className="text-black w-full lg:w-2/3 text-[14px] sm:text-base xl:text-[18px] mt-4 lg:mt-30 xl:mt-36">
           At Sea Clouds Engineering Solutions, we specialize in Integrated Engineering Services for the Offshore Oil & Gas and Wind Farm sectors, delivering innovative solutions with a commitment to quality, safety, and sustainability.
         </div>
       </div>
@@ -96,7 +96,7 @@ export default function Home() {
       </div>
 
       {/* Sekcja Our Team */}
-      <h2 className="text-center py-10 text-3xl sm:text-4xl">Our Team</h2>
+      <h2 className="text-center text-cyan-900 py-10 text-3xl sm:text-4xl">Our Team</h2>
       <div className="w-full flex flex-col lg:flex-row flex-wrap justify-between gap-y-10 lg:gap-x-6">
         {team.map((person, index) => (
           <div key={index} className="w-full sm:w-[85%] lg:w-[30%] flex flex-col gap-y-4 rounded-tr-[100px] overflow-clip mx-auto lg:mx-0">

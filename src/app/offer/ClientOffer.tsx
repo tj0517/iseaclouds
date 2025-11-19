@@ -179,7 +179,7 @@ export default function ClientOffer() {
         <h3
           className={`${playfair.className} text-cyan-900  
           md:w-1/3 lg:w-full text-4xl lg:text-3xl xl:text-4xl 
-          font-thin text-center md:text-left mt-10 md:mt-0 underline`}
+          font-light text-center md:text-left mt-10 md:mt-0 underline`}
         >
           {offer.title}
         </h3>
