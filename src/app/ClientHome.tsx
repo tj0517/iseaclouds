@@ -162,7 +162,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
     {/* Górny wiersz z projektem */}
     <div className="w-full h-auto md:h-72 flex flex-col lg:flex-row z-20 gap-8 md:gap-0">
       {/* Lewa karta - tekst */}
-      <div className="w-full lg:w-[40%] text-stone-800 rounded-xl lg:rounded-tr-[100px] px-6 py-6 md:px-10 md:py-10 flex flex-col gap-2 shadow-[-8px_8px_8px_-6px_rgba(0,_0,_0,_0.1)] md:shadow-[-14px_13px_8px_-6px_rgba(0,_0,_0,_0.1)] border-2 border-black bg-white order-1">
+      <div className="w-full lg:w-[40%] text-stone-800 rounded-xl lg:rounded-tr-[100px] px-6 py-6 md:px-10 md:py-10 flex flex-col gap-2  border-2 border-cyan-900 bg-amber-50 shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
         {project ? (
           <>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-thin pr-4 md:pr-10 pb-4 xl:pb-8">{project.title}</h3>
@@ -265,7 +265,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 
         <div className="w-[90%] md:w-[80%] lg:w-[40%] ml-auto mr-auto md:mr-0 md:ml-[10%] lg:ml-0 xl:w-[42.5%] flex flex-row justify-between flex-wrap h-full mt-10 lg:mt-auto gap-y-5">
           {courses.map((src, index) => (
-            <div key={index} className="w-[47.5%] aspect-square relative rounded-3xl overflow-clip shadow-2xl" >
+            <div key={index} className="w-[47.5%] aspect-square relative rounded-3xl overflow-clip " >
               <Link href={`/courses/${src.slug}`}><Image src={`/courses/${src.image}`} alt={`Course ${index + 1}`} fill className="object-cover object-center grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300" /></Link>
             </div>
           ))}

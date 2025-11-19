@@ -41,7 +41,7 @@ export default function StatsSection({ stats }: StatsSectionProps) {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="stat-item w-full flex flex-col py-4 sm:py-6 px-6 sm:px-10 rounded-2xl text-[14px] sm:text-[16px] bg-amber-50 border-1"
+          className="stat-item w-full flex flex-col py-4 sm:py-6 px-6 sm:px-10 rounded-2xl text-[14px] sm:text-[16px] bg-amber-50 border-1 border-cyan-900 shadow-[-8px_8px_0px_0px_rgba(5,51,69)]"
           style={{ zIndex: 10 + index * 10 }}
         >
           <div className="w-full flex flex-row items-center gap-4 sm:gap-8 h-16">
