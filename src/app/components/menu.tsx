@@ -29,8 +29,8 @@ export default function Menu() {
   <div><Link className="hover:text-cyan-900" href="/">Home</Link></div>
             <div><Link className="hover:text-cyan-900" href="/projects/baltica2-wind">Projects</Link></div>
             <div><Link className="hover:text-cyan-900" href="/news">News</Link></div>
-            <div><Link className="hover:text-cyan-900" href="/offer">Offer</Link></div>
             <div><Link className="hover:text-cyan-900" href="/about_us">About us</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/service">Service</Link></div>
             <div><Link className="hover:text-cyan-900" href="/contact">Contact us</Link></div>
       </div>
 
@@ -52,8 +52,8 @@ export default function Menu() {
         <Link href="/projects/baltica2-wind" onClick={() => setIsOpen(false)}>Projects</Link>
         <Link href="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
         <Link href="/news" onClick={() => setIsOpen(false)}>News</Link>
-        <Link href="/offer" onClick={() => setIsOpen(false)}>Offer</Link>
         <Link href="/about_us" onClick={() => setIsOpen(false)}>About us</Link>
+        <Link href="/service" onClick={() => setIsOpen(false)}>Service</Link>
         <Link href="/contact" onClick={() => setIsOpen(false)}>Contact us</Link>
       </div>
     </div>

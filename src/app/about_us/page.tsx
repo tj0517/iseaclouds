@@ -13,8 +13,9 @@ const playfair = Poppins({
 const offers = [
   {
     title:
-    [ "Our",
-      "mission"
+    [ 
+      "Our",
+      "vission"
     ],
     description: [
       "We deliver advanced engineering solutions with strong industry expertise, adapting to the dynamic needs of our clients through both remote and on-site support.",
@@ -23,8 +24,9 @@ const offers = [
   },
   {
     
-    title:    [ "Our",
-      "vission"
+    title:    [ 
+      "Our",
+      "mission"
     ],
     description: [
       "To empower young talent by equipping them with the skills and knowledge. Providing structured courses and a comprehensive mentoring system",
@@ -36,18 +38,18 @@ const offers = [
 const team=[
   {
     image:"ej.png",
-    name:"Ernest Jezionek (CEO)",
-    specialization:"Survey & GIS",
+    name:"Ernest Jezionek",
+    specialization:"Managing Director",
   },
   {
     image:"ml.png",
-    name:"Michał Łatacz (COO)",
-    specialization:"Construction & IRM",
+    name:"Michał Łatacz",
+    specialization:"Operational Director (Marine & Construction)",
   },
   {
     image:"kj.png",
-    name:"Karol Jacob (COO)",
-    specialization:"ROV & Offshore Robotics",
+    name:"Karol Jacob",
+    specialization:"Operational Director (Survey & ROV)",
   },
 ]
 

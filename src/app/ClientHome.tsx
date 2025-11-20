@@ -99,7 +99,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
     <div className="overflow-x-hidden sm:text-lg md:text-[13.5px] lg:text-[15px]  xl:text-[18px] text-stone-600">
       <div className="block lg:hidden"><Menu /></div>
       
-      <div className="w-full flex flex-row h-[650px] md:h-[650px] xl:h-[750px] 2xl:h-[800px]">
+      <div className="w-full flex flex-row h-[650px] md:h-[650px] xl:h-[775px] 2xl:h-[800px]">
         <div className="w-full lg:w-[45%] 2xl:w-[55%] h-full relative">
           <Image src="/offer/offer3.jpg" alt="Oil&gas" priority={true} fill className="object-cover object-center lg:brightness-100 brightness-30" />
           <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">
@@ -112,8 +112,8 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
             <div><Link className="hover:text-cyan-900" href="/">Home</Link></div>
             <div><Link className="hover:text-cyan-900" href="/projects/baltica2-wind">Projects</Link></div>
             <div><Link className="hover:text-cyan-900" href="/news">News</Link></div>
-            <div><Link className="hover:text-cyan-900" href="/offer">Offer</Link></div>
             <div><Link className="hover:text-cyan-900" href="/about_us">About us</Link></div>
+            <div><Link className="hover:text-cyan-900" href="/service">Service</Link></div>
             <div><Link className="hover:text-cyan-900" href="/contact">Contact us</Link></div>
           </div>
 
@@ -125,13 +125,13 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
             <div className="lg:w-[70%] text-center lg:text-left mt-12 lg:mt-8 xl:mt-15 text-amber-50 font-light text-lg xl:text-xl 2xl:w-[50%]">
               Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.
             </div>
-            <Link  href="/offer">
+            <Link  href="/service">
             <div className="p-4 bg-cyan-900 text-white w-[40%] ml-[30%] lg:ml-0 mt-12 lg:mt-16 text-center hover:cursor-pointer hover:text-cyan-900 hover:bg-amber-50">
               Explore
             </div>
             </Link>
 
-            <div className="w-[30%] lg:w-[10%] ml-[35%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]">
+            <div className="w-[30%] lg:w-[12.5%] ml-[35%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]">
               <a href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               <a href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
             </div>
@@ -241,7 +241,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 >
   <div
     className="bg absolute left-0 top-0 w-full h-full bg-cover bg-center brightness-50"
-    style={{ backgroundImage: "url('/offer/offer3.jpg')" }}
+    style={{ backgroundImage: "url('/about_us/about_us3.jpg')" }}
   ></div>
 
   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl lg:text-5xl font-light text-center">
@@ -256,7 +256,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
         <div className="flex-col w-[90%] ml-auto mr-auto xl:mr-0 xl:ml-0 lg:w-[45%] text-center lg:text-left z-10" >
           <h4 className="text-4xl md:text-5xl text-cyan-900 font-thin underline">Master Offshore Skills with SeaClouds Courses</h4>
           <div className="text-base sm:text-lg text-cyan-900 font-light mt-10 md:mt-6 xl:mt-10 2xl:leading-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
-          Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
+          Advance your career in the maritime industry with SeaClouds courses! We about_us professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
           </div>
           <div className="bg-cyan-900 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer hover:bg-gray-400">
           <Link href="/courses">Check out</Link>

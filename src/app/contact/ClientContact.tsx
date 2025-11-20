@@ -30,8 +30,8 @@ const faqs = [
     answer: "Our dedicated team comprises seasoned professionals with extensive experience in the offshore industry, bringing a wealth of knowledge in engineering, project management, and safety compliance to deliver innovative solutions tailored to the unique challenges of each project."
   },
   {
-    question: "What commitment does Sea Clouds?",
-    answer: "At Sea Clouds, our commitment to quality, safety, and sustainability is at the forefront of our operations. We strive to execute projects with the highest standards of integrity and efficiency while building lasting partnerships with our clients.",
+    question: "How does Sea Clouds conduct offshore work supervision?",
+    answer: "Sea Clouds does not operate as a typical recruitment or crewing agency. We provide qualified offshore personnel who are fully supported — both logistically and technically — by our onshore team. Our involvement goes far beyond manning: we assist the client from the very beginning of the project, including tender support, document review, field operations, and post-campaign data analysis.",
   },
 ];
 

@@ -14,69 +14,49 @@ const playfair = Poppins({
 
 const offers = [
   {
-    image: "offer1.webp",
+    image: "offer2.jpg",
     title: "Operations Support",
     description: [
-      "Vessel DP Stability and Operational Manuals",
-      "ROV Specifications and Documentation",
-      "Installation and Construction Methodology",
-      "Engineering Analysis and Calculations",
-      "Health, Safety, and Environmental (HSE) Documentation",
-      "Project Execution Plan and Schedule",
-      "Inspection and QC Documentation",
-      "Survey and Positioning Documentation",
-      "Underwater Spool Metrologies",
-      "Provision of Offshore Client Representatives",
+      "Operational Readiness of marine activities ",
+      "Coordination of offshore vessels and assets ",
+      "Anchor Handling Coordination ",
+      "Technical and HSE advisory",
+      "Emergency Response and Contingency Plans",
+      "Interface with Marine Warranty Surveyor (MWS), CLIENT and CONTRACTORs",
+      "QC and revies survey results",
+      "Provision of Offshore Client Representatives"
     ],
   },
   {
-    image: "offer2.jpg",
-    title: "Tenders Support",
+    image: "offer1.jpg",
+    title: "Mobilization Support",
     description: [
-      "Technical Documentation and Engineering evaluations",
-      "Materials and Equipment Lists",
-      "Scheduling and Timeline Development",
-      "Development of methodologies",
-      "Risk Assessment and Mitigation Plans",
-      "Cost Estimation and Budgeting",
-      "Supplier Identification and Qualification",
-      "Health, Safety, and Environmental (HSE) Planning",
+      "Provision of execution  procedures (Marine, Survey, ROV, Installation)",
+      "Mobilization and Deck Layout Plan",
+      "Seafastening Plan and Loads calculations",
+      "Structural Analysis and Load Calculations",
+      "ROV & Survey Equipment Interfacing Plan",
+      "Vessel, ROV and Lifting Certifications Records",
+      "Risk Assessment and Health, Safety, Environment (HSE) Support"
     ],
   },
   {
     image: "offer3.jpg",
-    title: "Vessels Mobilizations",
+    title: "Engineering Support",
     description: [
-      "DP and Marine Suitability Survey",
-      "Mobilization and Deck Layout Plan",
-      "Vessel Stability Plan",
-      "Structural Analysis and Load Calculations",
-      "ROV Launch and Recovery Procedures",
-      "ROV & Survey Equipment Interfacing Plan",
-      "Health, Safety, and Environmental (HSE) Documentation",
-      "Vessel, ROV and Lifting Certifications Records",
-      "Seafastening Plan and Report",
-      "Emergency Response and Contingency Plans",
-    ],
-  },
-  {
-    image: "offer4.jpg",
-    title: "Enginnering Support",
-    description: [
-      "Geotechnical and Geophysical Data Review and GAP Analysis",
+      "Geotechnical and Geophysical Data Review",
+      "Data Analysis Report and ALARPs",
       "Cable route design (Basic and Micro-routing)",
       "Cable Burial Risk Assessment",
       "Installation Planning and Engineering",
       "Installation Analysis (S-lay pipeline lay, Spools lifting)",
-      "Inspection, Monitoring, and Quality Assurance",
-      "Risk Assessment and Health, Safety, Environment (HSE) Support",
-      "Operational Readiness and Handover Support",
       "ROV and Vessel Requirements and Specifications",
+      "Operational, Inspection and Maintenance Planning Support"
     ],
   },
   {
-    image: "offer5.jpg",
-    title: "GIS & Field Data Management",
+    image: "gis.jpg",
+    title: "GIS & Field...",
     description: [
       "Project Documentation (GIS GDBS Structure, Up-to-date status)",
       "Management of GIS GDBS structure and data flow",
@@ -84,25 +64,18 @@ const offers = [
       "GIS and Spatial Analysis Support",
       "Field Layout and Subsea infrastructure Design",
       "Data Management, QC and Integration",
-      "Survey, Mapping and Geospatial Data Support",
-      "Compliance and Reporting Data Delivery",
-      "Operational, Inspection and Maintenance Planning Support",
+      "Survey, Mapping and Geospatial Data Support"
     ],
   },
   {
-    image: "offer6.jpg",
-    title: "Audits & Inspections",
+    image: "offer5.jpg",
+    title: "Spool Metrologies",
     description: [
-      "Vessel inspections (IMCA eCMID) and Project Audits (QHSE)",
-      "QHSE and Project Execution Plan",
-      "DP and Marine Suitability Surveys",
-      "DP System or Client-Specific Audits",
-      "Classification and Certification Audits",
-      "Health, Safety, and Environmental (HSE) Audits",
-      "Technical and Equipment Inspections",
-      "Operational and Maintenance Audits",
-      "Communication and Navigation Systems Check",
-      "Documentation and Certification Verification",
+      "Planning and optimizing offshore schedule",
+      "Preparatory work and methodology",
+      "Support offshore operations and calculations",
+      "Provision of final results and metrology charts",
+      "Assistance to spool design team"
     ],
   },
 ];
@@ -112,34 +85,23 @@ export default function ClientOffer() {
     <div className="bg-amber-50 text-black overflow-x-hidden">
       <Menu />
 
-      {/* Hero */}
-      <motion.div
-        className="w-full flex flex-row bg-amber-50 pt-10 px-[10%] pb-10"
-        initial={{ opacity: 0, x: 60 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2
-          className={`${playfair.className} text-cyan-900 w-full text-3xl sm:text-5xl xl:text-6xl font-bold mr-10 sm:mr-0`}
-        >
-          Our<br/> Offer
+       <div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto flex flex-col lg:flex-row bg-amber-50 pt-10 pb-10  gap-y-8 lg:gap-y-0">
+        <h2 className="text-cyan-900 w-full lg:w-1/3 underline text-2xl lg:text-4xl">
+          Our Offer
         </h2>
-        <motion.div
-          className="text-black mt-32  sm:mt-36 lg:mt-48 text-[14px] sm:text-[16px]   lg:text-[18px]"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Sea Clouds provides comprehensive technical advisory services in the
-          preparation, execution, and management of offshore projects — both
-          from the Operator’s and the Contractor’s perspective.
-        </motion.div>
-      </motion.div>
+        <div className="text-black w-full lg:w-2/3 text-[14px] sm:text-base xl:text-[18px] mt-4 lg:mt-30 xl:mt-36">
+          Sea Clouds provides comprehensive technical advisory services in the preparation, execution, and management of offshore projects — including marine operations, survey, ROV, and post-installation activities — both from the Operator’s and the Contractor’s perspective. 
+        </div>
+      </div>
+
 
       {offers.map((offer, index) => {
   const isEven = index % 2 === 0;
+  let bgEven=isEven;
+  if(index===4)
+  {
+bgEven=!isEven;
+  }
 
   return (
     <div
@@ -147,7 +109,8 @@ export default function ClientOffer() {
       className={`
         w-full md:w-[80%] mx-auto lg:mx-0 lg:w-full 
         flex flex-col lg:flex-row 
-        ${isEven ? "lg:bg-gray-400" : "bg-amber-50 lg:flex-row-reverse"}
+         ${bgEven ? "bg-gray-400" : "bg-amber-50"} 
+        ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}
       `}
     >
       {/* Obraz */}
