@@ -46,11 +46,11 @@ export default async function ArticlePage(
 
 
   return (
-    <div className="bg-amber-50 text-black text-xl">
+    <div className="bg-amber-50 text-black ">
       <Menu />
 
       {/* HERO */}
-      <div className="w-[75%] mx-auto max-w-[1200px]">
+      <div className="w-[75%] mx-auto max-w-[1200px] text-xl">
       <div className="flex flex-row w-full mt-20">
     <div className="h-full w-full md:w-[50%] flex flex-col">
       <h1 className="text-stone-800 text-5xl lg:text-7xl font-extralight">
