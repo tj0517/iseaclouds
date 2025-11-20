@@ -241,7 +241,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 >
   <div
     className="bg absolute left-0 top-0 w-full h-full bg-cover bg-center brightness-50"
-    style={{ backgroundImage: "url('/about_us/about_us3.jpg')" }}
+    style={{ backgroundImage: "url('/offer/offer3.jpg')" }}
   ></div>
 
   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl lg:text-5xl font-light text-center">
