@@ -50,7 +50,6 @@ export default function Menu() {
       >
         <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
         <Link href="/projects/baltica2-wind" onClick={() => setIsOpen(false)}>Projects</Link>
-        <Link href="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
         <Link href="/news" onClick={() => setIsOpen(false)}>News</Link>
         <Link href="/about_us" onClick={() => setIsOpen(false)}>About us</Link>
         <Link href="/service" onClick={() => setIsOpen(false)}>Service</Link>
