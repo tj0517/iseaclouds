@@ -1,5 +1,5 @@
 import { getProject } from "@/sanity/lib/getProject";
-import ClientHome, { fadeUp, fadeLeft, scaleUpDelay } from "./ClientHome";
+import ClientHome from "./ClientHome";
 import { FaCalendarAlt, FaBuilding, FaShip, FaClock } from "react-icons/fa";
 
 export const metadata = {

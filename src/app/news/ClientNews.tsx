@@ -2,18 +2,18 @@ import Image from "next/image";
 import Footer from "../components/footer";
 import Menu from "../components/menu";
 import Link from "next/link";
-import { Poppins } from "next/font/google";
+import {
+  FadeInWhenVisible,
+  SlideFromLeft,
+  SlideFromRight,
+  ScaleIn,
+} from "@/app/components/animations";
 import { Article } from "../types/article";
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from "@/sanity/lib/client";
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { ArrowRight } from "lucide-react";
 
-const playfair = Poppins({
-  subsets: ["latin"],
-  weight: ["200", "400", "500", "700"],
-  variable: "--font-poppins",
-});
 
 interface Props {
   articles: Article[];
@@ -31,7 +31,9 @@ export default function ClientNews({ articles, i }: Props) {
     <div className="overflow-x-hidden bg-amber-50 text-2xl lg:text-xl">
       <Menu />
       <div className="w-[80%] mx-auto max-w-[1400px] flex flex-col pt-20 text-left">
+        <ScaleIn>
       <h2 className="mb-10 md:mb-20 text-5xl md:text-7xl underline text-cyan-900">Last<br/> Articles</h2>
+      </ScaleIn>
       <div className="w-full flex flex-col gap-y-6 md:gap-y-14  mb-20">
         {articles.map((article, index) => (
           <div key={index} className="w-full">
@@ -51,10 +53,14 @@ export default function ClientNews({ articles, i }: Props) {
 }
             </div>
             <div className="w-3/4 md:w-[45%] lg:w-1/2 xl:w-1/3 flex flex-col lg:pl-4 mt-4 lg:mt-0 ">
+            <SlideFromLeft>
                 <h3 className={`text-3xl lg:text-4xl mb-4 font-thin underline `}>{article.title}</h3>
+                </SlideFromLeft>
+                <FadeInWhenVisible delay={0.2}>
               <p className="text-[14px] md:hidden lg:block lg:text-[16px]">{article.overview}</p>
+              </FadeInWhenVisible>
               <div className="mt-4 text-[14px] font-bold md:mt-auto">{article.date}</div>
-            </div>
+                      </div>
             <div className="w-fit ml-auto pl-6 flex justify-end ">
               <Link href={`/news/${article.slug.current}`} className="text-lg underline">
                 <ArrowRight className="w-10 h-10 text-cyan-900"/>

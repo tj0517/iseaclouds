@@ -12,24 +12,10 @@ import Footer from "./components/footer";
 import { courses } from "@/data/courses";
 import StatsSection from "./components/stact";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FadeInWhenVisible, SlideFromLeft, ScaleIn,SlideFromRight }  from "@/app/components/animations"
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-export const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i = 1) => ({ opacity: 1, y: 0, transition: { delay: i * 0.2, duration: 0.6 } }),
-};
-
-export const fadeLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: (i = 1) => ({ opacity: 1, x: 0, transition: { delay: i * 0.2, duration: 0.6 } }),
-};
-
-export const scaleUpDelay = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: (i = 1) => ({ scale: 1, opacity: 1, transition: { delay: i * 0.2, duration: 0.6 } }),
-};
 
 interface Stat {
   number: number;
@@ -118,23 +104,30 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
           </div>
 
           <div className="ml-auto mr-auto lg:ml-[15%] xl:ml-[20%] w-[75%] sm:w-[60%] lg:w-full">
+            <SlideFromLeft>
             <h1 className="text-cyan-700 lg:text-cyan-900 w-full lg:w-[70%] text-center lg:text-left text-4xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-6xl 2xl:w-[50%] font-light mt-16 md:mt-24 lg:mt-16 underline">
               Navigating Offshore Excellence
             </h1>
+            </SlideFromLeft>
 
+            <FadeInWhenVisible delay={0.2}>
             <div className="lg:w-[70%] text-center lg:text-left mt-12 lg:mt-8 xl:mt-15 text-amber-50 font-light text-lg xl:text-xl 2xl:w-[50%]">
               Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.
             </div>
+            </FadeInWhenVisible>
+            <ScaleIn delay={0.5}>
             <Link  href="/service">
             <div className="p-4 bg-cyan-900 text-white w-[40%] ml-[30%] lg:ml-0 mt-12 lg:mt-16 text-center hover:cursor-pointer hover:text-cyan-900 hover:bg-amber-50">
               Explore
             </div>
             </Link>
-
+            </ScaleIn>
+            <FadeInWhenVisible delay={0.7}>
             <div className="w-[30%] lg:w-[12.5%] ml-[35%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]">
               <a href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               <a href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
             </div>
+            </FadeInWhenVisible>
           </div>
         </div>
       </div>
@@ -144,14 +137,18 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 
       {/* Sekcje About, Stats, Courses, Why Us */}
      <StatsSection stats={stats} />
-    <div className="w-full -50">
+    <div className="w-full ">
+
+
 <div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto flex flex-col py-8 md:py-10 relative  pb-20 md:pb-30">
   {/* Nagłówek sekcji */}
    <div className=" absolute top-0 right-0 translate-x-1/3 -translate-y-1/2 opacity-70 z-0 rotate-90">
        
       </div>
   <div className="w-full flex flex-row justify-between border-b-2 border-black pb-4 mb-10 md:mb-20 z-10">
+    <ScaleIn>
     <h2 className="text-cyan-900 text-2xl md:text-3xl lg:text-4xl">Last<br/> Projects</h2>
+    </ScaleIn>
   </div>
 
   {/* Główna zawartość */}
@@ -162,6 +159,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
     {/* Górny wiersz z projektem */}
     <div className="w-full h-auto md:h-72 flex flex-col lg:flex-row z-20 gap-8 md:gap-0">
       {/* Lewa karta - tekst */}
+      
       <div className="w-full lg:w-[40%] text-stone-800 rounded-xl lg:rounded-tr-[100px] px-6 py-6 md:px-10 md:py-10 flex flex-col gap-2  border-2 border-cyan-900 bg-amber-50 shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
         {project ? (
           <>
@@ -184,7 +182,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
         </div>
       </div>
 
-      {/* Prawa karta - zdjęcie */}
+
       <div className="w-full lg:w-[40%] order-2 lg:order-3">
         {project && project.photo ? (
           <div className="w-full h-64 md:h-full relative rounded-xl lg:rounded-tr-[100px] overflow-clip shadow-[-8px_8px_8px_-6px_rgba(0,_0,_0,_0.1)] md:shadow-[-14px_13px_8px_-6px_rgba(0,_0,_0,_0.1)]">
@@ -202,6 +200,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
         )}
       </div>
     </div>
+    
 
     {/* Dolny wiersz - "Wait for more" */}
     <div className="w-full h-auto md:h-56 hidden lg:flex flex-col lg:flex-row z-20 mt-8 md:mt-0">
@@ -224,12 +223,16 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
            <div className=" absolute top-0 left-0 -translate-x-2/3 -translate-y-1/3 opacity-70 z-0 rotate-90">
     
       </div>
+      <ScaleIn>
         <h2 className="text-center text-cyan-900 z-10">Why us?</h2>
+        </ScaleIn>
         <div className="w-full flex flex-row flex-wrap pb-9 justify-between mt-10 md:mt-20 text-[12px] md:text-[14px] xl:text-[16px] gap-y-10 z-10">
           {items.map((item, index) => (
             <div key={index} className="w-[47.5%] lg:w-[20%] flex flex-col text-center  lg:mb-0">
+              <FadeInWhenVisible delay={index*0.3}>
               <div className="text-cyan-900 text-2xl md:text-3xl xl:text-3xl font-light pb-7 border-b-2 border-b-cyan-900 whitespace-pre-line">{item.title}</div>
               <div className="italic mt-6 xl:mt-10 text-stone-600">{item.text}</div>
+              </FadeInWhenVisible>
             </div>
           ))}
         </div>
@@ -251,9 +254,8 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
 
 
      <div className="w-full max-w-[1500px] mx-auto px-[7.5%] py-16 pb-24 flex lg:flex-row flex-col justify-between overflow-clip  relative">
-      <div className=" absolute top-0 left-0 -translate-x-1/3 -translate-y-1/2 opacity-70 z-0 rotate-90">
-      </div>
         <div className="flex-col w-[90%] ml-auto mr-auto xl:mr-0 xl:ml-0 lg:w-[45%] text-center lg:text-left z-10" >
+          <SlideFromLeft>
           <h4 className="text-4xl md:text-5xl text-cyan-900 font-thin underline">Master Offshore Skills with SeaClouds Courses</h4>
           <div className="text-base sm:text-lg text-cyan-900 font-light mt-10 md:mt-6 xl:mt-10 2xl:leading-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
           Advance your career in the maritime industry with SeaClouds courses! We about_us professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
@@ -261,6 +263,7 @@ export default function ClientHome({ stats, items,project}: ClientHomeProps) {
           <div className="bg-cyan-900 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer hover:bg-gray-400">
           <Link href="/courses">Check out</Link>
           </div>
+          </SlideFromLeft>
         </div>
 
         <div className="w-[90%] md:w-[80%] lg:w-[40%] ml-auto mr-auto md:mr-0 md:ml-[10%] lg:ml-0 xl:w-[42.5%] flex flex-row justify-between flex-wrap h-full mt-10 lg:mt-auto gap-y-5">

@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import Menu from "../components/menu";
 import { Poppins } from "next/font/google";
 import { useState } from "react";
+import { FadeInWhenVisible, SlideFromLeft, ScaleIn,SlideFromRight }  from "@/app/components/animations"
 
 const playfair = Poppins({
   subsets: ["latin"],
@@ -63,7 +64,9 @@ export default function ClientContact() {
 
       <div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto bg-amber-50 py-16 flex flex-col">
         <h2 className="text-cyan-900 xl:text-6xl text-5xl font-thin underline">
+          <ScaleIn>
           Get in touch
+          </ScaleIn>
         </h2>
 
         <div className="w-full flex flex-col md:flex-row justify-between gap-10 md:gap-0 mt-8">
@@ -114,7 +117,9 @@ export default function ClientContact() {
 
       <div className="bg-amber-50 w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto pb-30 flex flex-col text-black">
         <h2 className="text-cyan-900 text-center mb-10">
+          <ScaleIn>
           Frequently asked questions
+          </ScaleIn>
         </h2>
         {faqs.map((faq, index) => {
           const isActive = activeIndex === index;

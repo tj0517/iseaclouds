@@ -1,8 +1,8 @@
 "use client";
 import {JSX} from "react";
-import Image from "next/image";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FadeInWhenVisible, SlideFromLeft, ScaleIn,SlideFromRight }  from "@/app/components/animations"
   
 
 gsap.registerPlugin(ScrollTrigger);
@@ -28,19 +28,24 @@ export default function StatsSection({ stats }: StatsSectionProps) {
 
     {/* Left content */}
     <div className="content_box w-full lg:w-[55%] flex flex-col z-10">
+      <ScaleIn>
       <h2 className="w-full text-4xl sm:text-5xl xl:text-7xl font-light text-cyan-900">
         About us
       </h2>
+      </ScaleIn>
+      <FadeInWhenVisible delay={0.2}>
       <div className="text-stone-600 w-full sm:w-[80%] 2xl:w-[60%] mt-6 sm:mt-10 mb-10 sm:mb-16 text-base sm:text-lg">
         Sea Clouds was founded by a team of experts with over 25 years of professional experience and deep knowledge in the Offshore Oil & Gas and Wind Farm sectors. We specialize in delivering comprehensive offshore engineering solutions and technical advisory services across key disciplines including Marine, Offshore Construction, Survey and Seabed Intervention, as well as ROV (Remotely Operated Vehicle) operations. Our services are grounded in technical excellence, safety, and efficiency, ensuring that every involvement in our client’s project meets the highest industry standards. Partner with Sea Clouds for precise and dependable offshore engineering solutions—from concept design and planning to execution and support. Whether you require strategic offshore technical advisory or fully integrated engineering capabilities, we bring clarity and confidence to complex offshore challenges. Over...
       </div>
+      </FadeInWhenVisible>
     </div>
 
     {/* Right stats */}
     <div className="w-full lg:w-[45%] flex flex-col gap-y-6 sm:gap-y-10 lg:mt-24">
       {stats.map((stat, index) => (
+        <SlideFromRight key={index} delay={index*0.5}>
         <div
-          key={index}
+          
           className="stat-item w-full flex flex-col py-4 sm:py-6 px-6 sm:px-10 rounded-2xl text-[14px] sm:text-[16px] bg-amber-50 border-1 border-cyan-900 shadow-[-8px_8px_0px_0px_rgba(5,51,69)]"
           style={{ zIndex: 10 + index * 10 }}
         >
@@ -61,6 +66,7 @@ export default function StatsSection({ stats }: StatsSectionProps) {
             </div>
           </div>
         </div>
+        </SlideFromRight>
       ))}
     </div>
   </div>

@@ -3,14 +3,9 @@
 import Image from "next/image";
 import Footer from "../components/footer";
 import Menu from "../components/menu";
-import { Poppins } from "next/font/google";
-import { motion } from "framer-motion";
 
-const playfair = Poppins({
-  subsets: ["latin"],
-  weight: ["200", "400", "500", "700"],
-  variable: "--font-poppins",
-});
+import { motion } from "framer-motion";
+import { FadeInWhenVisible, SlideFromLeft, ScaleIn,SlideFromRight }  from "@/app/components/animations"
 
 const offers = [
   {
@@ -87,11 +82,15 @@ export default function ClientOffer() {
 
        <div className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto flex flex-col lg:flex-row bg-amber-50 pt-10 pb-10  gap-y-8 lg:gap-y-0">
         <h2 className="text-cyan-900 w-full lg:w-1/3 underline text-2xl lg:text-4xl">
+        <ScaleIn>
           Our Offer
+          </ScaleIn>
         </h2>
         <div className="text-black w-full lg:w-2/3 text-[14px] sm:text-base xl:text-[18px] mt-4 lg:mt-30 xl:mt-36">
+        <SlideFromRight>
           Sea Clouds provides comprehensive technical advisory services in the preparation, execution, and management of offshore projects — including marine operations, survey, ROV, and post-installation activities — both from the Operator’s and the Contractor’s perspective. 
-        </div>
+       </SlideFromRight>
+       </div>
       </div>
 
 
@@ -140,9 +139,9 @@ bgEven=!isEven;
         transition={{ duration: 0.8 }}
       >
         <h3
-          className={`${playfair.className} text-cyan-900  
+          className=" text-cyan-900  
           md:w-1/3 lg:w-full text-4xl lg:text-3xl xl:text-4xl 
-          font-light text-center md:text-left mt-10 md:mt-0 underline`}
+          font-light text-center md:text-left mt-10 md:mt-0 underline"
         >
           {offer.title}
         </h3>
