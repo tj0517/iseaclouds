@@ -28,9 +28,9 @@ export default function ClientNews({ articles, i }: Props) {
   if (!articles.length) return <div>Brak artykułów do wyświetlenia</div>;
 
   return (
-    <div className="overflow-x-hidden bg-amber-50 text-2xl lg:text-xl">
+    <div className="overflow-x-hidden bg-amber-50 ">
       <Menu />
-      <div className="w-[80%] mx-auto max-w-[1400px] flex flex-col pt-20 text-left">
+      <div className="w-[80%] mx-auto max-w-[1400px] flex flex-col pt-20 text-left text-2xl lg:text-xl">
         <ScaleIn>
       <h2 className="mb-10 md:mb-20 text-5xl md:text-7xl underline text-cyan-900">Last<br/> Articles</h2>
       </ScaleIn>
