@@ -3,14 +3,13 @@ import Clientproject from "./Clientproject";
 import type { Metadata } from "next";
 
 interface Props {
-  params: { slug: string }; 
+  params: Promise<{ slug: string }>; // ← Change this line
 }
 
 // ———————————————————————————————————————
 //  METADATA (SEO)
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // Await the params object first
-  const { slug } = await params;
+  const { slug } = await params; // Now this works correctly
   const project = await getProject(slug);
 
   return {
@@ -22,8 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // ———————————————————————————————————————
 //  PAGE COMPONENT
 export default async function ProjectPage({ params }: Props) {
-  // Await the params object here as well for consistency
-  const { slug } = await params;
+  const { slug } = await params; // Now this works correctly
   const project = await getProject(slug);
 
   if (!project) {
