@@ -5,18 +5,11 @@ import Menu from "@/app/components/menu";
 import Footer from "@/app/components/footer";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/lib/client";
 import { ArrowLeft } from "lucide-react";
-
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100","200", "400", "500", "700"],
-  variable: "--font-poppins",
-})
 
 const builder = imageUrlBuilder(client);
 

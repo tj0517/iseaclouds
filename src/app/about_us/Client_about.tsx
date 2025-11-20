@@ -84,19 +84,21 @@ return (
             <h3 className="text-cyan-900 text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-thin text-center md:text-left mt-6 md:mt-0 underline">
               {offer.title.map((parent, id) => (
                 
-                <p key={id}>
-                    <SlideFromLeft>{parent}<br/></SlideFromLeft></p>
+                <div key={id}>
+                  <SlideFromLeft> {parent}<br/></SlideFromLeft></div>
+                    
               ))}
             </h3>
             <div className="w-full flex flex-col gap-y-4 items-center md:items-end">
-              {offer.description.map((parent, id) => (
-                <p className="text-[14px] sm:text-base xl:text-[18px] w-3/4 sm:w-2/3 text-center md:text-left" key={id}>
-                    <SlideFromRight delay={index*0.15}>
+              
+              {offer.description.map((parent, id) => (          
+                 <div className="text-[14px] sm:text-base xl:text-[18px] w-3/4 sm:w-2/3 text-center md:text-left" key={id}>
+                  <SlideFromRight delay={index*0.15}>
                   {parent}
                   </SlideFromRight>
-                </p>
-                
+                </div>
               ))}
+              
             </div>
           </div>
         ))}
@@ -128,8 +130,7 @@ return (
                 </h4>
             <div className="w-1/2 h-2 bg-cyan-900"></div>
             <h5 className="font-bold text-lg sm:text-xl">
-                <FadeInWhenVisible>
-                {person.specialization}</FadeInWhenVisible></h5>
+                {person.specialization}</h5>
           </div>
         ))}
       </div>
