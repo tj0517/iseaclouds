@@ -79,9 +79,9 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
       <main>
       <div className="w-full flex flex-row h-[650px] md:h-[650px] lg:h-[700px] xl:h-[775px] 2xl:h-[800px]">
         <div className="w-full lg:w-[45%] 2xl:w-[55%] h-full relative">
-          <Image src="/offer/offer3.webp" alt="Oil&gas" priority={true} {...{ fetchPriority: 'high' } as any} fill className="object-cover object-center lg:brightness-100 brightness-30" />
+          <Image src="/offer/offer3.webp" alt="Offshore Engineering Services vessel conducting marine operations for Wind Farm Support in the Baltic Sea" priority={true} {...{ fetchPriority: 'high' } as any} fill className="object-cover object-center lg:brightness-100 brightness-30" />
           <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">
-            <Image src="/logo.png" alt="Logo" width={150} height={150} priority className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" />
+            <Image src="/logo.png" alt="Sea Clouds - Offshore Engineering & Technical Advisory Company Logo" width={150} height={150} priority className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" />
           </div>
         </div>
 
@@ -242,6 +242,7 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
           <div
             className="bg absolute left-0 top-0 w-full h-full bg-cover bg-center brightness-50"
             style={{ backgroundImage: "url('/offer/offer3.jpg')" }}
+            aria-label="Marine and Subsea Engineering operations supporting Offshore Wind Farm construction"
           ></div>
 
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 w-full px-4">
