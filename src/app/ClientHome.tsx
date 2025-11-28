@@ -78,20 +78,37 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
       <div className="block lg:hidden"><Menu /></div>
       <main>
       <div className="w-full flex flex-row h-[650px] md:h-[650px] lg:h-[700px] xl:h-[775px] 2xl:h-[800px]">
-        <div className="w-full lg:w-[45%] 2xl:w-[55%] h-full relative">
-         <Image 
-  src="/offer/offer3.webp" // <--- ZMIANA ROZSZERZENIA NA WEBP
-  alt="Offshore Engineering Services vessel conducting marine operations for Wind Farm Support in the Baltic Sea" 
-  priority={true} 
-  quality={75}             // <--- DODANO: Jawna kontrola jakości (domyślnie jest 75, ale warto mieć kontrolę)
-  fill 
-  className="object-cover object-center lg:brightness-100 brightness-30"
-  sizes="(max-width: 1024px) 100vw, 50vw"
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  {...{ fetchPriority: 'high' } as any}
-/>
-          <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">
-            <Image src="/logo.png" alt="Sea Clouds - Offshore Engineering & Technical Advisory Company Logo" width={150} height={150} priority className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" />
+   <div className="w-full lg:w-[45%] 2xl:w-[55%] h-full relative">
+          
+          {/* 1. OBRAZEK (LCP) */}
+          <Image 
+            src="/offer/offer3.webp" // Upewnij się, że to plik WebP
+            alt="Offshore Engineering Services vessel conducting marine operations for Wind Farm Support in the Baltic Sea" 
+            priority={true} 
+            fill 
+            // ZMIANA 1: Usunąłem klasy "brightness". Obrazek jest czysty.
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            
+            // ZMIANA 2: Wymuszenie synchronicznego dekodowania (Maluj natychmiast!)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            {...{ fetchPriority: 'high', decoding: 'sync' } as any}
+          />
+
+          {/* ZMIANA 3: Lekka warstwa przyciemniająca (zastępuje ciężki filtr brightness-30) */}
+          {/* Na mobile: czarne tło 70% (bg-black/70). Na desktop: przezroczyste (lg:bg-transparent) */}
+          <div className="absolute inset-0 bg-black/70 lg:bg-transparent z-0 pointer-events-none"></div>
+
+          {/* LOGO (Musi być nad warstwą przyciemniającą, więc z-10) */}
+          <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10 z-10">
+            <Image 
+              src="/logo.png" 
+              alt="Sea Clouds - Offshore Engineering & Technical Advisory Company Logo" 
+              width={150} 
+              height={150} 
+              priority 
+              className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" 
+            />
           </div>
         </div>
 
