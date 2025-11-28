@@ -79,7 +79,7 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
 
       <div className="w-full flex flex-row h-[650px] md:h-[650px] lg:h-[700px] xl:h-[775px] 2xl:h-[800px]">
         <div className="w-full lg:w-[45%] 2xl:w-[55%] h-full relative">
-          <Image src="/offer/offer3.jpg" alt="Oil&gas" priority={true} fill className="object-cover object-center lg:brightness-100 brightness-30" />
+          <Image src="/offer/offer3.webp" alt="Oil&gas" priority={true} fill className="object-cover object-center lg:brightness-100 brightness-30" />
           <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">
             <Image src="/logo.png" alt="Logo" width={150} height={150} priority className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" />
           </div>
@@ -120,8 +120,8 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
             
             <FadeInWhenVisible delay={0.7}>
               <div className="w-[30%] lg:w-[12.5%] ml-[35%] lg:ml-0 flex flex-row justify-between text-3xl lg:text-2xl xl:text-3xl text-white mt-[70px] lg:mt-[80px]">
-                <a href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-                <a href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+                <a href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer" aria-label="Visit Sea Clouds Instagram profile"><FaInstagram /></a>
+                <a href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer"  aria-label="Visit Sea Clouds LinkedIn profile"><FaLinkedinIn /></a>
               </div>
             </FadeInWhenVisible>
           </div>
@@ -160,10 +160,10 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
                       <h3 className="pr-4 md:pr-10 pb-4 xl:pb-8">
                         {project.title}
                       </h3>
-                      {/* H5 - Detale projektu (małe, uppercase - zdefiniowane w CSS) */}
-                      <h5>{project.industry}</h5>
-                      <h5>{project.location}</h5>
-                      <h5>{project.date}</h5>
+                      {/* p - Detale projektu (małe, uppercase - zdefiniowane w CSS) */}
+                      <p>{project.industry}</p>
+                      <p>{project.location}</p>
+                      <p>{project.date}</p>
                     </>
                   ) : (
                     <p>No project data available</p>
@@ -173,7 +173,7 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
                 {/* Środkowa strzałka */}
                 <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-center h-auto lg:h-full items-center order-3 lg:order-2 my-4 lg:my-0">
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-cyan-900 rounded-full flex flex-row justify-center items-center text-amber-50 text-2xl md:text-3xl">
-                    <Link href={`/projects/${project?.slug}`}>
+                    <Link href={`/projects/${project?.slug}`} aria-label={`View project details: ${project?.title}`}>
                       <GoArrowUpRight strokeWidth={1.5} />
                     </Link>
                   </div>

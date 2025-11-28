@@ -58,9 +58,9 @@ export default function StatsSection({ stats }: StatsSectionProps) {
                 {/* Number + Label */}
                 <div className="flex flex-col justify-center h-16 mt-4 gap-y-2">
                   {/* H4 - Używamy H4 dla liczby (Globalnie: Bold, Cyan, Bez linii). !mb-0 usuwa margines. */}
-                  <h4 className="!mb-0 leading-none !font-bold">
+                  <div className="!mb-0 leading-none font-bold text-cyan-900 text-xl sm:text-2xl">
                     {stat.number}+
-                  </h4>
+                  </div>
                   {/* P - Etykieta */}
                   <p className="text-stone-700 leading-none text-sm sm:text-base">
                     {stat.label}

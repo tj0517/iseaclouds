@@ -16,7 +16,7 @@ export default function Footer() {
 
 
 
-        <div className="w-[100%]  flex flex-col bg-gray-400 pt-6 pb-6 md:pb-16 justify-between">
+        <div className="w-[100%]  flex flex-col bg-gray-500 pt-6 pb-6 md:pb-16 justify-between">
 <div className="px-[5%]">
 <Image
   src="/logo.png"
@@ -41,10 +41,10 @@ info@seaclouds.eu <br></br>
 <div className="w-full border-t-2 border-b-2 border-amber-50 mt-20 mb-10 flex flex-row py-6 items-center">
 <div className= {`${poppins.className} text-amber-50 text-3xl font-light ml-[6%]`}>Get social</div>
 <div className="ml-[2.5%] flex flex-row justify-between text-3xl text-black mt-[2px]">
-<a className= "bg-white p-3 rounded-full" href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer">
+<a className= "bg-white p-3 rounded-full" href="https://www.instagram.com/seaclouds_offshore/" target="_blank" rel="noopener noreferrer" aria-label="Visit Sea Clouds Instagram">
         <FaInstagram />
       </a>
-      <a className=" ml-[25%] bg-white p-3 rounded-full" href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer">
+      <a className=" ml-[25%] bg-white p-3 rounded-full" href="https://pl.linkedin.com/company/sea-clouds" target="_blank" rel="noopener noreferrer" aria-label="Visit Sea Clouds LinkedIn">
         <FaLinkedinIn />
       </a>     
     </div>

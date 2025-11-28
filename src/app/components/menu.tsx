@@ -17,7 +17,7 @@ export default function Menu() {
 
   return (
     <div
-      className={`w-full bg-gray-400 text-amber-50 flex flex-row items-center justify-between py-1.5 px-4 relative ${poppins.className}`}
+      className={`w-full bg-gray-500 text-amber-50 flex flex-row items-center justify-between py-1.5 px-4 relative ${poppins.className}`}
     >
       {/* Logo */}
       <Link href="/">
@@ -36,14 +36,14 @@ export default function Menu() {
 
       {/* Mobile hamburger */}
       <div className="md:hidden">
-        <button onClick={() => setIsOpen(!isOpen)}>
+        <button onClick={() => setIsOpen(!isOpen)} aria-label="Open menu">
           {isOpen ? <X size={32} /> : <MenuIcon size={32} />}
         </button>
       </div>
 
       {/* Dropdown menu with animation */}
       <div
-        className={`absolute top-16 left-0 w-full bg-gray-400 flex flex-col items-center gap-4 py-6 shadow-md md:hidden z-50 
+        className={`absolute top-16 left-0 w-full bg-gray-500 flex flex-col items-center gap-4 py-6 shadow-md md:hidden z-50 
           transition-all duration-300 origin-top
           ${isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}
         `}
