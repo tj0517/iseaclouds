@@ -34,7 +34,7 @@
 
   /* --- H2 --- */
   h2 {
-    @apply text-5xl sm:text-6xl lg:text-8xl;
+    @apply text-5xl sm:text-5xl lg:text-6xl;
     text-decoration-thickness: 3px;
   }
 

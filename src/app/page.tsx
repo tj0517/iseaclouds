@@ -3,8 +3,8 @@ import ClientHome from "./ClientHome";
 import { FaCalendarAlt, FaBuilding, FaShip, FaClock } from "react-icons/fa";
 
 export const metadata = {
-  title: "Sea Clouds",
-  description: "Sea Clouds delivers expert offshore engineering solutions and technical advisory for Oil & Gas and Wind Farm projects, emphasizing safety and innovation.",
+  itle: "Offshore Engineering & Technical Advisory | Sea Clouds",
+  description: "Expert Offshore Engineering Services & Technical Advisory. We provide comprehensive Offshore Wind Farm Support, marine operations & vessel mobilization.",
 }
 
 export default async function Home() { // ✅ Dodaj 'async' tutaj
@@ -18,7 +18,7 @@ export default async function Home() { // ✅ Dodaj 'async' tutaj
   const items = [
     {
       title: "Offshore\nEngineering",
-      text: "Sea Clouds brings together a team of seasoned professionals with deep offshore industry expertise, delivering efficient and effective offshore technical advisory and engineering solutions tailored to the needs of Oil & Gas and Wind Farm projects.",
+      text: "Sea Clouds delivers efficient marine solutions and expert consultancy, tailored specifically to the needs of Oil & Gas and Wind Farm projects.",
     },
     {
       title: "Flexible\nService",

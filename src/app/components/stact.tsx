@@ -25,14 +25,19 @@ export default function StatsSection({ stats }: StatsSectionProps) {
       <div className="content_box h-fit w-full lg:w-[55%] flex flex-col z-10">
         <ScaleIn>
           {/* H2 - Przejmuje globalne style (Bold, Underline, Cyan) */}
-          <h2>About us</h2>
+          <h2>About our Offshore Engineering Team</h2>
         </ScaleIn>
         
         <FadeInWhenVisible delay={0.2}>
           {/* P - Zastąpił div, usunięto zbędne style tekstu */}
-          <p className="mt-6 md:mt-16 mb-10 sm:mb-16 w-full sm:w-[80%] 2xl:w-[60%] text-stone-600">
-            Sea Clouds was founded by a team of experts with over 25 years of professional experience and deep knowledge in the Offshore Oil & Gas and Wind Farm sectors. We specialize in delivering comprehensive offshore engineering solutions and technical advisory services across key disciplines including Marine, Offshore Construction, Survey and Seabed Intervention, as well as ROV (Remotely Operated Vehicle) operations. Our services are grounded in technical excellence, safety, and efficiency, ensuring that every involvement in our client’s project meets the highest industry standards. Partner with Sea Clouds for precise and dependable offshore engineering solutions—from concept design and planning to execution and support. Whether you require strategic offshore technical advisory or fully integrated engineering capabilities, we bring clarity and confidence to complex offshore challenges. Over...
-          </p>
+          <div className="mt-6 md:mt-16 mb-10 sm:mb-16 w-full sm:w-[80%] 2xl:w-[60%] text-stone-600">
+<p>
+              Sea Clouds was founded by a team of experts with over 25 years of professional experience and deep knowledge in the global Offshore and Offshore Wind Farm sectors. We specialize in delivering comprehensive Offshore Engineering Services and strategic Offshore Technical Advisory across key disciplines including Marine, Offshore Construction, Survey, and ROV operations.
+            </p>
+            <p>
+             Our services are grounded in technical excellence, ensuring that every project meets the highest industry standards. Partner with Sea Clouds for precise and dependable solutions—from concept design to execution. Whether you require specialized marine consultancy or fully integrated operational support, we bring clarity and confidence to complex offshore challenges.
+            </p>
+          </div>
         </FadeInWhenVisible>
       </div>
 

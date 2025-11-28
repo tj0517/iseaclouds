@@ -106,14 +106,14 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
             <FadeInWhenVisible delay={0.2}>
               {/* P - Opis w sekcji Hero */}
               <p className="lg:w-[70%] text-center lg:text-left mt-12 lg:mt-8 xl:mt-15 text-amber-50 2xl:w-[50%] !font-thin !text-xl">
-                Sea Clouds delivers integrated offshore engineering solutions and technical advisory services for Oil & Gas and Wind Farm projects, with a strong focus on quality, safety, and sustainability.
+                 Sea Clouds delivers integrated Offshore Engineering Services and Offshore Technical Advisory for Oil & Gas and Offshore Wind Farm projects, with a strong focus on quality, safety, and sustainability.
               </p>
             </FadeInWhenVisible>
             
             <ScaleIn delay={0.5}>
               <Link href="/service">
                 <div className="p-4 bg-cyan-900 text-white w-[40%] ml-[30%] lg:ml-0 mt-12 lg:mt-16 text-center hover:cursor-pointer hover:text-cyan-900 hover:bg-amber-50 font-bold">
-                  Explore
+                  Our Services
                 </div>
               </Link>
             </ScaleIn>
@@ -141,7 +141,7 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
             <div className="w-full flex flex-row justify-between pb-4 mb-10 md:mb-20 z-10 border-b-2 border-b-black">
               <ScaleIn>
                 {/* H2 - Nagłówek sekcji */}
-                <h2>Last<br /> Projects</h2>
+                <h2>Featured<br/>Offshore Projects</h2>
               </ScaleIn>
             </div>
 
@@ -244,11 +244,9 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
             style={{ backgroundImage: "url('/offer/offer3.jpg')" }}
           ></div>
 
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 w-full px-4">
              {/* H2 - Hasło na zdjęciu (override kolorów na biały i usunięcie linii) */}
-            <h2 className="text-center !text-white !border-none !text-4xl !md:text-6xl !w-1/2 mx-auto">
-              Your Trusted Offshore Engineering Partner
-            </h2>
+           
           </div>
         </section>
 
@@ -261,7 +259,7 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
               
               {/* P - Opis kursów */}
               <p className="mt-10 md:mt-6 xl:mt-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
-                Advance your career in the maritime industry with SeaClouds courses! We about_us professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
+                Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
               </p>
               
               <div className="bg-cyan-900 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer hover:bg-gray-400 text-center font-bold">
