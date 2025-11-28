@@ -79,7 +79,17 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
       <main>
       <div className="w-full flex flex-row h-[650px] md:h-[650px] lg:h-[700px] xl:h-[775px] 2xl:h-[800px]">
         <div className="w-full lg:w-[45%] 2xl:w-[55%] h-full relative">
-          <Image src="/offer/offer3.webp" alt="Offshore Engineering Services vessel conducting marine operations for Wind Farm Support in the Baltic Sea" priority={true} {...{ fetchPriority: 'high' } as any} fill className="object-cover object-center lg:brightness-100 brightness-30" />
+          <Image 
+  src="/offer/offer3.jpg" 
+  alt="Offshore Engineering Services vessel conducting marine operations for Wind Farm Support in the Baltic Sea" 
+  priority={true} 
+  fill 
+  className="object-cover object-center lg:brightness-100 brightness-30"
+  sizes="(max-width: 1024px) 100vw, 50vw"
+  
+  // ZMIANA TUTAJ:
+  {...{ fetchPriority: 'high' } as Record<string, string>}
+/>
           <div className="absolute top-2.5 lg:top-10 left-2.5 lg:left-10">
             <Image src="/logo.png" alt="Sea Clouds - Offshore Engineering & Technical Advisory Company Logo" width={150} height={150} priority className="hidden lg:block md:w-32 md:h-32 lg:w-32 lg:h-32" />
           </div>
