@@ -1,54 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;800&display=swap');
 @import "tailwindcss";
 
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-
-body {
-  font-family: Poppins, sans-serif;
-}
-
-.article-content ul {
-  list-style: disc;
-  padding-left: 1.5rem; /* lub 24px */
-  margin-bottom: 30px;
-}
-.article-content li {
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  width: 100%;
-  font-weight: 300;
-  text-decoration: underline;
-  font-size: 3rem; /* mobile first */
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  h2 {
-    font-size: 4rem;
+@layer base {
+  /* --- WSPÓLNE USTAWIENIA --- */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-thin text-cyan-900; /* Kolor tekstu: Ciemny Cyan */
+    line-height: 1.2;
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
-}
 
-/* Desktop */
-@media (min-width: 1024px) {
-  h2 {
-    font-size: 5rem;
+  /* --- STYL PODKREŚLENIA (TEXT DECORATION) --- */
+  h1, h2, h3 {
+    text-decoration-line: underline;
+    text-decoration-color: cyan-900; /* Kolor linii: Jasny błękit (sky-300) */
+    text-decoration-style: solid;
+    text-underline-offset: 4px; /* Odstęp linii od tekstu */
+    text-decoration-skip-ink: auto; /* Linia przerywa się na literach "g", "j", "y" (ładniejszy efekt) */
   }
-}
 
-/* Large desktop */
-@media (min-width: 1280px) {
-  h2 {
-    font-size: 6rem;
+  /* --- H1 --- */
+  h1 {
+    @apply text-4xl lg:text-4xl xl:text-6xl;
+    text-decoration-thickness: 3px; /* Grubość linii */
   }
+
+  /* Pogrubienie linii H1 na dużych ekranach */
+  @media (min-width: 1024px) {
+    h1 {
+      text-decoration-thickness: 5px;
+      text-underline-offset: 6px;
+    }
+  }
+
+  /* --- H2 --- */
+  h2 {
+    @apply text-5xl sm:text-6xl lg:text-8xl;
+    text-decoration-thickness: 3px;
+  }
+
+  /* --- H3 --- */
+  h3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+    text-decoration-thickness: 2px;
+  }
+
+  /* --- H4 (Bez podkreślenia) --- */
+  h4 {
+    @apply text-lg lg:text-2xl;
+    text-decoration: none;
+  }
+
+  /* --- H5 (Bez podkreślenia, styl detali) --- */
+  h5 {
+    @apply text-base lg:text-lg;
+    @apply font-semibold uppercase tracking-widest text-black;
+    text-decoration: none;
+  }
+ p {
+    /* Rozmiar: 16px na mobile, 18px na desktopie */
+    @apply text-base md:text-lg;
+    
+    /* Kolor: Stonowany szary/beż (pasuje do Stone w Tailwind) */
+    @apply text-stone-600;
+    
+    /* Interlinia: Luźna dla lepszej czytelności */
+    @apply leading-relaxed;
+    
+    /* Odstęp od dołu (żeby akapity się nie zlewały) */
+    margin-bottom: 1.25em;
+    
+    /* Opcjonalnie: Maksymalna szerokość wiersza (dla komfortu czytania - UX) */
+    max-width: 75ch; 
+  }
+
 }
-
-
-
-/* Medium screens */
