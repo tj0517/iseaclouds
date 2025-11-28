@@ -161,9 +161,9 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
                         {project.title}
                       </h3>
                       {/* p - Detale projektu (małe, uppercase - zdefiniowane w CSS) */}
-                      <p>{project.industry}</p>
-                      <p>{project.location}</p>
-                      <p>{project.date}</p>
+                      <p className="!m-0">{project.industry}</p>
+                      <p className="!m-0">{project.location}</p>
+                      <p className="!m-0">{project.date}</p>
                     </>
                   ) : (
                     <p>No project data available</p>
@@ -173,7 +173,7 @@ export default function ClientHome({ stats, items, project }: ClientHomeProps) {
                 {/* Środkowa strzałka */}
                 <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-center h-auto lg:h-full items-center order-3 lg:order-2 my-4 lg:my-0">
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-cyan-900 rounded-full flex flex-row justify-center items-center text-amber-50 text-2xl md:text-3xl">
-                    <Link href={`/projects/${project?.slug}`} aria-label={`View project details: ${project?.title}`}>
+                    <Link href={`/projects/${project?.slug}`} >
                       <GoArrowUpRight strokeWidth={1.5} />
                     </Link>
                   </div>
