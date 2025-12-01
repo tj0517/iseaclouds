@@ -1,63 +1,87 @@
 import { MetadataRoute } from 'next'
-// Pamiętaj o imporcie swoich funkcji do pobierania danych, np.:
-// import { getPosts, getProjects } from '@/sanity/sanity-utils'
+import { client } from '@/sanity/lib/client'
+import { groq } from 'next-sanity'
+
+export const revalidate = 3600; // Odświeżanie co godzinę
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.seaclouds.eu';
+
+interface SanitySlug {
+  slug: string;
+  updatedAt: string;
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.seaclouds.eu'
-
-  // 1. Pobieranie danych (zastąp to swoimi funkcjami)
-  // const news = await getPosts()
-  // const projects = await getProjects()
   
-  // Symulacja pustych tablic, żeby kod się nie wywalił przy kopiowaniu
-  // (Usuń to, gdy podłączysz swoje dane)
-  const news: any[] = [] 
-  const projects: any[] = []
+  // 1. Definiujemy zapytania GROQ dla obu typów
+  const projectsQuery = groq`*[_type == "project" && defined(slug.current)] {
+    "slug": slug.current,
+    "updatedAt": _updatedAt
+  }`;
 
-  // 2. Generowanie URLi dla Newsów (z naprawą błędu)
-  const newsUrls = news.map((item) => ({
-    // ⚠️ KLUCZOWA POPRAWKA: .trim() usuwa spacje i entery
-    url: `${baseUrl}/news/${item.slug}`.trim(),
-    lastModified: new Date(item._updatedAt),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+  const articlesQuery = groq`*[_type == "article" && defined(slug.current)] {
+    "slug": slug.current,
+    "updatedAt": _updatedAt
+  }`;
 
-  // 3. Generowanie URLi dla Projektów (z naprawą błędu)
-  const projectUrls = projects.map((item) => ({
-    url: `${baseUrl}/projects/${item.slug}`.trim(),
-    lastModified: new Date(item._updatedAt),
+  // 2. Pobieramy dane równolegle
+  const [sanityProjects, sanityArticles] = await Promise.all([
+    client.fetch<SanitySlug[]>(projectsQuery),
+    client.fetch<SanitySlug[]>(articlesQuery)
+  ]);
+
+  // 3. Mapujemy PROJEKTY
+  const projectUrls = sanityProjects.map((item) => ({
+    // ✅ POPRAWKA: .trim() usuwa niewidoczne znaki nowej linii i spacje
+    url: `${BASE_URL}/projects/${item.slug}`.trim(),
+    lastModified: new Date(item.updatedAt),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
-  }))
+  }));
 
-  // 4. Statyczne strony i zwrócenie całości
-  return [
+  // 4. Mapujemy ARTYKUŁY
+  const articleUrls = sanityArticles.map((item) => ({
+    // ✅ POPRAWKA: Tutaj również dodano .trim()
+    url: `${BASE_URL}/news/${item.slug}`.trim(), 
+    lastModified: new Date(item.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  // 5. Strony statyczne
+  const staticRoutes = [
     {
-      url: baseUrl,
+      url: BASE_URL,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 1,
     },
     {
-      url: `${baseUrl}/service`,
+      url: `${BASE_URL}/service`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about_us`,
+      url: `${BASE_URL}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
-    ...newsUrls,     // Dodajemy dynamiczne newsy
-    ...projectUrls,  // Dodajemy dynamiczne projekty
-  ]
+    {
+      url: `${BASE_URL}/news`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/about_us`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+  ];
+
+  // 6. Łączymy wszystko w jedną tablicę
+  return [...staticRoutes, ...projectUrls, ...articleUrls];
 }
