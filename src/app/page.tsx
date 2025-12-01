@@ -49,6 +49,23 @@ export default async function Home() { // ✅ Dodaj 'async' tutaj
     photo: projectData.photo
   };
 
+    const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization', // lub 'ProfessionalService'
+    name: 'Sea Clouds',
+    url: 'https://www.seaclouds.eu',
+    logo: 'https://www.seaclouds.eu/logo.png',
+    description: 'Expert Offshore Engineering Services & Technical Advisory. Comprehensive Offshore Wind Farm Support and marine operations.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Gdańsk',
+      addressCountry: 'PL'
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/sea-clouds" // Warto dodać prawdziwy link
+    ]
+  };
+
   return (
     <div>
       <ClientHome stats={stats} items={items} project={project} />
