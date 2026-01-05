@@ -1,20 +1,22 @@
 import { getProject } from "@/sanity/lib/getProject";
-import ClientHome from "./ClientHome";
+import Hero from "./components/Hero";
+import MainContent from "./components/MainContent";
+import Menu from "./components/menu";
 import { FaCalendarAlt, FaBuilding, FaShip, FaClock } from "react-icons/fa";
 
 export const metadata = {
-  itle: "Offshore Engineering & Technical Advisory | Sea Clouds",
+  title: "Offshore Engineering & Technical Advisory | Sea Clouds",
   description: "Expert Offshore Engineering Services & Technical Advisory. We provide comprehensive Offshore Wind Farm Support, marine operations & vessel mobilization.",
 }
 
-export default async function Home() { // ✅ Dodaj 'async' tutaj
+export default async function Home() {
   const stats = [
     { number: 25, label: "Years of experience", icon: <FaCalendarAlt />, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
     { number: 50, label: "Large-scale Projects", icon: <FaBuilding />, description: "Lorem ipsum dolor sit amet, consecteturconsectetur adipiscing elit " },
     { number: 550, label: "Offshore Days Annually", icon: <FaShip />, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
     { number: 1000, label: "Engineering hours", icon: <FaClock />, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   ];
-  
+
   const items = [
     {
       title: "Offshore\nEngineering",
@@ -34,22 +36,22 @@ export default async function Home() { // ✅ Dodaj 'async' tutaj
     },
   ];
 
-  const projectData = await getProject("baltica2-wind"); // ✅ Teraz 'await' działa
-  
+  const projectData = await getProject("baltica2-wind");
+
   if (!projectData) {
     return <div>Project not found</div>;
   }
-  
+
   const project = {
     title: projectData.title,
-    industry: projectData.industry, 
+    industry: projectData.industry,
     slug: projectData.slug,
-    location: projectData.location, 
-    date: projectData.year, 
+    location: projectData.location,
+    date: projectData.year,
     photo: projectData.photo
   };
 
-    const jsonLd = {
+  const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization', // lub 'ProfessionalService'
     name: 'Sea Clouds',
@@ -67,8 +69,12 @@ export default async function Home() { // ✅ Dodaj 'async' tutaj
   };
 
   return (
-    <div>
-      <ClientHome stats={stats} items={items} project={project} />
+    <div className="overflow-x-hidden text-stone-600">
+      <div className="block lg:hidden"><Menu /></div>
+      <main>
+        <Hero />
+        <MainContent stats={stats} items={items} project={project} />
+      </main>
     </div>
   );
 }
