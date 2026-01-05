@@ -7,7 +7,9 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const articles = await client.fetch(`
+  let articles = [];
+  try {
+    articles = await client.fetch(`
     *[_type=='article'] | order(date desc){
       title,
       overview,
@@ -19,6 +21,9 @@ export default async function Page() {
       content
     }
   `);
+  } catch (error) {
+    console.error("Failed to fetch articles:", error);
+  }
 
   return <ClientNews articles={articles} />;
 }
