@@ -12,7 +12,7 @@ interface SanitySlug {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  
+
   // 1. Definiujemy zapytania GROQ dla obu typów
   const projectsQuery = groq`*[_type == "project" && defined(slug.current)] {
     "slug": slug.current,
@@ -26,8 +26,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 2. Pobieramy dane równolegle
   const [sanityProjects, sanityArticles] = await Promise.all([
-    client.fetch<SanitySlug[]>(projectsQuery),
-    client.fetch<SanitySlug[]>(articlesQuery)
+    client.fetch<SanitySlug[]>(projectsQuery).catch((err) => {
+      console.error('Failed to fetch projects for sitemap:', err);
+      return [];
+    }),
+    client.fetch<SanitySlug[]>(articlesQuery).catch((err) => {
+      console.error('Failed to fetch articles for sitemap:', err);
+      return [];
+    })
   ]);
 
   // 3. Mapujemy PROJEKTY
@@ -42,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 4. Mapujemy ARTYKUŁY
   const articleUrls = sanityArticles.map((item) => ({
     // ✅ POPRAWKA: Tutaj również dodano .trim()
-    url: `${BASE_URL}/news/${item.slug}`.trim(), 
+    url: `${BASE_URL}/news/${item.slug}`.trim(),
     lastModified: new Date(item.updatedAt),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
