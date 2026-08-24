@@ -1,19 +1,14 @@
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["200","400","500","700"],
-  variable: "--font-poppins"
-});
+import { getProjects } from "@/sanity/lib/getProject";
+import ClientProjects from "./ClientProjects";
 
 export const metadata = {
   title: "Sea Clouds - Projects",
-  description: "Grow in offshore wind with our Sea Clouds courses",
-}
+  description:
+    "Offshore engineering, technical advisory and client representative projects delivered by Sea Clouds across the Baltic Sea.",
+};
 
-export default function Home() {
-  return (
-    <div className={`${poppins.className} bg-amber-50`}>
-    </div>
-  );
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+
+  return <ClientProjects projects={projects} />;
 }

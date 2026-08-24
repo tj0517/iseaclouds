@@ -1,7 +1,9 @@
-import { getProject } from "@/sanity/lib/getProject";
+import { getProjects } from "@/sanity/lib/getProject";
+import { client } from "@/sanity/lib/client";
 import Hero from "./components/Hero";
 import MainContent from "./components/MainContent";
 import Menu from "./components/menu";
+import Footer from "./components/footer";
 import { FaCalendarAlt, FaBuilding, FaShip, FaClock } from "react-icons/fa";
 
 export const metadata = {
@@ -36,20 +38,34 @@ export default async function Home() {
     },
   ];
 
-  const projectData = await getProject("baltica2-wind");
+  const allProjects = await getProjects();
 
-  if (!projectData) {
+  if (allProjects.length === 0) {
     return <div>Project not found</div>;
   }
 
-  const project = {
-    title: projectData.title,
-    industry: projectData.industry,
-    slug: projectData.slug,
-    location: projectData.location,
-    date: projectData.year,
-    photo: projectData.photo
-  };
+  const featuredProjects = allProjects.slice(0, 3).map((p) => ({
+    title: p.title,
+    industry: p.industry,
+    slug: p.slug,
+    location: p.location,
+    date: p.year,
+    photo: p.photo,
+  }));
+
+  let latestArticles: { title: string; slug: string; date?: string; photo?: string }[] = [];
+  try {
+    latestArticles = await client.fetch(`
+      *[_type == 'article'] | order(date desc)[0...3]{
+        title,
+        "slug": slug.current,
+        date,
+        "photo": photo.asset->url
+      }
+    `);
+  } catch (error) {
+    console.error("Failed to fetch articles for home page:", error);
+  }
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -73,8 +89,9 @@ export default async function Home() {
       <div className="block lg:hidden"><Menu /></div>
       <main>
         <Hero />
-        <MainContent stats={stats} items={items} project={project} />
+        <MainContent stats={stats} items={items} projects={featuredProjects} articles={latestArticles} />
       </main>
+      <Footer />
     </div>
   );
 }

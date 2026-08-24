@@ -5,10 +5,9 @@ import gsap from 'gsap';
 import Image from "next/image";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
-import { courses } from "@/data/courses";
 import StatsSection from "./stact";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FadeInWhenVisible, ScaleIn, SlideFromLeft } from "@/app/components/animations";
+import { FadeInWhenVisible, ScaleIn } from "@/app/components/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,20 +23,30 @@ interface Item {
     text: string;
 }
 
+interface FeaturedProject {
+    title: string;
+    industry: string;
+    slug: string;
+    location: string;
+    date: string;
+    photo: string;
+}
+
+interface LatestArticle {
+    title: string;
+    slug: string;
+    date?: string;
+    photo?: string;
+}
+
 interface MainContentProps {
     stats: Stat[];
     items: Item[];
-    project?: {
-        title: string;
-        industry: string;
-        slug: string;
-        location: string;
-        date: string;
-        photo: string;
-    };
+    projects?: FeaturedProject[];
+    articles?: LatestArticle[];
 }
 
-export default function MainContent({ stats, items, project }: MainContentProps) {
+export default function MainContent({ stats, items, projects = [], articles = [] }: MainContentProps) {
     const sectionRef = useRef<HTMLDivElement>(null);
 
     useLayoutEffect(() => {
@@ -85,70 +94,62 @@ export default function MainContent({ stats, items, project }: MainContentProps)
                             </ScaleIn>
                         </div>
 
-                        {/* Główna zawartość */}
-                        <div className="w-full flex flex-col pt-8 md:pt-10 relative z-10">
-                            {/* Linia pionowa */}
-                            <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-2 h-full bg-cyan-900 rounded-t-2xl z-10"></div>
+                        {/* Główna zawartość - siatka kart projektów */}
+                        <div className="w-full flex flex-col relative z-10">
+                            {projects.length > 0 ? (
+                                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                                    {projects.map((project, index) => (
+                                        <FadeInWhenVisible key={project.slug} delay={index * 0.15}>
+                                            <Link
+                                                href={`/projects/${project.slug}`}
+                                                aria-label={`View project details: ${project.title}`}
+                                                className="group flex flex-col h-full border-2 border-cyan-900 bg-amber-50 rounded-xl overflow-hidden shadow-[-8px_8px_0px_0px_rgba(5,51,69)] transition-transform duration-300 hover:-translate-y-1"
+                                            >
+                                                {/* Obraz */}
+                                                <div className="w-full aspect-video relative overflow-hidden">
+                                                    {project.photo ? (
+                                                        <Image
+                                                            src={project.photo}
+                                                            alt={project.title}
+                                                            fill
+                                                            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                                        />
+                                                    ) : (
+                                                        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                                                            <p className="text-gray-500">No image</p>
+                                                        </div>
+                                                    )}
+                                                </div>
 
-                            {/* Górny wiersz z projektem */}
-                            <div className="w-full h-auto md:h-72 flex flex-col lg:flex-row z-20 gap-4 md:gap-0">
-                                {/* Lewa karta - tekst */}
-                                <div className="w-full lg:w-[40%] rounded-xl lg:rounded-tr-[100px] px-6 py-6 md:px-10 md:py-10 flex flex-col gap-2 border-2 border-cyan-900 bg-amber-50 shadow-[-12px_12px_0px_0px_rgba(5,51,69)]">
-                                    {project ? (
-                                        <>
-                                            {/* H3 - Tytuł projektu */}
-                                            <h3 className="pr-4 md:pr-10 pb-4 xl:pb-8">
-                                                {project.title}
-                                            </h3>
-                                            {/* p - Detale projektu (małe, uppercase - zdefiniowane w CSS) */}
-                                            <p className="!m-0">{project.industry}</p>
-                                            <p className="!m-0">{project.location}</p>
-                                            <p className="!m-0">{project.date}</p>
-                                        </>
-                                    ) : (
-                                        <p>No project data available</p>
-                                    )}
+                                                {/* Tekst */}
+                                                <div className="flex flex-col flex-grow gap-2 px-5 py-5 md:px-6 md:py-6">
+                                                    <h3 className="!text-lg xl:!text-xl group-hover:text-cyan-900 transition-colors duration-300">
+                                                        {project.title}
+                                                    </h3>
+                                                    <p className="!m-0">{project.industry}</p>
+                                                    <p className="!m-0">{project.location}</p>
+                                                    <p className="!m-0">{project.date}</p>
+                                                    <div className="mt-auto pt-4 flex flex-row items-center gap-2 text-cyan-900">
+                                                        <span className="text-sm font-bold">Read more</span>
+                                                        <GoArrowUpRight strokeWidth={1.5} className="text-xl transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        </FadeInWhenVisible>
+                                    ))}
                                 </div>
+                            ) : (
+                                <p>No project data available</p>
+                            )}
 
-                                {/* Środkowa strzałka */}
-                                <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-center h-auto lg:h-full items-center order-3 lg:order-2 my-4 lg:my-0">
-                                    <div className="w-12 h-12 md:w-14 md:h-14 bg-cyan-900 rounded-full flex flex-row justify-center items-center text-amber-50 text-2xl md:text-3xl">
-                                        <Link href={`/projects/${project?.slug}`} aria-label={`View project details: ${project?.title}`}>
-                                            <GoArrowUpRight strokeWidth={1.5} />
-                                        </Link>
-                                    </div>
-                                </div>
-
-                                <div className="w-full lg:w-[40%] order-2 lg:order-3">
-                                    {project && project.photo ? (
-                                        <div className="w-full hidden lg:block h-64 md:h-full relative rounded-xl lg:rounded-tr-[100px] overflow-clip shadow-[-8px_8px_8px_-6px_rgba(0,_0,_0,_0.1)] md:shadow-[-14px_13px_8px_-6px_rgba(0,_0,_0,_0.1)]">
-                                            <Image
-                                                src={project.photo}
-                                                alt={project.title}
-                                                fill
-                                                className="object-cover object-center hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                    ) : (
-                                        <div className="w-full h-64 bg-gray-200 rounded-xl flex items-center justify-center">
-                                            <p className="text-gray-500">No project image available</p>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-
-
-                            {/* Dolny wiersz - "Wait for more" */}
-                            <div className="w-full h-auto md:h-56 hidden lg:flex flex-col lg:flex-row z-20 mt-8 md:mt-0">
-                                <div className="w-full lg:w-[40%] order-2 lg:order-1"></div>
-                                <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-center h-auto lg:h-full items-center lg:items-end order-1 lg:order-2 mb-4 lg:mb-0">
-                                    <div className="hidden lg:flex md:w-10 md:h-10 bg-cyan-900 rounded-full flex-row justify-center items-center text-white text-xl md:text-3xl"></div>
-                                </div>
-
-                                <div className="w-full lg:w-[40%] flex flex-row justify-center lg:justify-start items-center lg:items-end order-3 text-center lg:text-left">
-                                    {/* H3 - Traktujemy to jako kolejny nagłówek projektu */}
-                                    <h3>Wait for more</h3>
-                                </div>
+                            {/* "View all projects" */}
+                            <div className="w-full flex flex-row justify-center md:justify-end mt-10 md:mt-12">
+                                <Link href="/projects" className="group flex flex-row items-center gap-3">
+                                    <span className="text-lg md:text-xl font-medium group-hover:text-cyan-900 transition-colors duration-300">View all projects</span>
+                                    <span className="w-10 h-10 bg-cyan-900 rounded-full flex flex-row justify-center items-center text-amber-50 text-2xl group-hover:scale-110 transition-transform duration-300">
+                                        <GoArrowUpRight strokeWidth={1.5} />
+                                    </span>
+                                </Link>
                             </div>
                         </div>
                     </section>
@@ -177,7 +178,7 @@ export default function MainContent({ stats, items, project }: MainContentProps)
 
                 <section
                     ref={sectionRef}
-                    className="parallax_container relative w-full h-[250px] overflow-hidden"
+                    className="parallax_container relative w-full h-[300px] md:h-[360px] overflow-hidden"
                 >
                     <div
                         className="bg absolute left-0 top-0 w-full h-full bg-cover bg-center brightness-50"
@@ -185,38 +186,82 @@ export default function MainContent({ stats, items, project }: MainContentProps)
                         aria-label="Marine and Subsea Engineering operations supporting Offshore Wind Farm construction"
                     ></div>
 
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 w-full px-4">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 md:gap-8 px-[7.5%] text-center">
                         {/* H2 - Hasło na zdjęciu (override kolorów na biały i usunięcie linii) */}
-
+                        <h2 className="!text-amber-50 no-underline !text-3xl sm:!text-4xl lg:!text-5xl font-thin max-w-[900px]">
+                            Ready to take your offshore project further?
+                        </h2>
+                        <Link
+                            href="/contact"
+                            className="bg-amber-50 text-cyan-900 px-8 py-3 text-lg md:text-xl font-bold hover:bg-cyan-900 hover:text-amber-50 border-2 border-amber-50 transition-colors duration-300"
+                        >
+                            Get in touch
+                        </Link>
                     </div>
                 </section>
 
+                {/* Sekcja Latest News */}
+                {articles.length > 0 && (
+                    <section className="w-full px-[5%] sm:px-[7.5%] max-w-[1500px] mx-auto flex flex-col py-14 md:py-20 relative">
+                        <div className="w-full flex flex-row justify-between items-end pb-4 mb-10 md:mb-14 z-10 border-b-2 border-b-black">
+                            <ScaleIn>
+                                {/* H2 - Nagłówek sekcji */}
+                                <h2>Latest<br />News</h2>
+                            </ScaleIn>
+                        </div>
 
-                <section className="w-full max-w-[1500px] mx-auto px-[7.5%] py-16 pb-24 flex lg:flex-row flex-col justify-between overflow-clip relative">
-                    <div className="flex-col w-[90%] ml-auto mr-auto xl:mr-0 xl:ml-0 lg:w-[45%] text-center lg:text-left z-10" >
-                        <SlideFromLeft>
-                            {/* H2 - Główny nagłówek sekcji Courses (zastąpił h4) */}
-                            <h2 className="!text-4xl !md:text-6xl">Master Offshore Skills with SeaClouds Courses</h2>
+                        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                            {articles.map((article, index) => (
+                                <FadeInWhenVisible key={article.slug} delay={index * 0.15}>
+                                    <Link
+                                        href={`/news/${article.slug}`}
+                                        aria-label={`Read article: ${article.title}`}
+                                        className="group flex flex-col h-full border-2 border-cyan-900 bg-amber-50 rounded-xl overflow-hidden shadow-[-8px_8px_0px_0px_rgba(5,51,69)] transition-transform duration-300 hover:-translate-y-1"
+                                    >
+                                        <div className="w-full aspect-video relative overflow-hidden">
+                                            {article.photo ? (
+                                                <Image
+                                                    src={article.photo}
+                                                    alt={article.title}
+                                                    fill
+                                                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                                                    <p className="text-gray-500">No image</p>
+                                                </div>
+                                            )}
+                                        </div>
 
-                            {/* P - Opis kursów */}
-                            <p className="mt-10 md:mt-6 xl:mt-10 w-full md:w-[80%] lg:w-full md:ml-[10%] lg:ml-0">
-                                Advance your career in the maritime industry with SeaClouds courses! We offer professional training for aspiring Surveyors, Offshore Technicians, and deck specialists, equipping you for international offshore projects. Our courses combine practical skills with essential theoretical knowledge, while experienced instructors and modern training materials ensure you’re ready to tackle offshore challenges from day one.
-                            </p>
+                                        <div className="flex flex-col flex-grow gap-2 px-5 py-5 md:px-6 md:py-6">
+                                            {article.date && (
+                                                <p className="!m-0 text-sm uppercase tracking-widest">
+                                                    {new Date(article.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
+                                                </p>
+                                            )}
+                                            <h3 className="!text-lg xl:!text-xl group-hover:text-cyan-900 transition-colors duration-300">
+                                                {article.title}
+                                            </h3>
+                                            <div className="mt-auto pt-4 flex flex-row items-center gap-2 text-cyan-900">
+                                                <span className="text-sm font-bold">Read more</span>
+                                                <GoArrowUpRight strokeWidth={1.5} className="text-xl transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </FadeInWhenVisible>
+                            ))}
+                        </div>
 
-                            <div className="bg-cyan-900 px-4 py-2 text-xl text-amber-50 xl:w-[40%] w-[60%] ml-[20%] lg:ml-0 mt-10 hover:cursor-pointer hover:bg-gray-400 text-center font-bold">
-                                <Link href="/courses">Check out</Link>
-                            </div>
-                        </SlideFromLeft>
-                    </div>
-
-                    <div className="w-[90%] md:w-[80%] lg:w-[40%] ml-auto mr-auto md:mr-0 md:ml-[10%] lg:ml-0 xl:w-[42.5%] flex flex-row justify-between flex-wrap h-full mt-10 lg:mt-auto gap-y-5">
-                        {courses.map((src, index) => (
-                            <div key={index} className="w-[47.5%] aspect-square relative rounded-3xl overflow-clip " >
-                                <Link href={`/courses/${src.slug}`}><Image src={`/courses/${src.image}`} alt={`Course ${index + 1}`} fill className="object-cover object-center grayscale hover:grayscale-0 hover:cursor-pointer transition duration-300" /></Link>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                        <div className="w-full flex flex-row justify-center md:justify-end mt-10 md:mt-12">
+                            <Link href="/news" className="group flex flex-row items-center gap-3">
+                                <span className="text-lg md:text-xl font-medium group-hover:text-cyan-900 transition-colors duration-300">All news</span>
+                                <span className="w-10 h-10 bg-cyan-900 rounded-full flex flex-row justify-center items-center text-amber-50 text-2xl group-hover:scale-110 transition-transform duration-300">
+                                    <GoArrowUpRight strokeWidth={1.5} />
+                                </span>
+                            </Link>
+                        </div>
+                    </section>
+                )}
 
             </div>
         </div>

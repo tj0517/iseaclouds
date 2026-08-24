@@ -27,7 +27,7 @@ export async function getProject(slug: string): Promise<Project | null> {
 
 export async function getProjects(): Promise<Project[]> {
   return await client.fetch(`
-    *[_type == "project"] | order(date desc){
+    *[_type == "project"] | order(_createdAt desc){
       title,
       "slug": slug.current,
       industry,
