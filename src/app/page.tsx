@@ -51,6 +51,7 @@ export default async function Home() {
     location: p.location,
     date: p.year,
     photo: p.photo,
+    photoAspect: p.photoAspect,
   }));
 
   let latestArticles: { title: string; slug: string; date?: string; photo?: string }[] = [];

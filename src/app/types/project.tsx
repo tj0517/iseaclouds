@@ -5,6 +5,7 @@ export interface Project {
   location: string;
   year: string;
   photo: string;
+  photoAspect?: number;
   photo2?: string;
   overview: string;
   scopeOfWork: string[];

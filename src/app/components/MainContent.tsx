@@ -30,6 +30,7 @@ interface FeaturedProject {
     location: string;
     date: string;
     photo: string;
+    photoAspect?: number;
 }
 
 interface LatestArticle {
@@ -112,7 +113,7 @@ export default function MainContent({ stats, items, projects = [], articles = []
                                                             src={project.photo}
                                                             alt={project.title}
                                                             fill
-                                                            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                                            className={`object-cover ${project.photoAspect && project.photoAspect < 1 ? "object-top" : "object-center"} transition-transform duration-500 group-hover:scale-105`}
                                                         />
                                                     ) : (
                                                         <div className="w-full h-full bg-gray-200 flex items-center justify-center">
