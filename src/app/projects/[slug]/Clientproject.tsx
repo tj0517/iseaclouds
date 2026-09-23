@@ -65,7 +65,7 @@ export default function Clientproject({ project }: ClientProjectProps) {
                 src={project.photo}
                 alt={project.title}
                 fill
-                className={`object-cover ${project.photoAspect && project.photoAspect < 1 ? "object-top" : "object-center"}`}
+                className={`object-cover ${project.photoAspect && project.photoAspect < 1 ? "object-[50%_35%]" : "object-center"}`}
               />
             </div>
         </div>
